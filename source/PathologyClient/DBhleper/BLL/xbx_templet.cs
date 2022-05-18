@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class xbx_templet
     {
@@ -79,7 +76,7 @@ namespace DBhleper.BLL
                     ins.parentid = dt.Rows[0]["parentid"].ToString();
                     ins.title = dt.Rows[0]["title"].ToString();
                     ins.content = dt.Rows[0]["content"].ToString();
-                   
+
                     ins.DocNo = dt.Rows[0]["DocNo"].ToString();
                     ins.TreeLevel = Convert.ToInt32(dt.Rows[0]["TreeLevel"]);
                     ins.Clicked = Convert.ToInt32(dt.Rows[0]["Clicked"]);
@@ -105,7 +102,7 @@ namespace DBhleper.BLL
                 DBProcess._db.AddInParameter(cmd, "@parentid", DbType.String, ins.parentid);
                 DBProcess._db.AddInParameter(cmd, "@title", DbType.String, ins.title);
                 DBProcess._db.AddInParameter(cmd, "@content", DbType.String, ins.content);
-                
+
                 DBProcess._db.AddInParameter(cmd, "@DocNo", DbType.String, ins.DocNo);
                 DBProcess._db.AddInParameter(cmd, "@TreeLevel", DbType.Int16, ins.TreeLevel);
                 DBProcess._db.AddInParameter(cmd, "@Clicked", DbType.Int32, ins.Clicked);
@@ -134,7 +131,7 @@ namespace DBhleper.BLL
                 DBProcess._db.AddInParameter(cmd, "@parentid", DbType.String, "-1");
                 DBProcess._db.AddInParameter(cmd, "@title", DbType.String, "公共模版");
                 DBProcess._db.AddInParameter(cmd, "@content", DbType.String, "");
-            
+
                 DBProcess._db.AddInParameter(cmd, "@DocNo", DbType.String, docno);
                 DBProcess._db.AddInParameter(cmd, "@TreeLevel", DbType.Int16, 1);
                 DBProcess._db.AddInParameter(cmd, "@Clicked", DbType.Int32, 0);
@@ -147,7 +144,7 @@ namespace DBhleper.BLL
                     DBProcess._db.AddInParameter(cmd, "@parentid", DbType.String, "-1");
                     DBProcess._db.AddInParameter(cmd, "@title", DbType.String, "私有模版");
                     DBProcess._db.AddInParameter(cmd, "@content", DbType.String, "");
-                 
+
                     DBProcess._db.AddInParameter(cmd, "@DocNo", DbType.String, docno);
                     DBProcess._db.AddInParameter(cmd, "@TreeLevel", DbType.Int16, 1);
                     DBProcess._db.AddInParameter(cmd, "@Clicked", DbType.Int32, 0);
@@ -218,7 +215,7 @@ namespace DBhleper.BLL
                 {
                     result = new Model.bgnr_templet();
                     result.content = dt.Rows[0][0].ToString();
-                    
+
                 }
             }
             catch (Exception ex)

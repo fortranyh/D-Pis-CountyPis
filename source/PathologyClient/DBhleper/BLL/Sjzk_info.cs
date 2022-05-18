@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class Sjzk_info
     {
@@ -90,7 +87,7 @@ namespace DBhleper.BLL
             }
             return null;
         }
-        public int AddInfoXbzk(string num, string byyyx, string date, string bz,string byzd,string zkzd,string zkyyx,string qsh,string zzh )
+        public int AddInfoXbzk(string num, string byyyx, string date, string bz, string byzd, string zkzd, string zkyyx, string qsh, string zzh)
         {
             string sqlstr = "insert into tj_xbzk_fhl(num,byyyx,date,bz,zkyyx,byzd,zkzd,qsh,zzh)values(@num,@byyyx,@date,@bz,@zkyyx,@byzd,@zkzd,@qsh,@zzh)";
             int Result = 0;
@@ -136,9 +133,9 @@ namespace DBhleper.BLL
             return null;
         }
         //YH修改
-        public int  GetInfoXbzkint(string tj)
-        {   
-            int aa =0;
+        public int GetInfoXbzkint(string tj)
+        {
+            int aa = 0;
             string sqlstr = "select count(*) as sl from tj_xbzk_fhl where " + tj;
             try
             {

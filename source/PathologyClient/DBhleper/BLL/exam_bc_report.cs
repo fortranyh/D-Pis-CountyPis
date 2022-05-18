@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-   public class exam_bc_report
+    public class exam_bc_report
     {
-       public Boolean SaveReport(Model.exam_bc_report insM)
+        public Boolean SaveReport(Model.exam_bc_report insM)
         {
             Boolean Zx_Result = false;
             string sqlstr = "select count(*) as sl from exam_bc_report where study_no=@study_no";

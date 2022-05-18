@@ -1,20 +1,16 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
-using DevComponents.DotNetBar;
-using System.Configuration;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml;
 
 
 namespace PathologyClient
 {
-   
+
     public partial class FrmJcyy : DevComponents.DotNetBar.Office2007Form
     {
         public FrmJcyy()
@@ -111,7 +107,7 @@ namespace PathologyClient
                 dt_birth.Value = Convert.ToDateTime(DateTime.Now.Date.AddYears(0 - Convert.ToInt32(txt_age.Text.Trim())).ToString("yyyy-MM-dd"));
             }
         }
-      
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -128,11 +124,11 @@ namespace PathologyClient
         private void btn_clear_Click(object sender, EventArgs e)
         {
             ClearData();
-            
+
             //设置光标位置
             this.txt_patName.Select();
             this.txt_patName.Focus();
-           
+
         }
         private void ClearData()
         {
@@ -191,7 +187,7 @@ namespace PathologyClient
             {
                 IDictionary<string, string> parameters = new Dictionary<string, string>();
                 //组织post请求参数
-                parameters.Add("flag","0");
+                parameters.Add("flag", "0");
                 string xmldata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "GetExamTypeXML", parameters);
                 DataSet ds = new DataSet();
                 ds.ReadXml(new StringReader(xmldata));
@@ -241,9 +237,9 @@ namespace PathologyClient
         {
             txt_Sqrq.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
-       
+
         //保存登记标本病人基本信息
-        public Boolean Save_PatMI(ref string faild_info,string PidStr)
+        public Boolean Save_PatMI(ref string faild_info, string PidStr)
         {
             Boolean ResultDb_Flag = false;
             EntityModel.exam_pat_mi patmi_Ins = new EntityModel.exam_pat_mi();
@@ -265,11 +261,11 @@ namespace PathologyClient
             patmi_Ins.identity = txt_sfz.Text.Trim();
             patmi_Ins.phone_number = txt_tel.Text.Trim();
             patmi_Ins.current_place = current_place.Text.Trim();
-            string jsonStr= PublicBaseLib.JsonHelper.ToJson(patmi_Ins);
+            string jsonStr = PublicBaseLib.JsonHelper.ToJson(patmi_Ins);
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             //组织post请求参数
             parameters.Add("JsonStr", jsonStr);
-            string  Retdata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "Process_Patmi", parameters);
+            string Retdata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "Process_Patmi", parameters);
             DataSet ds = new DataSet();
             ds.ReadXml(new StringReader(Retdata));
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -288,7 +284,7 @@ namespace PathologyClient
         }
 
         //保存登记标本申请单信息
-        public Boolean Save_ExamMaster(ref string faild_info,string exam_no,string PidStr)
+        public Boolean Save_ExamMaster(ref string faild_info, string exam_no, string PidStr)
         {
             Boolean ResultDb_Flag = false;
             //电子申请单描述性
@@ -329,7 +325,7 @@ namespace PathologyClient
             examMas_Ins.inout_type = (radioButton1.Checked == true ? 0 : 1);
             examMas_Ins.input_id = txt_inputid.Text.Trim();
             examMas_Ins.output_id = "";
-            examMas_Ins.patient_source = ((DevComponents.Editors.ComboItem)(cmb_patSource.SelectedItem)).Text.Trim(); 
+            examMas_Ins.patient_source = ((DevComponents.Editors.ComboItem)(cmb_patSource.SelectedItem)).Text.Trim();
             examMas_Ins.new_flag = 1;
             examMas_Ins.modality = cmbExam_type.SelectedValue.ToString();
             //取大类
@@ -348,13 +344,13 @@ namespace PathologyClient
             examMas_Ins.parts = txt_sjbb.Text.Trim();
             examMas_Ins.bed_no = Txt_bedNo.Text.Trim();
             examMas_Ins.ward = "";
-            examMas_Ins.wtzd_flag=Chk_Wtzd.Checked==true ? 1 : 0;
+            examMas_Ins.wtzd_flag = Chk_Wtzd.Checked == true ? 1 : 0;
             examMas_Ins.req_date_time = (txt_Sqrq.Text.Trim().Equals("") ? DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") : txt_Sqrq.Text.Trim());
             examMas_Ins.req_dept = txt_Sqks.Text.Trim();
             examMas_Ins.req_dept_code = "";
             examMas_Ins.req_physician = txt_Sqys.Text.ToString();
             examMas_Ins.req_physician_code = "";
-            examMas_Ins.submit_unit =Txt_Sjdw .Text.Trim();
+            examMas_Ins.submit_unit = Txt_Sjdw.Text.Trim();
             examMas_Ins.ice_flag = (((DevComponents.Editors.ComboItem)(cmb_ice.SelectedItem)).Text.Equals("是") ? 1 : 0);
             examMas_Ins.ks_flag = (((DevComponents.Editors.ComboItem)(cmb_ks.SelectedItem)).Text.Equals("是") ? 1 : 0);
             examMas_Ins.fk_flag = (chk_fkhz.Checked == true ? 1 : 0);
@@ -388,7 +384,7 @@ namespace PathologyClient
             return ResultDb_Flag;
         }
         //保存肿瘤信息
-        public Boolean Save_exam_tumour(ref string faild_info,string exam_no)
+        public Boolean Save_exam_tumour(ref string faild_info, string exam_no)
         {
             Boolean ResultDb_Flag = false;
             EntityModel.exam_tumour exam_tuIns = new EntityModel.exam_tumour();
@@ -409,7 +405,7 @@ namespace PathologyClient
             string Retdata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "Process_Tumour", parameters);
             DataSet ds = new DataSet();
             ds.ReadXml(new StringReader(Retdata));
-            if (ds != null && ds.Tables.Count > 0  && ds.Tables[0].Rows.Count > 0)
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 faild_info = ds.Tables[0].Rows[0]["INFO"].ToString();
                 if (ds.Tables[0].Rows[0]["RESULT_CODE"].ToString().Equals("0"))
@@ -490,7 +486,7 @@ namespace PathologyClient
             }
             return ResultDb_Flag;
         }
-     
+
         //新建
         private void buttonItem4_Click(object sender, EventArgs e)
         {
@@ -532,12 +528,12 @@ namespace PathologyClient
             }
             //验证是否正确
             parameters.Clear();
-            parameters.Add("SqdStr",string.Format("{0}{1}", Program.H_Pre_Char,Pat_Sqd));
+            parameters.Add("SqdStr", string.Format("{0}{1}", Program.H_Pre_Char, Pat_Sqd));
             xmldata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "verifySqd", parameters);
             xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmldata);
-            int sl =Convert.ToInt32(xmlDoc.DocumentElement.InnerText);
-            if ( sl> 0)
+            int sl = Convert.ToInt32(xmlDoc.DocumentElement.InnerText);
+            if (sl > 0)
             {
                 Frm_TJInfo("提示", "病人生成申请单号已经存在。");
                 return;
@@ -590,7 +586,7 @@ namespace PathologyClient
             {
                 return;
             }
-                  
+
             //结果提示
             if (save_flag)
             {
@@ -598,10 +594,10 @@ namespace PathologyClient
                 //打印纸质申请单
                 if (PathologyClient.Properties.Settings.Default.Print_Sqd_Flag && !PathologyClient.Properties.Settings.Default.CurPrinter.Equals(""))
                 {
-                    EntityModel.Exam_BlSqd BlSqdIns =Program.GetSqdInfo(string.Format("{0}{1}", Program.H_Pre_Char, Pat_Sqd));
-                    if(BlSqdIns!=null)
+                    EntityModel.Exam_BlSqd BlSqdIns = Program.GetSqdInfo(string.Format("{0}{1}", Program.H_Pre_Char, Pat_Sqd));
+                    if (BlSqdIns != null)
                     {
-                       BLSqdPrint.PrintBlSQD(BlSqdIns, PathologyClient.Properties.Settings.Default.CurPrinter, 1);
+                        BLSqdPrint.PrintBlSQD(BlSqdIns, PathologyClient.Properties.Settings.Default.CurPrinter, 1);
                     }
                 }
                 //清空数据
@@ -633,7 +629,7 @@ namespace PathologyClient
                 txt_tel.Focus();
                 return false;
             }
-            string strSource=((DevComponents.Editors.ComboItem)(cmb_patSource.SelectedItem)).Text.Trim();
+            string strSource = ((DevComponents.Editors.ComboItem)(cmb_patSource.SelectedItem)).Text.Trim();
             if (strSource.Equals("住院") && txt_inputid.Text.Equals(""))
             {
                 Frm_TJInfo("数据验证", "住院患者请输入住院号和床号！");
@@ -675,8 +671,8 @@ namespace PathologyClient
                 SendKeys.Send("{TAB}");
             }
         }
-       
-       public int calculationDate(DateTime beginDateTime, DateTime endDateTime) { if (beginDateTime > endDateTime)         throw new Exception("开始时间应小于或等与结束时间！");          /*计算出生日期到当前日期总月数*/      int Months = endDateTime.Month - beginDateTime.Month + 12 * (endDateTime.Year - beginDateTime.Year);       /*出生日期加总月数后，如果大于当前日期则减一个月*/      int totalMonth = (beginDateTime.AddMonths(Months) > endDateTime) ? Months - 1 : Months;       /*计算整年*/      int fullYear = totalMonth / 12;       /*计算整月*/      int fullMonth = totalMonth % 12;       /*计算天数*/      DateTime changeDate = beginDateTime.AddMonths(totalMonth); double days = (endDateTime - changeDate).TotalDays; return fullYear; } 
+
+        public int calculationDate(DateTime beginDateTime, DateTime endDateTime) { if (beginDateTime > endDateTime) throw new Exception("开始时间应小于或等与结束时间！");          /*计算出生日期到当前日期总月数*/      int Months = endDateTime.Month - beginDateTime.Month + 12 * (endDateTime.Year - beginDateTime.Year);       /*出生日期加总月数后，如果大于当前日期则减一个月*/      int totalMonth = (beginDateTime.AddMonths(Months) > endDateTime) ? Months - 1 : Months;       /*计算整年*/      int fullYear = totalMonth / 12;       /*计算整月*/      int fullMonth = totalMonth % 12;       /*计算天数*/      DateTime changeDate = beginDateTime.AddMonths(totalMonth); double days = (endDateTime - changeDate).TotalDays; return fullYear; }
 
         //获取拼音
         private void txt_patName_Leave(object sender, EventArgs e)
@@ -687,5 +683,5 @@ namespace PathologyClient
             }
         }
     }
-    
+
 }

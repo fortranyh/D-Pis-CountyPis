@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Threading;
-using System.Globalization;
-using System.Configuration;
-using System.Reflection;
-using DevComponents.DotNetBar;
-using System.Runtime.InteropServices;
-using System.IO;
 using System.Diagnostics;
-using AutoUpdaterDotNET;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace PathologyClient
 {
@@ -127,7 +122,7 @@ namespace PathologyClient
             Thread.CurrentThread.CurrentCulture.DateTimeFormat.DateSeparator = "-";
             Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
             Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortTimePattern = "HH:mm:ss";
-           //窗体最大化
+            //窗体最大化
             this.Height = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
             this.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;
             this.CenterToScreen();
@@ -173,17 +168,17 @@ namespace PathologyClient
         {
             Graphics g = e.Graphics;
             g.DrawImage(Properties.Resources.bg, new Rectangle(0, 0, mdiClient.Width, mdiClient.Height));
-            string msg = AssemblyProduct + "{" + Assembly.GetEntryAssembly().GetName().Version +"}";
+            string msg = AssemblyProduct + "{" + Assembly.GetEntryAssembly().GetName().Version + "}";
             SizeF size = e.Graphics.MeasureString(msg, this.Font);
             g.DrawString(msg, this.Font, new SolidBrush(Color.DodgerBlue), mdiClient.Width - size.Width, mdiClient.Height - size.Height);
         }
-        
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
             buttonItem1.Visible = false;
             BtnOldForColor = this.buttonItem2.ForeColor;
             //当前登录用户
-            this.Text = string.Format("病理诊断中心客户端—【{0}-{1}】",Program.HospitalName,Program.User_Code);
+            this.Text = string.Format("病理诊断中心客户端—【{0}-{1}】", Program.HospitalName, Program.User_Code);
             this.BringToFront();
             string xmldata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "GetExamStatusDic", null);
             DataSet ds = new DataSet();
@@ -245,7 +240,7 @@ namespace PathologyClient
             RedrawWindow(this.Handle, IntPtr.Zero, IntPtr.Zero, 0x0491);
             this.Focus();
         }
-        
+
         //关于本系统
         private void buttonItem15_Click(object sender, EventArgs e)
         {

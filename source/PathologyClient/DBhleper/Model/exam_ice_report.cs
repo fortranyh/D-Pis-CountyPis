@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DBhleper.Model
+﻿namespace DBHelper.Model
 {
-   public class exam_ice_report
+    public class exam_ice_report
     {
         public string study_no { get; set; }
         public string content { get; set; }

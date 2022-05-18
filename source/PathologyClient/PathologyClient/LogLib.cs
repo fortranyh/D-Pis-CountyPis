@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 
 namespace PathologyClient
 {
-   public class LogLib
+    public class LogLib
     {
         #region 删除指定目录下几天之前的文件
         public static void DeleteFolorAFile(int Day)
@@ -113,7 +112,7 @@ namespace PathologyClient
         /// <param name="moduleInfo">具体异常发生模块名：功能模块名、类名、方法名等</param>
         /// <param name="parasInfo">参数信息</param>
         /// <returns></returns>
-        public static string GetExceptionInfo(Exception ex, string moduleInfo, string parasInfo="")
+        public static string GetExceptionInfo(Exception ex, string moduleInfo, string parasInfo = "")
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("【异常模块】：" + moduleInfo);
@@ -147,7 +146,7 @@ namespace PathologyClient
         public static string getLogInfo(StackFrame StackFrameIns)
         {
             StackTrace st = new StackTrace(StackFrameIns);
-            StackFrame sf   = st.GetFrame(0);
+            StackFrame sf = st.GetFrame(0);
             StringBuilder logInfo = new StringBuilder();
             logInfo.AppendLine();
             //得到文件名
@@ -161,15 +160,15 @@ namespace PathologyClient
             logInfo.Append("  ");
             //得到列号
             logInfo.Append(sf.GetFileColumnNumber());
-            string Info  = logInfo.ToString();
+            string Info = logInfo.ToString();
             logInfo = null;
             return Info;
         }
     }
     public enum LogType
     {
-        Trace=0,
-        Wrong=1,
+        Trace = 0,
+        Wrong = 1,
         Info
     }
 }

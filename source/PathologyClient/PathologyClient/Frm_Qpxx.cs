@@ -1,15 +1,12 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using DevComponents.DotNetBar.SuperGrid;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using DevComponents.DotNetBar.SuperGrid;
-using DevComponents.DotNetBar;
-using System.IO;
-using System.Xml;
 
 namespace PathologyClient
 {
@@ -77,7 +74,7 @@ namespace PathologyClient
             }
         }
 
-        
+
         private void Frm_Qpxx_Load(object sender, EventArgs e)
         {
             superGridControl1.PrimaryGrid.DefaultRowHeight = 0;

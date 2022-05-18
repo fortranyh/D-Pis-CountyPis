@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-   public class pat_zzsf_advice
+    public class pat_zzsf_advice
     {
         public DataTable GetZzsfAdvice(string study_no)
         {
@@ -29,7 +26,7 @@ namespace DBhleper.BLL
         public DataTable GetdtAdvice(string tj)
         {
             DataTable dt = null;
-            string sqlstr = "select study_no,advice,doc_name, date_format(create_dt,'%Y-%m-%d %H:%i:%s') AS create_dt from pat_zzsf_advice where "+ tj +" order by id asc";
+            string sqlstr = "select study_no,advice,doc_name, date_format(create_dt,'%Y-%m-%d %H:%i:%s') AS create_dt from pat_zzsf_advice where " + tj + " order by id asc";
             try
             {
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);

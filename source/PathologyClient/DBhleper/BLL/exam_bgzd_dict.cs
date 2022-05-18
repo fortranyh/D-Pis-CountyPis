@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-   public class exam_bgzd_dict
+    public class exam_bgzd_dict
     {
 
-       public DataTable GetTreeExam_bgzd_dict(int type_dict)
+        public DataTable GetTreeExam_bgzd_dict(int type_dict)
         {
             string sqlstr = "select id,part_name,parent_code,order_no from  exam_lcfh_dict order by parent_code asc";
             if (type_dict == 1)
@@ -38,7 +35,7 @@ namespace DBhleper.BLL
             return dt;
         }
 
-        public DataTable GetChildParts(int type_dict,string Pid)
+        public DataTable GetChildParts(int type_dict, string Pid)
         {
             string sqlstr = "select id from  exam_lcfh_dict where parent_code='" + Pid + "'";
             if (type_dict == 1)
@@ -171,11 +168,11 @@ namespace DBhleper.BLL
             string sqlstr = "delete from  exam_lcfh_dict where  id='" + id + "'";
             if (type_dict == 1)
             {
-                sqlstr = "delete from  exam_zdbmm_dict where  id='" + id + "'"; 
+                sqlstr = "delete from  exam_zdbmm_dict where  id='" + id + "'";
             }
             else if (type_dict == 2)
             {
-                sqlstr = "delete from  exam_zdbms_dict where  id='" + id + "'"; 
+                sqlstr = "delete from  exam_zdbms_dict where  id='" + id + "'";
             }
             else if (type_dict == 3)
             {
@@ -203,7 +200,7 @@ namespace DBhleper.BLL
             }
             else if (type_dict == 2)
             {
-                sqlstr = "update exam_zdbms_dict set part_name=@part_name where  id=@id"; 
+                sqlstr = "update exam_zdbms_dict set part_name=@part_name where  id=@id";
             }
             else if (type_dict == 3)
             {

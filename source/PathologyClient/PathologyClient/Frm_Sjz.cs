@@ -1,13 +1,11 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-using DevComponents.DotNetBar;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PathologyClient
 {
@@ -26,7 +24,7 @@ namespace PathologyClient
             comboLayout.SelectedItem = "Diagram";
             this.node1.Expanded = true;
             this.node1.Name = "node1";
-            this.node1.Text =string.Format("病理号:{0} 姓名:{1}",study_no, patient_name);
+            this.node1.Text = string.Format("病理号:{0} 姓名:{1}", study_no, patient_name);
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             //组织post请求参数
             parameters.Add("exam_no", exam_no);

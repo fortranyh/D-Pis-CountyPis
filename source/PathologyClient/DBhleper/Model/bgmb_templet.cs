@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DBhleper.Model
+﻿namespace DBHelper.Model
 {
-   public class bgmb_templet
+    public class bgmb_templet
     {
         public string id { get; set; }
         public string parentid { get; set; }
@@ -17,11 +12,11 @@ namespace DBhleper.Model
         public int Clicked { get; set; }
         public int flag { get; set; }
     }
-   public class bgnr_templet
-   {
-     
-       public string content { get; set; }
-       public string content2 { get; set; }
-      
-   }
+    public class bgnr_templet
+    {
+
+        public string content { get; set; }
+        public string content2 { get; set; }
+
+    }
 }

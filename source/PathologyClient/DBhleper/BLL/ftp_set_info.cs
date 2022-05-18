@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-   public class ftp_set_info
+    public class ftp_set_info
     {
         //查询配置信息
         public DataTable GetData()
@@ -29,7 +26,7 @@ namespace DBhleper.BLL
             return null;
         }
 
-        public void UpdateFtp(string ftpuser, string ftppwd,string ftpip,int ftpport)
+        public void UpdateFtp(string ftpuser, string ftppwd, string ftpip, int ftpport)
         {
             string sqlstr = "update ftp_set_info set ftpip=@ftpip,ftpport=@ftpport,ftpuser=@ftpuser,ftppwd=@ftppwd";
             try

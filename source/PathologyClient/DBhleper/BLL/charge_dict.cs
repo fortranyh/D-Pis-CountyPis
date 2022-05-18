@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class charge_dict
     {
@@ -22,6 +19,6 @@ namespace DBhleper.BLL
             }
             return ds;
         }
-       
+
     }
 }

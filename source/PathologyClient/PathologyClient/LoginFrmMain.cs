@@ -1,19 +1,13 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Configuration;
-using DevComponents.DotNetBar;
-using System.IO;
-using System.Xml;
+using System.Data;
 using System.Diagnostics;
-using AutoUpdaterDotNET;
-using System.Threading;
-using System.Globalization;
+using System.Drawing;
+using System.IO;
 using System.Security.Permissions;
+using System.Windows.Forms;
 
 namespace PathologyClient
 {
@@ -79,9 +73,6 @@ namespace PathologyClient
                 string RetStr = PublicBaseLib.PostWebService.PostCallWebServiceForTxt(Program.WebServerUrl, "LoginSys", parameters);
                 if (RetStr.Equals("1"))
                 {
-                    //检查系统更新
-                    string UpdateCheckUrl = string.Format("{0}{1}", ConfigurationManager.AppSettings["ServicesUrl"], "update/001/updateinfo.xml");
-                    AutoUpdater.Start(UpdateCheckUrl);
                     //操作人员编码
                     Program.User_Code = UsernameTextBox.Text.Trim();
                     parameters.Clear();
@@ -166,15 +157,8 @@ namespace PathologyClient
             SetComputerDateTime insDateTimeFormat = new SetComputerDateTime();
             insDateTimeFormat.SetDateTimeFormat();
             Application.DoEvents();
-            AutoUpdater.ApplicationExitEvent += AutoUpdater_ApplicationExitEvent;
         }
-        private void AutoUpdater_ApplicationExitEvent()
-        {
-            this.Text = @"执行升级...";
-            Thread.Sleep(1000);
-            Application.Exit();
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
-        }
+
         //提示窗体
         public void Frm_TJInfo(string Title, string B_info, Boolean DelayFlag = false)
         {
@@ -231,10 +215,10 @@ namespace PathologyClient
         //同时按下ALT+CTRL+F1打开设置窗体
         private void LoginFrmMain_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Alt && e.Control && e.KeyCode == Keys.F1)    
+            if (e.Alt && e.Control && e.KeyCode == Keys.F1)
             {
                 PictureBox2_Click(null, null);
-            } 
+            }
         }
     }
 }

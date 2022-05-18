@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EntityModel
 {
     [Serializable]
-   public class exam_pat_mi
+    public class exam_pat_mi
     {
         public string patient_id { get; set; }
         public string patient_name { get; set; }

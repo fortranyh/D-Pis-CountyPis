@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using Aspose.Cells;
 using DevComponents.DotNetBar;
 using DevComponents.DotNetBar.SuperGrid;
-using System.Configuration;
-using System.IO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
+using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 using System.Xml;
-using Aspose.Cells;
 
 namespace PathologyClient
 {
@@ -84,7 +82,7 @@ namespace PathologyClient
                 {
                     sb.AppendFormat("and report_print_datetime>='{0} 00:00:00' and report_print_datetime<='{1} 23:59:59'", dtStart.Value.ToString("yyyy-MM-dd"), dtEnd.Value.ToString("yyyy-MM-dd"));
                 }
-               
+
 
                 if (!TxtName.Text.Trim().Equals(""))
                 {
@@ -116,13 +114,13 @@ namespace PathologyClient
             sb.AppendFormat(" and submit_unit = '{0}' and exam_status>=55 ", Program.HospitalName);
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             //组织post请求参数
-            parameters.Add("tjStr",sb.ToString());
-            sb=null;
+            parameters.Add("tjStr", sb.ToString());
+            sb = null;
             string xmldata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "GetExamMasterXML", parameters);
             parameters.Clear();
             DataSet ds = new DataSet();
             ds.ReadXml(new StringReader(xmldata));
-            if (ds != null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count > 0)
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 superGridControl1.PrimaryGrid.DataSource = ds.Tables[0];
                 superGridControl1.PrimaryGrid.Footer.Text = String.Format("共查询到 <font color='Blue'><b>{0}</b></font> 条记录", ds.Tables[0].Rows.Count);
@@ -193,44 +191,44 @@ namespace PathologyClient
                 IDictionary<string, string> parameters = new Dictionary<string, string>();
                 if (exam_status >= 55)
                 {
-                      parameters.Add("exam_no", exam_no);
-                      parameters.Add("img_type", "7");
-                      string xmldata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "GetReportImgFlag", parameters);
-                      XmlDocument xmlDoc = new XmlDocument();
-                      xmlDoc.LoadXml(xmldata);
-                      string flag = xmlDoc.DocumentElement.InnerText;
-                      if (flag.Equals("0"))
-                      {
-                          Frm_TJInfo("提示", "整体报告不存在！");
-                      }
-                      else
-                      {
-                          //报告图片路径
-                          string ReportFolder = Program.APPdirPath + @"\Pis_Report_Image";
-                          if (Directory.Exists(ReportFolder) == false)
-                          {
-                              Directory.CreateDirectory(ReportFolder);
-                          }
-                          string filePathStr =string.Format(@"{0}\{1}.jpg", ReportFolder, exam_no);
-                          filePathStr = PublicBaseLib.PostWebService.PostCallWebServiceForImgFile(Program.WebServerUrl, "GetReportImgBinary", parameters, filePathStr);
-                          if(!filePathStr.Equals("") && File.Exists(@filePathStr))
-                          {
-                              Image img = GetImage(@filePathStr);
-                              this.pictureBox1.Image = img;
-                              this.pictureBox1.Location = new Point((panelEx1.Width - img.Width) / 2, 0);
-                              pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-                          }
-                          buttonX2.Visible = true;
-                      }
-                      parameters.Clear();
-                      this.panelEx1.AutoScroll = true;
+                    parameters.Add("exam_no", exam_no);
+                    parameters.Add("img_type", "7");
+                    string xmldata = PublicBaseLib.PostWebService.PostCallWebServiceForXml(Program.WebServerUrl, "GetReportImgFlag", parameters);
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xmldata);
+                    string flag = xmlDoc.DocumentElement.InnerText;
+                    if (flag.Equals("0"))
+                    {
+                        Frm_TJInfo("提示", "整体报告不存在！");
+                    }
+                    else
+                    {
+                        //报告图片路径
+                        string ReportFolder = Program.APPdirPath + @"\Pis_Report_Image";
+                        if (Directory.Exists(ReportFolder) == false)
+                        {
+                            Directory.CreateDirectory(ReportFolder);
+                        }
+                        string filePathStr = string.Format(@"{0}\{1}.jpg", ReportFolder, exam_no);
+                        filePathStr = PublicBaseLib.PostWebService.PostCallWebServiceForImgFile(Program.WebServerUrl, "GetReportImgBinary", parameters, filePathStr);
+                        if (!filePathStr.Equals("") && File.Exists(@filePathStr))
+                        {
+                            Image img = GetImage(@filePathStr);
+                            this.pictureBox1.Image = img;
+                            this.pictureBox1.Location = new Point((panelEx1.Width - img.Width) / 2, 0);
+                            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+                        }
+                        buttonX2.Visible = true;
+                    }
+                    parameters.Clear();
+                    this.panelEx1.AutoScroll = true;
                 }
             }
         }
         public Image GetImage(string path)
         {
             //加水印
-            PublicBaseLib.WaterAddToPic.AddWaterText(@path, @path,string.Format("{0} {1}", Program.HospitalName,DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")), PublicBaseLib.WaterPositionMode.RightBottom, "#FF0000", 127);
+            PublicBaseLib.WaterAddToPic.AddWaterText(@path, @path, string.Format("{0} {1}", Program.HospitalName, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")), PublicBaseLib.WaterPositionMode.RightBottom, "#FF0000", 127);
             //
             FileStream fs = new System.IO.FileStream(path, FileMode.Open);
             Image result = System.Drawing.Image.FromStream(fs);
@@ -250,7 +248,7 @@ namespace PathologyClient
             }
         }
 
-      
+
         //打印
         private void buttonX2_Click(object sender, EventArgs e)
         {
@@ -292,7 +290,7 @@ namespace PathologyClient
                 document.Print();
                 Frm_TJInfo("提示", "打印成功！");
             }
-            catch 
+            catch
             {
             }
         }
@@ -445,7 +443,7 @@ namespace PathologyClient
                 {
                     wk.Worksheets[0].Cells[i, j].PutValue(superGridControl1.PrimaryGrid.Columns[j].HeaderText);
                 }
-                for(int index=0;index<superGridControl1.PrimaryGrid.Rows.Count ;index++)
+                for (int index = 0; index < superGridControl1.PrimaryGrid.Rows.Count; index++)
                 {
                     GridRow Row = (GridRow)superGridControl1.PrimaryGrid.Rows[index];
                     i = i + 1;

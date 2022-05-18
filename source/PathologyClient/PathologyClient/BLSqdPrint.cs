@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FastReport.Barcode;
+﻿using FastReport.Barcode;
+using System;
 
 namespace PathologyClient
 {
-   public class BLSqdPrint
+    public class BLSqdPrint
     {
         //打印病理申请单
-       public static Boolean PrintBlSQD(EntityModel.Exam_BlSqd ins, string Printer_Name, int Print_Copys)
+        public static Boolean PrintBlSQD(EntityModel.Exam_BlSqd ins, string Printer_Name, int Print_Copys)
         {
             try
             {

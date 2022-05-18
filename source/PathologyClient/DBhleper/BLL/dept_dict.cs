@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class dept_dict
     {
@@ -26,14 +23,14 @@ namespace DBhleper.BLL
         {
             DataSet ds = null;
 
-            string sqlstr ;
+            string sqlstr;
             if (py == "")
             {
                 sqlstr = "select dept_code,dept_name,input_code as dept_py from dept_dict where dept_status=1 order by sort_order asc";
             }
             else
             {
-                sqlstr = "select dept_code,dept_name,input_code as dept_py from dept_dict where dept_status=1 and input_code like '"+ py +"%' order by sort_order asc";
+                sqlstr = "select dept_code,dept_name,input_code as dept_py from dept_dict where dept_status=1 and input_code like '" + py + "%' order by sort_order asc";
             }
             try
             {

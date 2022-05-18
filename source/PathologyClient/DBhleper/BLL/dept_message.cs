@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class dept_message
     {
@@ -163,15 +160,15 @@ namespace DBhleper.BLL
             string sqlstr = "delete from msgtype_dict where id=@id";
             try
             {
-                   DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
-                   DBProcess._db.AddInParameter(cmd, "@id", DbType.Int32, id);
-                   int result = DBProcess._db.ExecuteNonQuery(cmd);
-                   cmd.Parameters.Clear();
-                    if (result == 1)
-                    {
-                        return "true";
-                    }
-                
+                DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
+                DBProcess._db.AddInParameter(cmd, "@id", DbType.Int32, id);
+                int result = DBProcess._db.ExecuteNonQuery(cmd);
+                cmd.Parameters.Clear();
+                if (result == 1)
+                {
+                    return "true";
+                }
+
             }
             catch (Exception ex)
             {
@@ -223,7 +220,7 @@ namespace DBhleper.BLL
             return null;
         }
         //更新消息列表状态
-        public Boolean UpdateMessageInfo(string user_code,int id)
+        public Boolean UpdateMessageInfo(string user_code, int id)
         {
             string sqlstr = "update dept_message set see_flag=1 where see_flag=0 and toUser_Code=@user_code and id<=@id";
             try
@@ -271,7 +268,8 @@ namespace DBhleper.BLL
             return "false";
         }
         //插入新消息
-        public Boolean InsertMessage(Model.dept_message InsM){
+        public Boolean InsertMessage(Model.dept_message InsM)
+        {
             string sqlstr = "insert into dept_message(fromUser_Code,fromUser_Name,toUser_Code,toUser_Name,message)values(@fromUser_Code,@fromUser_Name,@toUser_Code,@toUser_Name,@message)";
             try
             {
@@ -283,7 +281,7 @@ namespace DBhleper.BLL
                 DBProcess._db.AddInParameter(cmd, "@message", DbType.String, InsM.message);
                 int result = DBProcess._db.ExecuteNonQuery(cmd);
                 cmd.Parameters.Clear();
-                if (result ==1)
+                if (result == 1)
                 {
                     return true;
                 }

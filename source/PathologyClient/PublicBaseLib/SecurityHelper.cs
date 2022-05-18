@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 
 namespace PublicBaseLib
 {
-   public class SecurityHelper
+    public class SecurityHelper
     {
-       
+
 
         #region 非对称加密算法
 
@@ -34,7 +33,7 @@ namespace PublicBaseLib
         /// <returns> 经过加密的字符串 </returns>
         public static string RsaEncrypt(string publickey, string content)
         {
-            Encoding encoding =  Encoding.UTF8;
+            Encoding encoding = Encoding.UTF8;
 
             var rsa = new RSACryptoServiceProvider();
 

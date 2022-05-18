@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class exam_tjyz
     {
@@ -61,7 +59,7 @@ namespace DBhleper.BLL
             return dt;
         }
         //数据
-        public DataTable GetData(string study_no,string work_source,string lk_no)
+        public DataTable GetData(string study_no, string work_source, string lk_no)
         {
             string sqlstr = "select  id,exam_no,study_no,lk_no,work_source,bj_name,group_num,sq_doctor_name,yz_flag,fx_result,zx_doc_name,barcode,memo_note,zc_flag, date_format(sq_datetime,'%Y-%m-%d %H:%i:%s') as sq_datetime,date_format(zx_datetime,'%Y-%m-%d %H:%i:%s') as zx_datetime,qc_id,1 as chk from exam_tjyz where study_no=@study_no and lk_no=@lk_no and work_source=@work_source and zc_flag=0 and yz_flag='申请' ";
             DataTable dt = null;
@@ -99,7 +97,7 @@ namespace DBhleper.BLL
         //特检切片已执行列表
         public DataTable GetTjlbData(string tj)
         {
-            string sqlstr = "select  id,exam_no,study_no,lk_no,work_source,bj_name,group_num,sq_doctor_name,yz_flag,fx_result,zx_doc_name,barcode,memo_note,zc_flag, date_format(sq_datetime,'%Y-%m-%d %H:%i:%s') as sq_datetime,date_format(zx_datetime,'%Y-%m-%d %H:%i:%s') as zx_datetime,qc_id,fz_hg,myzh_yl from exam_tjyz where yz_flag='已执行' and "+ tj + " order by zx_datetime desc";
+            string sqlstr = "select  id,exam_no,study_no,lk_no,work_source,bj_name,group_num,sq_doctor_name,yz_flag,fx_result,zx_doc_name,barcode,memo_note,zc_flag, date_format(sq_datetime,'%Y-%m-%d %H:%i:%s') as sq_datetime,date_format(zx_datetime,'%Y-%m-%d %H:%i:%s') as zx_datetime,qc_id,fz_hg,myzh_yl from exam_tjyz where yz_flag='已执行' and " + tj + " order by zx_datetime desc";
             DataTable dt = null;
             try
             {
@@ -150,9 +148,9 @@ namespace DBhleper.BLL
             return result;
         }
 
-        
 
-       //更新特检医嘱已经打印
+
+        //更新特检医嘱已经打印
         public int UpdatePrintFlag(Int32 id)
         {
             int result = 0;
@@ -170,7 +168,7 @@ namespace DBhleper.BLL
             }
             return result;
         }
-        public int UpdateMyzh_jyb(Int32 id, string myzh_yl,string myzh_bz)
+        public int UpdateMyzh_jyb(Int32 id, string myzh_yl, string myzh_bz)
         {
             int result = 0;
             string sqlstr = "update exam_tjyz set myzh_yl=@myzh_yl,myzh_bz=@myzh_bz where  id=@id";
@@ -193,7 +191,7 @@ namespace DBhleper.BLL
 
 
         //更新分子病理室内质控
-        public int UpdateFzhg(Int32 id, string fz_hg,string fz_bz)
+        public int UpdateFzhg(Int32 id, string fz_hg, string fz_bz)
         {
             int result = 0;
             string sqlstr = "update exam_tjyz set fz_hg=@fz_hg,fz_bz=@fz_bz where  id=@id";
@@ -229,7 +227,7 @@ namespace DBhleper.BLL
             return dt;
         }
 
-        
+
         //数据
         public Boolean DelData(int id)
         {
@@ -254,7 +252,7 @@ namespace DBhleper.BLL
             }
             return Zx_Result;
         }
-        public Boolean InsertData(string exam_no, string study_no, string lk_no, string work_source, string bj_name, int group_num, string sq_doctor_name, string sq_datetime, string yz_flag, string barcode, string memo_note, int zc_flag, int qc_id, string taocan_type = "", string myzh_yl = "", string fz_hg="")
+        public Boolean InsertData(string exam_no, string study_no, string lk_no, string work_source, string bj_name, int group_num, string sq_doctor_name, string sq_datetime, string yz_flag, string barcode, string memo_note, int zc_flag, int qc_id, string taocan_type = "", string myzh_yl = "", string fz_hg = "")
         {
             Boolean Zx_Result = false;
             string sqlstr = "insert into exam_tjyz(exam_no,study_no,lk_no,work_source,bj_name,group_num,sq_doctor_name,sq_datetime,yz_flag,barcode,memo_note,zc_flag,qc_id,taocan_type,myzh_yl,fz_hg) values(@exam_no,@study_no,@lk_no,@work_source,@bj_name,@group_num,@sq_doctor_name,@sq_datetime,@yz_flag,@barcode,@memo_note,@zc_flag,@qc_id,@taocan_type,@myzh_yl,@fz_hg)";
@@ -501,5 +499,5 @@ namespace DBhleper.BLL
             return ResultStr;
         }
     }
-   
+
 }

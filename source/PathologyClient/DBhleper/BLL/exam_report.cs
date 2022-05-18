@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-    public  class exam_report
+    public class exam_report
     {
 
         //报告ZK时间
@@ -63,7 +60,7 @@ namespace DBhleper.BLL
                     Ins.report_print_datetime = dt.Rows[0]["report_print_datetime"].ToString();
                     Ins.tmplet_index = dt.Rows[0]["tmplet_index"].ToString();
                     Ins.report_childtmp_index = dt.Rows[0]["report_childtmp_index"].ToString();
-                    Ins.lk_num =Convert.ToInt32( dt.Rows[0]["lk_num"].ToString());
+                    Ins.lk_num = Convert.ToInt32(dt.Rows[0]["lk_num"].ToString());
                     Ins.bp_num = Convert.ToInt32(dt.Rows[0]["bp_num"].ToString());
                     Ins.wy_study_no = dt.Rows[0]["wy_study_no"].ToString();
                     Ins.report_gb_doc = dt.Rows[0]["report_gb_doc"].ToString();
@@ -186,7 +183,7 @@ namespace DBhleper.BLL
             return Report_Count;
         }
 
-        public Boolean SaveExam_history_report(string study_no,string xgreport_doc_code,string xgreport_doc_name)
+        public Boolean SaveExam_history_report(string study_no, string xgreport_doc_code, string xgreport_doc_name)
         {
             Boolean Zx_Result = false;
             string sqlstr = "select count(*) as sl from exam_report where study_no=@study_no";
@@ -259,83 +256,83 @@ namespace DBhleper.BLL
             string sqlstr = "select count(*) as sl from exam_report where study_no=@study_no";
             try
             {
-               DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
-               DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, InsM.study_no);
-               int sl = Convert.ToInt32(DBProcess._db.ExecuteScalar(cmd));
-               cmd.Parameters.Clear();
-               if (sl == 0)
-               {
-                   sqlstr = "insert into exam_report(study_no,zdyj,rysj,xbms,image,cbreport_doc_code,cbreport_doc_name,zzreport_doc_code,zzreport_doc_name,cbreport_datetime,lock_flag,zdpz,sfyx,zdbm,zdkey,lcfh,tmplet_index,report_childtmp_index,lk_num,bp_num,wy_study_no,zzreport_datetime,report_gb_doc) values(@study_no,@zdyj,@rysj,@xbms,@image,@cbreport_doc_code,@cbreport_doc_name,@zzreport_doc_code,@zzreport_doc_name,@cbreport_datetime,@lock_flag,@zdpz,@sfyx,@zdbm,@zdkey,@lcfh,@tmplet_index,@report_childtmp_index,@lk_num,@bp_num,@wy_study_no,@zzreport_datetime,@report_gb_doc)";
-                   cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
-                   DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, InsM.study_no);
-                   DBProcess._db.AddInParameter(cmd, "@zdyj", DbType.String, InsM.zdyj);
-                   DBProcess._db.AddInParameter(cmd, "@rysj", DbType.String, InsM.rysj);
-                   DBProcess._db.AddInParameter(cmd, "@xbms", DbType.String, InsM.xbms);
-                   DBProcess._db.AddInParameter(cmd, "@image", DbType.String, InsM.image);
-                   DBProcess._db.AddInParameter(cmd, "@cbreport_doc_code", DbType.String, InsM.cbreport_doc_code);
-                   DBProcess._db.AddInParameter(cmd, "@cbreport_doc_name", DbType.String, InsM.cbreport_doc_name);
-                   DBProcess._db.AddInParameter(cmd, "@zzreport_doc_code", DbType.String, InsM.zzreport_doc_code);
-                   DBProcess._db.AddInParameter(cmd, "@zzreport_doc_name", DbType.String, InsM.zzreport_doc_name);
-                   DBProcess._db.AddInParameter(cmd, "@cbreport_datetime", DbType.DateTime, InsM.cbreport_datetime);
-                   DBProcess._db.AddInParameter(cmd, "@lock_flag", DbType.Int16, InsM.lock_flag);
-                   DBProcess._db.AddInParameter(cmd, "@zdpz", DbType.String, InsM.zdpz);
-                   DBProcess._db.AddInParameter(cmd, "@sfyx", DbType.String, InsM.sfyx);
-                   DBProcess._db.AddInParameter(cmd, "@zdbm", DbType.String, InsM.zdbm);
-                   DBProcess._db.AddInParameter(cmd, "@zdkey", DbType.String, InsM.zdkey);
-                   DBProcess._db.AddInParameter(cmd, "@lcfh", DbType.String, InsM.lcfh);
-                   DBProcess._db.AddInParameter(cmd, "@tmplet_index", DbType.String, tmplet_index);
-                   DBProcess._db.AddInParameter(cmd, "@report_childtmp_index", DbType.String,InsM.report_childtmp_index);
-                   DBProcess._db.AddInParameter(cmd, "@lk_num", DbType.Int32, InsM.lk_num);
-                   DBProcess._db.AddInParameter(cmd, "@bp_num", DbType.Int32, InsM.bp_num);
-                   DBProcess._db.AddInParameter(cmd, "@wy_study_no", DbType.String, InsM.wy_study_no);
-                   DBProcess._db.AddInParameter(cmd, "@zzreport_datetime", DbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                   DBProcess._db.AddInParameter(cmd, "@report_gb_doc", DbType.String, InsM.report_gb_doc);
-                   if (DBProcess._db.ExecuteNonQuery(cmd) == 1)
-                   {
-                       Zx_Result = true;
-                   }
-                   else
-                   {
-                       Zx_Result = false;
-                   }
-               }
-               else if (sl == 1)
-               {
-                   sqlstr = "update exam_report set zdyj=@zdyj,rysj=@rysj,xbms=@xbms,image=@image,cbreport_doc_code=@cbreport_doc_code,cbreport_doc_name=@cbreport_doc_name,cbreport_datetime=@cbreport_datetime,lock_flag=@lock_flag,zdpz=@zdpz,sfyx=@sfyx,zdbm=@zdbm,zdkey=@zdkey,lcfh=@lcfh,report_childtmp_index=@report_childtmp_index,lk_num=@lk_num,bp_num=@bp_num,wy_study_no=@wy_study_no,zzreport_doc_code=@zzreport_doc_code,zzreport_doc_name=@zzreport_doc_name,zzreport_datetime=@zzreport_datetime,report_gb_doc=@report_gb_doc where study_no=@study_no";
-                   cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
-                  
-                   DBProcess._db.AddInParameter(cmd, "@zdyj", DbType.String, InsM.zdyj);
-                   DBProcess._db.AddInParameter(cmd, "@rysj", DbType.String, InsM.rysj);
-                   DBProcess._db.AddInParameter(cmd, "@xbms", DbType.String, InsM.xbms);
-                   DBProcess._db.AddInParameter(cmd, "@image", DbType.String, InsM.image);
-                   DBProcess._db.AddInParameter(cmd, "@cbreport_doc_code", DbType.String, InsM.cbreport_doc_code);
-                   DBProcess._db.AddInParameter(cmd, "@cbreport_doc_name", DbType.String, InsM.cbreport_doc_name);
-                   DBProcess._db.AddInParameter(cmd, "@cbreport_datetime", DbType.DateTime, InsM.cbreport_datetime);
-                   DBProcess._db.AddInParameter(cmd, "@lock_flag", DbType.Int16, InsM.lock_flag);
-                   DBProcess._db.AddInParameter(cmd, "@zdpz", DbType.String, InsM.zdpz);
-                   DBProcess._db.AddInParameter(cmd, "@sfyx", DbType.String, InsM.sfyx);
-                   DBProcess._db.AddInParameter(cmd, "@zdbm", DbType.String, InsM.zdbm);
-                   DBProcess._db.AddInParameter(cmd, "@zdkey", DbType.String, InsM.zdkey);
-                   DBProcess._db.AddInParameter(cmd, "@lcfh", DbType.String, InsM.lcfh);
-                   DBProcess._db.AddInParameter(cmd, "@report_childtmp_index", DbType.String, InsM.report_childtmp_index);
-                   DBProcess._db.AddInParameter(cmd, "@lk_num", DbType.Int32, InsM.lk_num);
-                   DBProcess._db.AddInParameter(cmd, "@bp_num", DbType.Int32, InsM.bp_num);
-                   DBProcess._db.AddInParameter(cmd, "@wy_study_no", DbType.String, InsM.wy_study_no);
-                   DBProcess._db.AddInParameter(cmd, "@zzreport_doc_code", DbType.String, InsM.zzreport_doc_code);
-                   DBProcess._db.AddInParameter(cmd, "@zzreport_doc_name", DbType.String, InsM.zzreport_doc_name);
-                   DBProcess._db.AddInParameter(cmd, "@zzreport_datetime", DbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                   DBProcess._db.AddInParameter(cmd, "@report_gb_doc", DbType.String, InsM.report_gb_doc);
-                   DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, InsM.study_no);
-                   if (DBProcess._db.ExecuteNonQuery(cmd) == 1)
-                   {
-                       Zx_Result = true;
-                   }
-                   else
-                   {
-                       Zx_Result = false;
-                   }
+                DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
+                DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, InsM.study_no);
+                int sl = Convert.ToInt32(DBProcess._db.ExecuteScalar(cmd));
+                cmd.Parameters.Clear();
+                if (sl == 0)
+                {
+                    sqlstr = "insert into exam_report(study_no,zdyj,rysj,xbms,image,cbreport_doc_code,cbreport_doc_name,zzreport_doc_code,zzreport_doc_name,cbreport_datetime,lock_flag,zdpz,sfyx,zdbm,zdkey,lcfh,tmplet_index,report_childtmp_index,lk_num,bp_num,wy_study_no,zzreport_datetime,report_gb_doc) values(@study_no,@zdyj,@rysj,@xbms,@image,@cbreport_doc_code,@cbreport_doc_name,@zzreport_doc_code,@zzreport_doc_name,@cbreport_datetime,@lock_flag,@zdpz,@sfyx,@zdbm,@zdkey,@lcfh,@tmplet_index,@report_childtmp_index,@lk_num,@bp_num,@wy_study_no,@zzreport_datetime,@report_gb_doc)";
+                    cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
+                    DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, InsM.study_no);
+                    DBProcess._db.AddInParameter(cmd, "@zdyj", DbType.String, InsM.zdyj);
+                    DBProcess._db.AddInParameter(cmd, "@rysj", DbType.String, InsM.rysj);
+                    DBProcess._db.AddInParameter(cmd, "@xbms", DbType.String, InsM.xbms);
+                    DBProcess._db.AddInParameter(cmd, "@image", DbType.String, InsM.image);
+                    DBProcess._db.AddInParameter(cmd, "@cbreport_doc_code", DbType.String, InsM.cbreport_doc_code);
+                    DBProcess._db.AddInParameter(cmd, "@cbreport_doc_name", DbType.String, InsM.cbreport_doc_name);
+                    DBProcess._db.AddInParameter(cmd, "@zzreport_doc_code", DbType.String, InsM.zzreport_doc_code);
+                    DBProcess._db.AddInParameter(cmd, "@zzreport_doc_name", DbType.String, InsM.zzreport_doc_name);
+                    DBProcess._db.AddInParameter(cmd, "@cbreport_datetime", DbType.DateTime, InsM.cbreport_datetime);
+                    DBProcess._db.AddInParameter(cmd, "@lock_flag", DbType.Int16, InsM.lock_flag);
+                    DBProcess._db.AddInParameter(cmd, "@zdpz", DbType.String, InsM.zdpz);
+                    DBProcess._db.AddInParameter(cmd, "@sfyx", DbType.String, InsM.sfyx);
+                    DBProcess._db.AddInParameter(cmd, "@zdbm", DbType.String, InsM.zdbm);
+                    DBProcess._db.AddInParameter(cmd, "@zdkey", DbType.String, InsM.zdkey);
+                    DBProcess._db.AddInParameter(cmd, "@lcfh", DbType.String, InsM.lcfh);
+                    DBProcess._db.AddInParameter(cmd, "@tmplet_index", DbType.String, tmplet_index);
+                    DBProcess._db.AddInParameter(cmd, "@report_childtmp_index", DbType.String, InsM.report_childtmp_index);
+                    DBProcess._db.AddInParameter(cmd, "@lk_num", DbType.Int32, InsM.lk_num);
+                    DBProcess._db.AddInParameter(cmd, "@bp_num", DbType.Int32, InsM.bp_num);
+                    DBProcess._db.AddInParameter(cmd, "@wy_study_no", DbType.String, InsM.wy_study_no);
+                    DBProcess._db.AddInParameter(cmd, "@zzreport_datetime", DbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    DBProcess._db.AddInParameter(cmd, "@report_gb_doc", DbType.String, InsM.report_gb_doc);
+                    if (DBProcess._db.ExecuteNonQuery(cmd) == 1)
+                    {
+                        Zx_Result = true;
+                    }
+                    else
+                    {
+                        Zx_Result = false;
+                    }
+                }
+                else if (sl == 1)
+                {
+                    sqlstr = "update exam_report set zdyj=@zdyj,rysj=@rysj,xbms=@xbms,image=@image,cbreport_doc_code=@cbreport_doc_code,cbreport_doc_name=@cbreport_doc_name,cbreport_datetime=@cbreport_datetime,lock_flag=@lock_flag,zdpz=@zdpz,sfyx=@sfyx,zdbm=@zdbm,zdkey=@zdkey,lcfh=@lcfh,report_childtmp_index=@report_childtmp_index,lk_num=@lk_num,bp_num=@bp_num,wy_study_no=@wy_study_no,zzreport_doc_code=@zzreport_doc_code,zzreport_doc_name=@zzreport_doc_name,zzreport_datetime=@zzreport_datetime,report_gb_doc=@report_gb_doc where study_no=@study_no";
+                    cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
 
-               }
+                    DBProcess._db.AddInParameter(cmd, "@zdyj", DbType.String, InsM.zdyj);
+                    DBProcess._db.AddInParameter(cmd, "@rysj", DbType.String, InsM.rysj);
+                    DBProcess._db.AddInParameter(cmd, "@xbms", DbType.String, InsM.xbms);
+                    DBProcess._db.AddInParameter(cmd, "@image", DbType.String, InsM.image);
+                    DBProcess._db.AddInParameter(cmd, "@cbreport_doc_code", DbType.String, InsM.cbreport_doc_code);
+                    DBProcess._db.AddInParameter(cmd, "@cbreport_doc_name", DbType.String, InsM.cbreport_doc_name);
+                    DBProcess._db.AddInParameter(cmd, "@cbreport_datetime", DbType.DateTime, InsM.cbreport_datetime);
+                    DBProcess._db.AddInParameter(cmd, "@lock_flag", DbType.Int16, InsM.lock_flag);
+                    DBProcess._db.AddInParameter(cmd, "@zdpz", DbType.String, InsM.zdpz);
+                    DBProcess._db.AddInParameter(cmd, "@sfyx", DbType.String, InsM.sfyx);
+                    DBProcess._db.AddInParameter(cmd, "@zdbm", DbType.String, InsM.zdbm);
+                    DBProcess._db.AddInParameter(cmd, "@zdkey", DbType.String, InsM.zdkey);
+                    DBProcess._db.AddInParameter(cmd, "@lcfh", DbType.String, InsM.lcfh);
+                    DBProcess._db.AddInParameter(cmd, "@report_childtmp_index", DbType.String, InsM.report_childtmp_index);
+                    DBProcess._db.AddInParameter(cmd, "@lk_num", DbType.Int32, InsM.lk_num);
+                    DBProcess._db.AddInParameter(cmd, "@bp_num", DbType.Int32, InsM.bp_num);
+                    DBProcess._db.AddInParameter(cmd, "@wy_study_no", DbType.String, InsM.wy_study_no);
+                    DBProcess._db.AddInParameter(cmd, "@zzreport_doc_code", DbType.String, InsM.zzreport_doc_code);
+                    DBProcess._db.AddInParameter(cmd, "@zzreport_doc_name", DbType.String, InsM.zzreport_doc_name);
+                    DBProcess._db.AddInParameter(cmd, "@zzreport_datetime", DbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    DBProcess._db.AddInParameter(cmd, "@report_gb_doc", DbType.String, InsM.report_gb_doc);
+                    DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, InsM.study_no);
+                    if (DBProcess._db.ExecuteNonQuery(cmd) == 1)
+                    {
+                        Zx_Result = true;
+                    }
+                    else
+                    {
+                        Zx_Result = false;
+                    }
+
+                }
             }
             catch (Exception ex)
             {
@@ -344,7 +341,7 @@ namespace DBhleper.BLL
             return Zx_Result;
         }
 
-        public Boolean UpdateReport_Image(string study_no,string ImageStr)
+        public Boolean UpdateReport_Image(string study_no, string ImageStr)
         {
             Boolean Zx_Result = false;
             string sqlstr = "select count(*) as sl from exam_report where study_no=@study_no";
@@ -424,7 +421,9 @@ namespace DBhleper.BLL
                 {
                     Zx_Result = false;
                 }
-            }catch(Exception ex){
+            }
+            catch (Exception ex)
+            {
                 DBProcess.ShowException(ex, "ShReport 执行语句异常：" + sqlstr);
             }
             return Zx_Result;
@@ -463,7 +462,7 @@ namespace DBhleper.BLL
             try
             {
                 dt = DBProcess._db.ExecuteDataSet(CommandType.Text, sqlstr).Tables[0];
-              
+
             }
             catch (Exception ex)
             {
@@ -595,7 +594,7 @@ namespace DBhleper.BLL
             {
                 tj = " and study_no='" + tj.Trim().Replace("'", "''") + "'";
                 sqlstr = "select exam_no,study_no,modality_cn,patient_name,sex,age,patient_source,status_name,a.modality as modality,exam_type, b.status_code as curstatus,date_format(req_date_time,'%Y-%m-%d %H:%i:%s') AS req_date_time from exam_master a inner join exam_status_dict b on a.exam_status=b.status_code inner join exam_type_dict c on a.modality=c.modality   inner join exam_pat_mi d on a.patient_id=d.patient_id where status_code>=20 and status_code<55   " + tj;
-                
+
             }
             else
             {
@@ -618,10 +617,10 @@ namespace DBhleper.BLL
         public DataTable GetReportTemp(string exam_type)
         {
             string tj = "";
-           
-            tj = " and big_type in ("+exam_type+ ")";
-           
-            string sqlstr = "select temp_name,temp_enable,temp_index,temp_txt,sort_index from report_temp_dict where temp_enable=1 "+tj+" order by sort_index asc";
+
+            tj = " and big_type in (" + exam_type + ")";
+
+            string sqlstr = "select temp_name,temp_enable,temp_index,temp_txt,sort_index from report_temp_dict where temp_enable=1 " + tj + " order by sort_index asc";
             DataTable dt = null;
             try
             {
@@ -663,7 +662,7 @@ namespace DBhleper.BLL
         //统计阳性率
         public DataTable GetYxl(string tj)
         {
-            string sqlstr = "select sfyx,count(sfyx) as sl from exam_report where " +  tj  + " group by sfyx";
+            string sqlstr = "select sfyx,count(sfyx) as sl from exam_report where " + tj + " group by sfyx";
             DataTable dt = null;
             try
             {
@@ -680,7 +679,7 @@ namespace DBhleper.BLL
         //报告接收单查询
         public DataSet GetBgJsd(string startTime, string endTime, string tj)
         {
-            string sqlstr = string.Format("select study_no,req_dept,patient_name from  exam_report_view where report_print_datetime>='{0}' and report_print_datetime<='{1}' {2} order by study_no asc", startTime, endTime,  tj);
+            string sqlstr = string.Format("select study_no,req_dept,patient_name from  exam_report_view where report_print_datetime>='{0}' and report_print_datetime<='{1}' {2} order by study_no asc", startTime, endTime, tj);
             DataSet ds = null;
             try
             {
@@ -697,7 +696,7 @@ namespace DBhleper.BLL
         //登记薄打印列表
         public DataSet GetDsDjbPrintList(string tj)
         {
-            string sqlstr = "select  * from  exam_djb_view where  "+tj+"  order by study_no asc";
+            string sqlstr = "select  * from  exam_djb_view where  " + tj + "  order by study_no asc";
             DataSet ds = null;
             try
             {
@@ -754,7 +753,7 @@ namespace DBhleper.BLL
         //病理整体报告
         public string GetReportImgPath(string exam_no, int img_type)
         {
-            string ReportPath="";
+            string ReportPath = "";
             //定义数据库操作对象
             Microsoft.Practices.EnterpriseLibrary.Data.Database _db = Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.Current.GetInstance<Microsoft.Practices.EnterpriseLibrary.Data.Database>("mysql");
             string sqlstr = "select count(*) from exam_master where  exam_status>=55 and exam_no=@exam_no ";

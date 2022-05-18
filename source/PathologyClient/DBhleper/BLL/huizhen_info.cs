@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-   public class huizhen_info
+    public class huizhen_info
     {
         public DataTable GetHzinfo(string study_no)
         {
@@ -34,7 +31,7 @@ namespace DBhleper.BLL
             {
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
                 DBProcess._db.AddInParameter(cmd, "@study_no", DbType.String, study_no);
-                zxResult =Convert.ToInt32(DBProcess._db.ExecuteScalar(cmd));
+                zxResult = Convert.ToInt32(DBProcess._db.ExecuteScalar(cmd));
             }
             catch (Exception ex)
             {
@@ -44,7 +41,7 @@ namespace DBhleper.BLL
             return zxResult;
         }
 
-        public Boolean InsertHzInfo(string study_no, string chry,string zjyj, string doc_no, string doc_name)
+        public Boolean InsertHzInfo(string study_no, string chry, string zjyj, string doc_no, string doc_name)
         {
             Boolean Zx_Result = false;
             string sqlstr = "insert into huizhen_info(study_no,chry,zjyj,doc_no,doc_name,create_dt) values(@study_no,@chry,@zjyj,@doc_no,@doc_name,@create_dt)";

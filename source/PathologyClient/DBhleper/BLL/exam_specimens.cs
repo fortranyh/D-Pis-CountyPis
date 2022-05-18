@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class exam_specimens
     {
-        public Boolean Process_exam_specimens(string sjbbStr,int Icount, string exam_no,string doctor_code,string doctor_name,Boolean Merge_flag,ref string Str_Result)
+        public Boolean Process_exam_specimens(string sjbbStr, int Icount, string exam_no, string doctor_code, string doctor_name, Boolean Merge_flag, ref string Str_Result)
         {
             Boolean Zx_Result = false;
             string sqlstr = "";
@@ -65,7 +62,7 @@ namespace DBhleper.BLL
             return Zx_Result;
         }
         //插入标本信息
-        public Boolean InsertSpecimensInfo(string exam_no,  string parts, string specimens_class,string memo_note, string pack_order, string doctor_code, string doctor_name)
+        public Boolean InsertSpecimensInfo(string exam_no, string parts, string specimens_class, string memo_note, string pack_order, string doctor_code, string doctor_name)
         {
             Boolean ZxResult = false;
             string sqlstr = "insert into exam_specimens(exam_no,parts,pack_order,specimens_class,sfhg,memo_note,receive_doctor_code,receive_doctor_name)values(@exam_no,@parts,@pack_order,@specimens_class,@sfhg,@memo_note,@receive_doctor_code,@receive_doctor_name)";
@@ -95,23 +92,23 @@ namespace DBhleper.BLL
         //标本接收模块标本展示
         public DataTable GetSpecimensInfo(string exam_no)
         {
-           string sqlstr = "select id,parts,pack_order,specimens_class,sfhg,memo_note from exam_specimens where sfhg=1 and exam_no=@exam_no order by id asc";
-           try
-           {
-               DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
-               DBProcess._db.AddInParameter(cmd, "@exam_no", DbType.String, exam_no);
-               DataSet ds = DBProcess._db.ExecuteDataSet(cmd);
-               cmd.Parameters.Clear();
-               if (ds != null && ds.Tables[0].Rows.Count > 0)
-               {
-                   return ds.Tables[0];
-               }
-           }
-           catch (Exception ex)
-           {
-               DBProcess.ShowException(ex, "GetSpecimensInfo 执行语句异常：" + sqlstr);
-           }
-           return null;
+            string sqlstr = "select id,parts,pack_order,specimens_class,sfhg,memo_note from exam_specimens where sfhg=1 and exam_no=@exam_no order by id asc";
+            try
+            {
+                DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
+                DBProcess._db.AddInParameter(cmd, "@exam_no", DbType.String, exam_no);
+                DataSet ds = DBProcess._db.ExecuteDataSet(cmd);
+                cmd.Parameters.Clear();
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    return ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                DBProcess.ShowException(ex, "GetSpecimensInfo 执行语句异常：" + sqlstr);
+            }
+            return null;
 
         }
         //取材模块标本展示
@@ -305,9 +302,9 @@ namespace DBhleper.BLL
                 }
                 else
                 {
-                    dt = null; 
+                    dt = null;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -325,7 +322,7 @@ namespace DBhleper.BLL
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
                 DBProcess._db.AddInParameter(cmd, "@exam_no", DbType.String, exam_no);
                 dt = DBProcess._db.ExecuteDataSet(cmd).Tables[0];
-                if (dt != null )
+                if (dt != null)
                 {
                     return dt;
                 }
@@ -383,7 +380,7 @@ namespace DBhleper.BLL
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
                 DBProcess._db.AddInParameter(cmd, "@bbgfh_flag", DbType.Int16, bbgfh_flag);
                 DBProcess._db.AddInParameter(cmd, "@id", DbType.Int32, id);
-                result= DBProcess._db.ExecuteNonQuery(cmd);
+                result = DBProcess._db.ExecuteNonQuery(cmd);
 
             }
             catch (Exception ex)
@@ -402,7 +399,7 @@ namespace DBhleper.BLL
             {
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
                 DBProcess._db.AddInParameter(cmd, "@id", DbType.Int32, id);
-                result =Convert.ToInt16(DBProcess._db.ExecuteScalar(cmd));
+                result = Convert.ToInt16(DBProcess._db.ExecuteScalar(cmd));
 
             }
             catch (Exception ex)
@@ -420,7 +417,7 @@ namespace DBhleper.BLL
             try
             {
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
-                Result=Convert.ToString( DBProcess._db.ExecuteScalar(cmd));
+                Result = Convert.ToString(DBProcess._db.ExecuteScalar(cmd));
             }
             catch (Exception ex)
             {

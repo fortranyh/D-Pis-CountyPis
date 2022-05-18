@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class exam_status
     {
@@ -28,7 +26,7 @@ namespace DBhleper.BLL
         }
         public List<Model.exam_status> GetModelExam_Status()
         {
-            List<Model.exam_status> lst=new List<Model.exam_status>();
+            List<Model.exam_status> lst = new List<Model.exam_status>();
             string sqlstr = " select '-9' as status_code,'全部' as status_name,'-65536' as status_color union  all  ( select status_code,status_name,status_color from exam_status_dict where enable_show=1 order by order_index asc)";
             try
             {
@@ -164,7 +162,7 @@ namespace DBhleper.BLL
 
         public DataSet GetDsExam_Status()
         {
-            DataSet ds =null;
+            DataSet ds = null;
             string sqlstr = "select status_code,status_name,status_color from exam_status_dict where enable_show=1 order by order_index asc";
             try
             {

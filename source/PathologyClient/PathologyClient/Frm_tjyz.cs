@@ -1,15 +1,12 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using DevComponents.DotNetBar.SuperGrid;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using DevComponents.DotNetBar.SuperGrid;
-using DevComponents.DotNetBar;
-using System.Collections;
-using System.IO;
 
 namespace PathologyClient
 {
@@ -60,10 +57,10 @@ namespace PathologyClient
             dtEnd.Value = DateTime.Now;
             //执行查询
             BtnQuery.PerformClick();
-           
+
         }
-        
-       
+
+
         //提示窗体
         public void Frm_TJInfo(string Title, string B_info)
         {
@@ -145,7 +142,7 @@ namespace PathologyClient
                 string exam_no = Row.Cells["exam_no"].Value.ToString();
                 string study_no = Row.Cells["study_no"].Value.ToString();
                 int exam_status = Convert.ToInt32(Row.Cells["exam_status"].Value.ToString());
-               
+
                 if (exam_status >= 25)
                 {
                     IDictionary<string, string> parameters = new Dictionary<string, string>();
@@ -166,7 +163,7 @@ namespace PathologyClient
                             superGridControl2.PrimaryGrid.DataSource = null;
                         }
                     }
-                    
+
                 }
             }
         }

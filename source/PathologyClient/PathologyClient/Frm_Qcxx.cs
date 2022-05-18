@@ -1,14 +1,12 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using DevComponents.DotNetBar.SuperGrid;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using DevComponents.DotNetBar.SuperGrid;
-using DevComponents.DotNetBar;
-using System.IO;
 
 namespace PathologyClient
 {
@@ -24,7 +22,7 @@ namespace PathologyClient
                 panel2.Columns[i].ColumnSortMode = ColumnSortMode.None;
                 panel2.Columns[i].CellStyles.Default.Font = this.Font;
             }
-          
+
         }
         //提示窗体
         public void Frm_TJInfo(string Title, string B_info)
@@ -79,7 +77,7 @@ namespace PathologyClient
             //执行查询
             BtnQuery.PerformClick();
         }
-       private void BtnQuery_Click(object sender, EventArgs e)
+        private void BtnQuery_Click(object sender, EventArgs e)
         {
             if (dtStart.Value > dtEnd.Value)
             {
@@ -229,11 +227,11 @@ namespace PathologyClient
                         EntityModel.Exam_BlSqd BlSqdIns = Program.GetSqdInfo(exam_no);
                         if (BlSqdIns != null)
                         {
-                           Boolean flag= BLSqdPrint.PrintBlSQD(BlSqdIns, PathologyClient.Properties.Settings.Default.CurPrinter, 1);
-                           if (flag)
-                           {
-                               Frm_TJInfo("提示", "打印申请单成功！");
-                           }
+                            Boolean flag = BLSqdPrint.PrintBlSQD(BlSqdIns, PathologyClient.Properties.Settings.Default.CurPrinter, 1);
+                            if (flag)
+                            {
+                                Frm_TJInfo("提示", "打印申请单成功！");
+                            }
                         }
                     }
                 }
@@ -361,7 +359,7 @@ namespace PathologyClient
             }
         }
 
-      
-       
+
+
     }
 }

@@ -1,13 +1,10 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using DevComponents.DotNetBar;
-using System.Xml;
 using System.Configuration;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace PathologyClient
 {
@@ -22,12 +19,12 @@ namespace PathologyClient
         {
             if (textBoxX1.Text.Trim().Equals("") || textBoxX2.Text.Trim().Equals("") || textBoxX3.Text.Trim().Equals(""))
             {
-                Frm_TJInfo( this.Text,"密码信息都不允许为空！");
+                Frm_TJInfo(this.Text, "密码信息都不允许为空！");
                 return;
             }
-            if ( !textBoxX2.Text.Trim().Equals("").Equals(textBoxX3.Text.Trim().Equals("")))
+            if (!textBoxX2.Text.Trim().Equals("").Equals(textBoxX3.Text.Trim().Equals("")))
             {
-                Frm_TJInfo( this.Text,"两次输入新密码不一样！");
+                Frm_TJInfo(this.Text, "两次输入新密码不一样！");
                 return;
             }
             //
@@ -42,12 +39,14 @@ namespace PathologyClient
             string RetStr = xmlDoc.DocumentElement.InnerText;
             if (RetStr.Equals("1"))
             {
-                Frm_TJInfo( this.Text,"密码修改成功！",true);
-                DialogResult=DialogResult.OK;
-            }else{
+                Frm_TJInfo(this.Text, "密码修改成功！", true);
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
                 Frm_TJInfo(this.Text, "密码修改失败！");
                 return;
-            } 
+            }
         }
 
         private void Frm_Pwd_Load(object sender, EventArgs e)
@@ -55,7 +54,7 @@ namespace PathologyClient
 
         }
         //提示窗体
-        public void Frm_TJInfo(string Title, string B_info, Boolean DelayFlag=false)
+        public void Frm_TJInfo(string Title, string B_info, Boolean DelayFlag = false)
         {
             FrmAlert Frm_AlertIns = new FrmAlert();
             Rectangle r = Screen.GetWorkingArea(this);

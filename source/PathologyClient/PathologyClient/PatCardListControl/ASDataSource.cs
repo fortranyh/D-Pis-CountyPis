@@ -1,32 +1,28 @@
-
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Runtime.InteropServices;
 using System.Xml;
 
 namespace ASwartz.WinForms.Controls
 {
     public class ASDataSource
-	{
-		public enum Enum17
-		{
-			const_0,
-			const_1,
-			const_2,
-			const_3
-		}
+    {
+        public enum Enum17
+        {
+            const_0,
+            const_1,
+            const_2,
+            const_3
+        }
 
-		private object object_0 = null;
+        private object object_0 = null;
 
-		private string string_0 = null;
+        private string string_0 = null;
 
-		private ASDataSourceFieldList ASDataSourceFieldList_0 = new ASDataSourceFieldList();
+        private ASDataSourceFieldList ASDataSourceFieldList_0 = new ASDataSourceFieldList();
 
-		private bool bool_0 = false;
+        private bool bool_0 = false;
 
-		private int _int_0 = 0;
+        private int _int_0 = 0;
         public int int_0
         {
             get
@@ -50,69 +46,69 @@ namespace ASwartz.WinForms.Controls
                 this._enum17_0 = value;
             }
         }
-		private IEnumerator ienumerator_0 = null;
+        private IEnumerator ienumerator_0 = null;
 
-		public object DataSource
-		{
-			get
-			{
-				return this.object_0;
-			}
-			set
-			{
-				this.object_0 = value;
-			}
-		}
+        public object DataSource
+        {
+            get
+            {
+                return this.object_0;
+            }
+            set
+            {
+                this.object_0 = value;
+            }
+        }
 
-		public string RootXPath
-		{
-			get
-			{
-				return this.string_0;
-			}
-			set
-			{
-				this.string_0 = value;
-			}
-		}
+        public string RootXPath
+        {
+            get
+            {
+                return this.string_0;
+            }
+            set
+            {
+                this.string_0 = value;
+            }
+        }
 
-		public ASDataSourceFieldList Fields
-		{
-			get
-			{
-				return this.ASDataSourceFieldList_0;
-			}
-			set
-			{
-				this.ASDataSourceFieldList_0 = value;
-			}
-		}
+        public ASDataSourceFieldList Fields
+        {
+            get
+            {
+                return this.ASDataSourceFieldList_0;
+            }
+            set
+            {
+                this.ASDataSourceFieldList_0 = value;
+            }
+        }
 
-		public object Current
-		{
-			get
-			{
-				object result;
-				if (this.ienumerator_0 == null)
-				{
-					result = null;
-				}
-				else
-				{
-					result = this.ienumerator_0.Current;
-				}
-				return result;
-			}
-		}
+        public object Current
+        {
+            get
+            {
+                object result;
+                if (this.ienumerator_0 == null)
+                {
+                    result = null;
+                }
+                else
+                {
+                    result = this.ienumerator_0.Current;
+                }
+                return result;
+            }
+        }
 
-		private void method_0()
-		{
-			if (!this.bool_0)
-			{
-				this.bool_0 = true;
-				this.Start();
-			}
-		}
+        private void method_0()
+        {
+            if (!this.bool_0)
+            {
+                this.bool_0 = true;
+                this.Start();
+            }
+        }
 
         public void Start()
         {
@@ -219,24 +215,24 @@ namespace ASwartz.WinForms.Controls
                 }
             }
         }
-		public void Reset()
-		{
-			this.Start();
-			if (this.ienumerator_0 != null)
-			{
-				this.ienumerator_0.Reset();
-			}
-		}
+        public void Reset()
+        {
+            this.Start();
+            if (this.ienumerator_0 != null)
+            {
+                this.ienumerator_0.Reset();
+            }
+        }
 
-		public bool MoveNext()
-		{
-			return this.ienumerator_0 != null && this.ienumerator_0.MoveNext();
-		}
+        public bool MoveNext()
+        {
+            return this.ienumerator_0 != null && this.ienumerator_0.MoveNext();
+        }
 
-		public object ReadValue(string fieldName)
-		{
-			ASSingleDataSource ASSingleDataSource = ASSingleDataSource.Package(this.Current);
-			return ASSingleDataSource.ReadValue(fieldName);
-		}
-	}
+        public object ReadValue(string fieldName)
+        {
+            ASSingleDataSource ASSingleDataSource = ASSingleDataSource.Package(this.Current);
+            return ASSingleDataSource.ReadValue(fieldName);
+        }
+    }
 }

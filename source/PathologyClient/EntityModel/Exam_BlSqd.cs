@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EntityModel
+﻿namespace EntityModel
 {
-   public class Exam_BlSqd
+    public class Exam_BlSqd
     {
         public string exam_no { get; set; }
         public string hospital_name { get; set; }

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Configuration;
-using System.Threading;
-using Hik.Communication.Scs.Client;
+﻿using Hik.Communication.Scs.Client;
 using Hik.Communication.Scs.Communication.EndPoints.Tcp;
 using Hik.Communication.Scs.Communication.Messages;
 using Hik.Communication.Scs.Communication.Messengers;
-using System.Data;
+using System;
+using System.Configuration;
+using System.Threading;
 
 namespace WebServiceApp
 {
@@ -16,7 +12,7 @@ namespace WebServiceApp
     {
 
         //接口服务设置信息
-        public static DBhleper.Model.interface_set_info Interface_SetInfo = null;
+        public static DBHelper.Model.interface_set_info Interface_SetInfo = null;
         //创建日志记录组件实例
         public static log4net.ILog FileLog = log4net.LogManager.GetLogger("FileLog.Logging");
         public static void GetIneterfaceInfo()
@@ -25,7 +21,7 @@ namespace WebServiceApp
             if (Interface_SetInfo == null)
             {
                 //获取接口服务设置信息
-                DBhleper.BLL.interface_set_info InsInter = new DBhleper.BLL.interface_set_info();
+                DBHelper.BLL.interface_set_info InsInter = new DBHelper.BLL.interface_set_info();
                 Interface_SetInfo = InsInter.GetInterfaceSetInfo();
             }
         }
@@ -50,7 +46,7 @@ namespace WebServiceApp
             {
                 GetIneterfaceInfo();
             }
-            if (Interface_SetInfo != null && !Tansmit_Info.Equals("") && Interface_SetInfo.enable_flag==1)
+            if (Interface_SetInfo != null && !Tansmit_Info.Equals("") && Interface_SetInfo.enable_flag == 1)
             {
                 try
                 {
@@ -79,7 +75,7 @@ namespace WebServiceApp
         {
             return ConfigurationManager.AppSettings["Debug_Mode"];
         }
-       
+
         public static String GetSysVersion()
         {
             string SysVersion = "";

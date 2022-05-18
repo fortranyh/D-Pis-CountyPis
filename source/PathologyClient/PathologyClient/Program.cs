@@ -1,16 +1,15 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using DevComponents.DotNetBar;
-using System.Threading;
 using System.Configuration;
-using System.Globalization;
 using System.Drawing;
 using System.Security.Permissions;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace PathologyClient
 {
-     [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
+    [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
     static class Program
     {
         public static Dictionary<string, Color> exam_status_dic = new Dictionary<string, Color>();

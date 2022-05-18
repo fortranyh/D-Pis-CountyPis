@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
-    public   class work_source_dict
+    public class work_source_dict
     {
         public DataTable Get_work_source_dict()
         {
@@ -47,5 +45,5 @@ namespace DBhleper.BLL
         }
     }
 
-    
+
 }

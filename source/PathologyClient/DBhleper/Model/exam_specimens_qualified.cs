@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DBhleper.Model
+﻿namespace DBHelper.Model
 {
-   public class exam_specimens_qualified
+    public class exam_specimens_qualified
     {
         public string exam_no { get; set; }
         public string specimens_name { get; set; }
@@ -18,6 +13,6 @@ namespace DBhleper.Model
         public string study_no { get; set; }
         public string patient_id { get; set; }
         public string input_id { get; set; }
-       
+
     }
 }

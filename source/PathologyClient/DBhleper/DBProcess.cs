@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+﻿using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Data;
-using log4net;
+using System;
 using System.Data;
-using System.Configuration;
-namespace DBhleper
+namespace DBHelper
 {
     public class DBProcess
     {
         //当前数据库类型
         static string Str_DbType = "mysql";
-        public static void SetDbType(string Str_Type){
+        public static void SetDbType(string Str_Type)
+        {
             Str_DbType = Str_Type;
         }
         //创建日志记录组件实例
         public static log4net.ILog FileLog = log4net.LogManager.GetLogger("FileLog.Logging");
         //定义数据库操作对象
         public static Database _db = EnterpriseLibraryContainer.Current.GetInstance<Database>(Str_DbType);
-        
+
         //数据库连接测试
         public static int DbConnTest()
         {
             try
             {
-               
+
                 disposeDb();
                 _db = EnterpriseLibraryContainer.Current.GetInstance<Database>(Str_DbType);
                 System.Data.Common.DbConnection dbconn = _db.CreateConnection();
@@ -59,7 +55,7 @@ namespace DBhleper
                 exInnerSource = ex.InnerException.Source;
                 exInnerStackTrace = ex.InnerException.StackTrace;
             }
-            string exInfoStr="=======ex异常=======" + Environment.NewLine +
+            string exInfoStr = "=======ex异常=======" + Environment.NewLine +
                             exMessage + Environment.NewLine +
                             exSource + Environment.NewLine +
                             exStackTrace + Environment.NewLine +

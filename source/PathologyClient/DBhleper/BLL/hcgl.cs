@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class hcgl
     {
@@ -52,7 +49,7 @@ namespace DBhleper.BLL
         }
 
 
-        public int UpdateInfoTsyjl(string wp, string jl, string ghrq, string qm, string bz,string id)
+        public int UpdateInfoTsyjl(string wp, string jl, string ghrq, string qm, string bz, string id)
         {
             string sqlstr = "update hcgl_tsyjl set wp=@wp, jl=@jl,ghrq=@ghrq,qm=@qm,bz=@bz where id=@id";
             int Result = 0;

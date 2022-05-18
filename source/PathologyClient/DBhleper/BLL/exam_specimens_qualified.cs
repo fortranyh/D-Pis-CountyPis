@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
-namespace DBhleper.BLL
+using System.Text;
+namespace DBHelper.BLL
 {
     public class exam_specimens_qualified
     {

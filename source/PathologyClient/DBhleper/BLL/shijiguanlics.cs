@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Common;
 using System.Data;
+using System.Data.Common;
 
-namespace DBhleper.BLL
+namespace DBHelper.BLL
 {
     public class shijiguanlics
     {
-        public int AddInfoShijiruku(string sjmc, double rkl, string rksj, string rkr, string bz, double sjdkc,string sjgq)
+        public int AddInfoShijiruku(string sjmc, double rkl, string rksj, string rkr, string bz, double sjdkc, string sjgq)
         {
             string sqlstr = "insert into shiji_ruku(sjmc,rkl,cursl,rksj,rkr,bz,sjdkc,sjgq)values(@sjmc,@rkl,@cursl,@rksj,@rkr,@bz,@sjdkc,@sjgq)";
             int Result = 0;
@@ -79,7 +76,7 @@ namespace DBhleper.BLL
             return null;
         }
 
-     
+
 
 
         //出库查询
@@ -145,7 +142,7 @@ namespace DBhleper.BLL
         }
 
         //
-        public int UpdateInfoShijiruku(string sjmc,double sl)
+        public int UpdateInfoShijiruku(string sjmc, double sl)
         {
             string sqlstr = "update  shiji_ruku set cursl=@cursl where sjmc=@sjmc and yw_flag='未用完'";
             int Result = 0;
@@ -164,7 +161,7 @@ namespace DBhleper.BLL
             return Result;
         }
         //
-        public int  SelectedSjmc(string sjmc)
+        public int SelectedSjmc(string sjmc)
         {
             string sqlstr = "select count(*) as sl from shiji_ruku where sjmc=@sjmc and yw_flag='未用完'";
             int Result = 0;
@@ -172,7 +169,7 @@ namespace DBhleper.BLL
             {
                 DbCommand cmd = DBProcess._db.GetSqlStringCommand(sqlstr);
                 DBProcess._db.AddInParameter(cmd, "@sjmc", DbType.String, sjmc);
-                Result =Convert.ToInt32(DBProcess._db.ExecuteScalar(cmd));
+                Result = Convert.ToInt32(DBProcess._db.ExecuteScalar(cmd));
             }
             catch (Exception ex)
             {

@@ -349,10 +349,6 @@
       <Project>{DA8222DF-985C-4532-BE17-9B9BE9EDFDA2}</Project>
       <Name>EntityModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OpenSource\AutoUpdater.NET-1.4.11\AutoUpdater.NET\AutoUpdater.NET.csproj">
-      <Project>{fb9e7e6b-b19f-4f37-a708-2996190cef13}</Project>
-      <Name>AutoUpdater.NET</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PublicBaseLib\PublicBaseLib.csproj">
       <Project>{D61444F0-3631-43E1-B8E7-D865FF9CD9E4}</Project>
       <Name>PublicBaseLib</Name>

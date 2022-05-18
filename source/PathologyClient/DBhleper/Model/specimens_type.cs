@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DBhleper.Model
+﻿namespace DBHelper.Model
 {
-   public class specimens_type
+    public class specimens_type
     {
-       public string specimens_name { get; set; }
+        public string specimens_name { get; set; }
     }
 }
