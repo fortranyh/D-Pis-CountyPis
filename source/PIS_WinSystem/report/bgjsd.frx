@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/04/2015 11:41:46" ReportInfo.Modified="01/12/2016 19:43:09" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <TableDataSource Name="exam_report_view" ReferenceName="Data.exam_report_view" DataType="System.Int32" Enabled="true">
+      <Column Name="study_no" DataType="System.String" PropName="meterial_no"/>
+      <Column Name="patient_name" DataType="System.String" PropName="work_source"/>
+      <Column Name="req_dept" DataType="System.String" PropName="parts"/>
+    </TableDataSource>
+    <Parameter Name="title" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="47.25">
+      <TextObject Name="Text1" Left="207.9" Top="18.9" Width="378" Height="28.35" Text="[title]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text2" Left="18.9" Top="18.9" Width="94.5" Height="28.35" Text="报告总数：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text3" Left="113.4" Top="18.9" Width="75.6" Height="28.35" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data2" Top="51.25" Width="396.9" Height="37.8" Guides="0" Columns.Count="2" Columns.Layout="DownThenAcross" KeepTogether="true" Indent="0">
+      <TableObject Name="Table1" Left="18.9" Width="359.1" Height="37.8" Border.Lines="All">
+        <TableColumn Name="Column1" Width="98.28"/>
+        <TableColumn Name="Column2" Width="98.28"/>
+        <TableColumn Name="Column3" Width="98.28"/>
+        <TableColumn Name="Column4" Width="22.68"/>
+        <TableColumn Name="Column5" Width="41.58"/>
+        <TableRow Name="Row1" Height="37.8">
+          <TableCell Name="Cell1" Border.Lines="All" Text="[exam_report_view.study_no]" HorzAlign="Center" VertAlign="Center" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell2" Border.Lines="All" Text="[exam_report_view.req_dept]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+          <TableCell Name="Cell3" Border.Lines="All" Text="[exam_report_view.patient_name]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+          <TableCell Name="Cell4" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+          <TableCell Name="Cell25" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>

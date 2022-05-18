@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/01/2015 09:47:29" ReportInfo.Modified="06/13/2016 18:47:18" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <TableDataSource Name="exam_master_view" ReferenceName="Data.exam_master_view" DataType="System.Int32" Enabled="true">
+      <Column Name="receive_doctor_name" DataType="System.String"/>
+      <Column Name="new_flag" DataType="System.String"/>
+      <Column Name="exam_no" DataType="System.String"/>
+      <Column Name="study_no" DataType="System.String"/>
+      <Column Name="exam_type" DataType="System.String"/>
+      <Column Name="modality_cn" DataType="System.String"/>
+      <Column Name="patient_name" DataType="System.String"/>
+      <Column Name="sex" DataType="System.String"/>
+      <Column Name="age" DataType="System.String"/>
+      <Column Name="patient_id" DataType="System.String"/>
+      <Column Name="patient_source" DataType="System.String"/>
+      <Column Name="req_dept" DataType="System.String"/>
+      <Column Name="req_physician" DataType="System.String"/>
+      <Column Name="submit_unit" DataType="System.String"/>
+      <Column Name="req_date_time" DataType="System.String"/>
+      <Column Name="received_datetime" DataType="System.String"/>
+      <Column Name="status_name" DataType="System.String"/>
+      <Column Name="exam_status" DataType="System.String"/>
+      <Column Name="si_card" DataType="System.String"/>
+      <Column Name="hospital_card" DataType="System.String"/>
+      <Column Name="output_id" DataType="System.String"/>
+      <Column Name="input_id" DataType="System.String"/>
+      <Column Name="ice_flag" DataType="System.String"/>
+      <Column Name="modality" DataType="System.String"/>
+      <Column Name="ward" DataType="System.String"/>
+      <Column Name="bed_no" DataType="System.String"/>
+      <Column Name="phone_number" DataType="System.String"/>
+      <Column Name="visit_id" DataType="System.String"/>
+      <Column Name="cbreport_doc_name" DataType="System.String"/>
+    </TableDataSource>
+    <Parameter Name="ReportParaHospital" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="195.1" PaperHeight="270" RawPaperSize="264" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="737.48" Height="151.2">
+      <TextObject Name="Text1" Left="9.45" Top="37.8" Width="718.2" Height="37.8" Text="[ReportParaHospital]" HorzAlign="Center" VertAlign="Center" Font="黑体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="85.05" Width="718.2" Height="28.35" Text="超薄细胞检测报告" HorzAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text3" Left="576.45" Top="122.85" Width="122.85" Height="28.35" Text="[exam_master_view.study_no]" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text4" Left="481.95" Top="122.85" Width="113.4" Height="28.35" Text="病理检查号：" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text33" Left="56.7" Top="122.85" Width="113.4" Height="28.35" Text="检查申请号：" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text34" Left="151.2" Top="122.85" Width="198.45" Height="28.35" Text="[exam_master_view.exam_no]" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="154.9" Width="737.48" Height="103.95" Guides="0">
+      <TextObject Name="Text5" Left="47.25" Top="9.45" Width="56.7" Height="28.35" Text="姓名：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text6" Left="226.8" Top="9.45" Width="56.7" Height="28.35" Text="性别：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text7" Left="226.8" Top="37.8" Width="56.7" Height="28.35" Text="科别：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Name" Left="94.5" Top="9.45" Width="132.3" Height="28.35" Text="[exam_master_view.patient_name]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjks" Left="274.05" Top="9.45" Width="122.85" Height="28.35" Text="[exam_master_view.sex]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjys" Left="274.05" Top="37.8" Width="132.3" Height="28.35" Text="[exam_master_view.req_dept]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text11" Left="47.25" Top="66.15" Width="85.05" Height="28.35" Text="送检医生：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sex" Left="122.85" Top="66.15" Width="103.95" Height="28.35" Text="[exam_master_view.req_physician]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text19" Left="47.25" Top="37.8" Width="85.05" Height="28.35" Text="送检单位：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Age" Left="122.85" Top="37.8" Width="103.95" Height="28.35" Text="[exam_master_view.submit_unit]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text25" Left="226.8" Top="66.15" Width="85.05" Height="28.35" Text="送检日期：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sqrq" Left="302.4" Top="66.15" Width="151.2" Height="28.35" Text="[exam_master_view.received_datetime]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text30" Left="396.9" Top="9.45" Width="56.7" Height="28.35" Text="年龄：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Pid" Left="444.15" Top="9.45" Width="103.95" Height="28.35" Text="[exam_master_view.age]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text32" Left="444.15" Top="66.15" Width="85.05" Height="28.35" Text="诊断日期：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Date" Left="519.75" Top="66.15" Width="207.9" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_ly" Left="444.15" Top="37.8" Width="103.95" Height="28.35" Text="[exam_master_view.bed_no]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text13" Left="396.9" Top="37.8" Width="56.7" Height="28.35" Text="床号：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text35" Left="548.1" Top="9.45" Width="75.6" Height="28.35" Text="住院号:" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text36" Left="604.8" Top="9.45" Width="113.4" Height="28.35" Text="[exam_master_view.input_id]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text37" Left="548.1" Top="37.8" Width="75.6" Height="28.35" Text="来源:" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text38" Left="595.35" Top="37.8" Width="122.85" Height="28.35" Text="[exam_master_view.patient_source]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line1" Left="37.8" Width="661.5" Border.Width="2"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="262.56" Width="737.48" Height="680.4" Guides="0">
+      <TextObject Name="Text8" Left="85.05" Top="37.8" Width="85.05" Height="18.9" Text="标本种类：" VertAlign="Bottom" Font="宋体, 10.5pt, style=Bold"/>
+      <PictureObject Name="Picture1" Left="434.7" Top="132.3" Width="217.35" Height="179.55" SizeMode="StretchImage"/>
+      <TextObject Name="Txt_BBzl" Left="160.65" Top="37.8" Width="538.65" Height="18.9" Text="&#13;&#10;" Font="宋体, 12pt"/>
+      <TextObject Name="Text39" Left="85.05" Top="85.05" Width="85.05" Height="18.9" Text="诊   断：" VertAlign="Bottom" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text40" Left="160.65" Top="85.05" Width="264.6" Height="103.95" Font="宋体, 12pt"/>
+      <TextObject Name="Text41" Left="85.05" Top="198.45" Width="85.05" Height="18.9" Text="细胞描述：" VertAlign="Bottom" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text42" Left="160.65" Top="198.45" Width="264.6" Height="151.2" Font="宋体, 12pt"/>
+      <TextObject Name="Text48" Left="85.05" Top="519.75" Width="103.95" Height="18.9" Text="诊断和建议：" VertAlign="Bottom" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Txt_Zdpz" Left="160.65" Top="538.65" Width="529.2" Height="141.75" Font="宋体, 12pt"/>
+      <TextObject Name="Text50" Left="85.05" Top="359.1" Width="113.4" Height="18.9" Text="炎症细胞描述：" VertAlign="Bottom" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text51" Left="160.65" Top="378" Width="529.2" Height="141.75" Font="宋体, 12pt"/>
+      <LineObject Name="Line4" Left="37.8" Top="28.35" Width="661.5"/>
+      <TextObject Name="Text52" Left="56.7" Width="85.05" Height="28.35" Text="临床诊断：" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text53" Left="132.3" Width="576.45" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line2" Left="37.8" Width="661.5"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="946.66" Width="737.48" Height="56.7">
+      <LineObject Name="Line3" Left="37.8" Width="661.5" Border.Width="2"/>
+      <TextObject Name="Text10" Left="56.7" Top="9.45" Width="359.1" Height="18.9" Text="若临床医师对病理诊断存有疑问,请尽快与病理医师联系. 电话:0971-8267241" VertAlign="Bottom" Font="宋体, 7.5pt"/>
+      <TextObject Name="Text28" Left="425.25" Width="94.5" Height="28.35" Text="医师签字：" VertAlign="Bottom" Font="宋体, 12pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

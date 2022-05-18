@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<item>
+  <version>2.0.0.0</version>
+  <url>http://localhost:8888/update/001/AutoUpdater.zip</url>
+  <changelog>http://localhost:8888/update/001/changelog.htm</changelog>
+  <mandatory>true</mandatory>
+</item>

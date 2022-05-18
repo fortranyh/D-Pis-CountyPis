@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/04/2015 11:41:46" ReportInfo.Modified="01/10/2016 21:31:07" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <TableDataSource Name="exam_draw_meterials" ReferenceName="Data.exam_draw_meterials" DataType="System.Int32" Enabled="true">
+      <Column Name="lks" DataType="System.String"/>
+      <Column Name="draw_doctor_name" DataType="System.String"/>
+      <Column Name="hdr" DataType="System.String"/>
+      <Column Name="bz" DataType="System.String"/>
+      <Column Name="study_no" DataType="System.String"/>
+    </TableDataSource>
+    <Parameter Name="title" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15" Columns.Count="2" Columns.Width="105" Columns.Positions="0,105">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="86.94">
+      <TextObject Name="Text1" Left="18.9" Top="18.9" Width="756" Height="18.9" Text="[title]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text2" Left="18.9" Top="37.8" Width="85.05" Height="18.9" Text="取材日期：" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text3" Left="103.95" Top="37.8" Width="340.2" Height="18.9" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text4" Left="548.1" Top="37.8" Width="132.3" Height="18.9" Text="本批次蜡块总数：" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text5" Left="680.4" Top="37.8" Width="94.5" Height="18.9" HorzAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TableObject Name="Table2" Left="9.45" Top="56.7" Width="378" Height="30.24" Border.Lines="All">
+        <TableColumn Name="Column6" Width="75.6"/>
+        <TableColumn Name="Column7" Width="75.6"/>
+        <TableColumn Name="Column8" Width="75.6"/>
+        <TableColumn Name="Column9" Width="75.6"/>
+        <TableColumn Name="Column10" Width="75.6"/>
+        <TableRow Name="Row3" Height="30.24">
+          <TableCell Name="Cell11" Border.Lines="All" Text="病理号" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell12" Border.Lines="All" Text="蜡块数" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell13" Border.Lines="All" Text="取材" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell14" Border.Lines="All" Text="核对" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell15" Border.Lines="All" Text="备注" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table3" Left="406.35" Top="56.7" Width="378" Height="30.24" Border.Lines="All">
+        <TableColumn Name="Column11" Width="75.6"/>
+        <TableColumn Name="Column12" Width="75.6"/>
+        <TableColumn Name="Column13" Width="75.6"/>
+        <TableColumn Name="Column14" Width="75.6"/>
+        <TableColumn Name="Column15" Width="75.6"/>
+        <TableRow Name="Row4" Height="30.24">
+          <TableCell Name="Cell16" Border.Lines="All" Text="病理号" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell17" Border.Lines="All" Text="蜡块数" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell18" Border.Lines="All" Text="取材" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell19" Border.Lines="All" Text="核对" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell20" Border.Lines="All" Text="备注" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+    </ReportTitleBand>
+    <DataBand Name="Data2" Top="90.94" Width="396.9" Height="28.35" Indent="0">
+      <TableObject Name="Table1" Left="9.45" Width="378" Height="28.35" Border.Lines="All">
+        <TableColumn Name="Column16" Width="75.6"/>
+        <TableColumn Name="Column17" Width="75.6"/>
+        <TableColumn Name="Column18" Width="75.6"/>
+        <TableColumn Name="Column19" Width="75.6"/>
+        <TableColumn Name="Column20" Width="75.6"/>
+        <TableRow Name="Row5" Height="28.35">
+          <TableCell Name="Cell21" Border.Lines="All" Text="[exam_draw_meterials.study_no]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell22" Border.Lines="All" Text="[exam_draw_meterials.lks]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell23" Border.Lines="All" Text="[exam_draw_meterials.draw_doctor_name]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell24" Border.Lines="All" Text="[exam_draw_meterials.hdr]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+          <TableCell Name="Cell25" Border.Lines="All" Text="[exam_draw_meterials.bz]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>

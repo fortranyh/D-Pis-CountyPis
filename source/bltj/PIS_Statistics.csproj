@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BC047ED-F97B-4757-BF60-D6A92E7FE2EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS_Statistics</RootNamespace>
+    <AssemblyName>PIS_Statistics</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\bltj.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\bltj.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\LibCommons\Aspose\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="FastReport, Version=2021.2.4.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\fastreport\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\LibCommons\Log4Net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildWinManagement.cs" />
+    <Compile Include="FrmBhgsj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBhgsj.Designer.cs">
+      <DependentUpon>FrmBhgsj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLcgtList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLcgtList.Designer.cs">
+      <DependentUpon>FrmLcgtList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_bbgfh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_bbgfh.Designer.cs">
+      <DependentUpon>Frm_bbgfh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_bdtj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_bdtj.Designer.cs">
+      <DependentUpon>Frm_bdtj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BgYsgzz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BgYsgzz.designer.cs">
+      <DependentUpon>Frm_BgYsgzz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BgZlKz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BgZlKz.designer.cs">
+      <DependentUpon>Frm_BgZlKz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Djb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Djb.Designer.cs">
+      <DependentUpon>Frm_Djb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_djbdy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_djbdy.Designer.cs">
+      <DependentUpon>Frm_djbdy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Fzblsj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Fzblsj.Designer.cs">
+      <DependentUpon>Frm_Fzblsj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Fzblsj_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Fzblsj_add.Designer.cs">
+      <DependentUpon>Frm_Fzblsj_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Fzsn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Fzsn.Designer.cs">
+      <DependentUpon>Frm_Fzsn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HeQp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HeQp.Designer.cs">
+      <DependentUpon>Frm_HeQp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_JsPjInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_JsPjInfo.designer.cs">
+      <DependentUpon>Frm_JsPjInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lcfh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lcfh.Designer.cs">
+      <DependentUpon>Frm_lcfh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Myzh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Myzh.Designer.cs">
+      <DependentUpon>Frm_Myzh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Myzhsj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Myzhsj.Designer.cs">
+      <DependentUpon>Frm_Myzhsj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Myzhsj_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Myzhsj_add.Designer.cs">
+      <DependentUpon>Frm_Myzhsj_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_SqmxTj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SqmxTj.Designer.cs">
+      <DependentUpon>Frm_SqmxTj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Szsl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Szsl.Designer.cs">
+      <DependentUpon>Frm_Szsl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Szzd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Szzd.Designer.cs">
+      <DependentUpon>Frm_Szzd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_tj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_tj.Designer.cs">
+      <DependentUpon>Frm_tj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_tj2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_tj2.Designer.cs">
+      <DependentUpon>Frm_tj2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Tjcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Tjcx.designer.cs">
+      <DependentUpon>Frm_Tjcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Xbbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Xbbl.Designer.cs">
+      <DependentUpon>Frm_Xbbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Xbzk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Xbzk.Designer.cs">
+      <DependentUpon>Frm_Xbzk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Yxl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Yxl.Designer.cs">
+      <DependentUpon>Frm_Yxl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_zhtj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_zhtj.Designer.cs">
+      <DependentUpon>Frm_zhtj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Zzbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Zzbl.Designer.cs">
+      <DependentUpon>Frm_Zzbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FtmJxtj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FtmJxtj.Designer.cs">
+      <DependentUpon>FtmJxtj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PinYin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReflectionUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmBhgsj.resx">
+      <DependentUpon>FrmBhgsj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLcgtList.resx">
+      <DependentUpon>FrmLcgtList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_bbgfh.resx">
+      <DependentUpon>Frm_bbgfh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_bdtj.resx">
+      <DependentUpon>Frm_bdtj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BgYsgzz.resx">
+      <DependentUpon>Frm_BgYsgzz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BgZlKz.resx">
+      <DependentUpon>Frm_BgZlKz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Djb.resx">
+      <DependentUpon>Frm_Djb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_djbdy.resx">
+      <DependentUpon>Frm_djbdy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Fzblsj.resx">
+      <DependentUpon>Frm_Fzblsj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Fzblsj_add.resx">
+      <DependentUpon>Frm_Fzblsj_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Fzsn.resx">
+      <DependentUpon>Frm_Fzsn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HeQp.resx">
+      <DependentUpon>Frm_HeQp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_JsPjInfo.resx">
+      <DependentUpon>Frm_JsPjInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lcfh.resx">
+      <DependentUpon>Frm_lcfh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Myzh.resx">
+      <DependentUpon>Frm_Myzh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Myzhsj.resx">
+      <DependentUpon>Frm_Myzhsj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Myzhsj_add.resx">
+      <DependentUpon>Frm_Myzhsj_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SqmxTj.resx">
+      <DependentUpon>Frm_SqmxTj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Szsl.resx">
+      <DependentUpon>Frm_Szsl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Szzd.resx">
+      <DependentUpon>Frm_Szzd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_tj.resx">
+      <DependentUpon>Frm_tj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_tj2.resx">
+      <DependentUpon>Frm_tj2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Tjcx.resx">
+      <DependentUpon>Frm_Tjcx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Xbbl.resx">
+      <DependentUpon>Frm_Xbbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Xbzk.resx">
+      <DependentUpon>Frm_Xbzk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Yxl.resx">
+      <DependentUpon>Frm_Yxl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_zhtj.resx">
+      <DependentUpon>Frm_zhtj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Zzbl.resx">
+      <DependentUpon>Frm_Zzbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FtmJxtj.resx">
+      <DependentUpon>FtmJxtj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\query_32px_1181401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel_2013_32px_1180012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBhleper\DBHelper.csproj">
+      <Project>{efde79ac-f2fa-425c-a426-02697b92ca7d}</Project>
+      <Name>DBHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastReportLib\PIS_StatReport.csproj">
+      <Project>{457ACF5E-C3C0-4D60-921E-BCA5A40123E8}</Project>
+      <Name>PIS_StatReport</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bar_Code_32px_556602_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note_write.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

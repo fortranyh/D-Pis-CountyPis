@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/06/2015 14:44:52" ReportInfo.Modified="09/06/2016 14:31:25" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="132.3">
+      <TextObject Name="Text1" Left="9.45" Top="18.9" Width="765.45" Height="47.25" HorzAlign="Center" VertAlign="Center" Font="黑体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="66.15" Width="765.45" Height="37.8" Text="免疫组织化学检查报告单" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 18pt, style=Bold"/>
+      <LineObject Name="Line1" Left="75.6" Top="132.3" Width="642.6" Border.Width="2"/>
+      <TextObject Name="Text3" Left="548.1" Top="113.4" Width="75.6" Height="18.9" Text="病理号：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="614.25" Top="113.4" Width="94.5" Height="18.9" VertAlign="Center" Font="微软雅黑, 12pt"/>
+      <TextObject Name="Text4" Left="85.05" Top="113.4" Width="94.5" Height="18.9" Font="宋体, 12pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="136.3" Width="793.8" Height="945" Guides="0">
+      <TextObject Name="Text6" Left="85.05" Top="9.45" Width="94.5" Height="18.9" Text="姓    名:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="179.55" Top="9.45" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text8" Left="85.05" Top="37.8" Width="94.5" Height="18.9" Text="送检日期:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="179.55" Top="37.8" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text12" Left="387.45" Top="9.45" Width="94.5" Height="18.9" Text="性    别:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text13" Left="481.95" Top="9.45" Width="75.6" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text14" Left="557.55" Top="9.45" Width="56.7" Height="18.9" Text="年龄:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text15" Left="614.25" Top="9.45" Width="94.5" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line2" Left="75.6" Top="94.5" Width="642.6"/>
+      <TextObject Name="Text20" Left="85.05" Top="557.55" Width="198.45" Height="28.35" Text="标记结果与诊断意见：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text22" Left="122.85" Top="585.9" Width="585.9" Height="264.6" Font="宋体, 12pt"/>
+      <TextObject Name="Text24" Left="85.05" Top="859.95" Width="94.5" Height="18.9" Text="报告医师:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text25" Left="179.55" Top="859.95" Width="103.95" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text28" Left="444.15" Top="859.95" Width="94.5" Height="18.9" Text="报告日期:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text29" Left="538.65" Top="859.95" Width="170.1" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line3" Left="75.6" Top="888.3" Width="642.6" Border.Width="2"/>
+      <TextObject Name="Text31" Left="387.45" Top="37.8" Width="94.5" Height="18.9" Text="送检科室:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text32" Left="481.95" Top="37.8" Width="226.8" Height="18.9" WordWrap="false" Font="宋体, 12pt"/>
+      <TextObject Name="Text10" Left="85.05" Top="888.3" Width="623.7" Height="28.35" Text="*此报告仅供临床医师参考*" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text33" Left="85.05" Top="66.15" Width="94.5" Height="18.9" Text="送检医院:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text34" Left="179.55" Top="66.15" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text35" Left="387.45" Top="66.15" Width="94.5" Height="18.9" Text="住 院 号:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text36" Left="481.95" Top="66.15" Width="75.6" Height="18.9" WordWrap="false" Font="宋体, 12pt"/>
+      <TextObject Name="Text37" Left="557.55" Top="66.15" Width="56.7" Height="18.9" Text="床号:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text38" Left="614.25" Top="66.15" Width="94.5" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text39" Left="85.05" Top="103.95" Width="151.2" Height="18.9" Text="组化检查目的:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text40" Left="207.9" Top="103.95" Width="500.85" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text41" Left="85.05" Top="132.3" Width="151.2" Height="18.9" Text="    染色方法:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text42" Left="207.9" Top="132.3" Width="500.85" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line4" Left="75.6" Top="160.65" Width="642.6"/>
+      <TextObject Name="Text43" Left="85.05" Top="170.1" Width="198.45" Height="28.35" Text="临床诊断：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text44" Left="122.85" Top="198.45" Width="585.9" Height="122.85" Font="宋体, 12pt"/>
+      <TextObject Name="Text45" Left="85.05" Top="330.75" Width="198.45" Height="28.35" Text="初步病理诊断：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text46" Left="122.85" Top="359.1" Width="585.9" Height="189" Font="宋体, 12pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

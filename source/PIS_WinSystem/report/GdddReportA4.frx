@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/01/2015 09:47:29" ReportInfo.Modified="11/21/2017 09:38:20" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <TableDataSource Name="exam_draw_meterials" ReferenceName="Data.exam_draw_meterials" DataType="System.Int32" Enabled="true">
+      <Column Name="meterial_no" DataType="System.String" PropName="lks"/>
+      <Column Name="draw_doctor_name" Alias="sex" Enabled="false" DataType="System.String"/>
+      <Column Name="hdr" Alias="age" Enabled="false" DataType="System.String"/>
+      <Column Name="parts" DataType="System.String" PropName="bz"/>
+      <Column Name="draw_doctor_name" DataType="System.String" PropName="study_no"/>
+      <Column Name="bm_doc_name" DataType="System.String" PropName="Column"/>
+      <Column Name="draw_datetime" DataType="System.String" PropName="Column1"/>
+    </TableDataSource>
+    <TableDataSource Name="exam_filmmaking" ReferenceName="Data.exam_filmmaking" DataType="System.Int32" Enabled="true">
+      <Column Name="draw_barcode" DataType="System.String" PropName="lks"/>
+      <Column Name="draw_doctor_name" Alias="sex" Enabled="false" DataType="System.String"/>
+      <Column Name="hdr" Alias="age" Enabled="false" DataType="System.String"/>
+      <Column Name="barcode" DataType="System.String" PropName="bz"/>
+      <Column Name="make_doc_name" DataType="System.String" PropName="study_no"/>
+      <Column Name="make_datetime" DataType="System.String"/>
+      <Column Name="parts" DataType="System.String" PropName="parts1"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="1" OtherPagesSource="1">
+    <DataBand Name="Data1" Width="793.8" Height="1039.5" Guides="0">
+      <TextObject Name="Text27" Left="66.15" Top="689.85" Width="94.5" Height="37.8" CanGrow="true" CanShrink="true" Text="病理诊断：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Rysj" Left="85.05" Top="226.8" Width="623.7" Height="415.8" CanGrow="true"  Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Blzd" Left="85.05" Top="737.1" Width="623.7" Height="179.55" CanGrow="true"  Font="宋体, 10.5pt"/>
+      <TextObject Name="Text28" Left="510.3" Top="926.1" Width="94.5" Height="28.35" CanGrow="true" CanShrink="true" Text="报告医师：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Bgys" Left="604.8" Top="926.1" Width="103.95" Height="28.35" CanGrow="true" CanShrink="true" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="txt_Bgrq" Left="160.65" Top="926.1" Width="151.2" Height="28.35" CanGrow="true" CanShrink="true" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Text9" Left="66.15" Top="926.1" Width="94.5" Height="28.35" CanGrow="true" CanShrink="true" Text="报告日期：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Text30" Left="585.9" Top="189" Width="94.5" Height="28.35" Text="病理编号：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text1" Left="670.95" Top="189" Width="103.95" Height="28.35" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Text31" Left="66.15" Top="642.6" Width="94.5" Height="28.35" Text="取材医师：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="TxtQcys" Left="160.65" Top="642.6" Width="151.2" Height="28.35" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Text33" Left="311.85" Top="642.6" Width="94.5" Height="28.35" Text="取材时间：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="TxtQcsj" Left="406.35" Top="642.6" Width="189" Height="28.35" VertAlign="Bottom" Font="宋体, 12pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

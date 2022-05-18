@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/27/2015 13:42:36" ReportInfo.Modified="09/06/2016 22:16:01" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" PaperWidth="58" PaperHeight="24" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="Data1" Width="219.24" Height="90.72" Guides="94.5">
+      <TextObject Name="Text1" Left="3.78" Width="75.6" Height="18.9" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 12pt, style=Bold, Underline"/>
+      <TextObject Name="Text2" Left="115.29" Width="75.6" Height="18.9" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 12pt, style=Bold, Underline"/>
+      <TextObject Name="Text5" Left="47.25" Top="18.9" Width="56.7" Height="22.68" AllowExpressions="false" VertAlign="Center" WordWrap="false" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text6" Left="158.76" Top="18.9" Width="56.7" Height="22.68" AllowExpressions="false" VertAlign="Center" WordWrap="false" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text3" Top="68.04" Width="103.95" Height="22.68" AllowExpressions="false" HorzAlign="Center" Font="宋体, 7.5pt"/>
+      <TextObject Name="Text4" Left="115.29" Top="68.04" Width="100.17" Height="22.68" AllowExpressions="false" HorzAlign="Center" Font="宋体, 7.5pt"/>
+      <TextObject Name="Text7" Left="9.45" Top="18.9" Width="37.8" Height="22.68" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text8" Left="119.07" Top="18.9" Width="37.8" Height="22.68" Font="宋体, 10.5pt, style=Bold"/>
+      <BarcodeObject Name="Barcode1" Left="18.9" Top="39.69" Width="75.55" Height="26.46" AutoSize="false" Text="" ShowText="false" Zoom="0.6" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <BarcodeObject Name="Barcode2" Left="128.52" Top="39.69" Width="75.55" Height="26.46" AutoSize="false" Text="" ShowText="false" Zoom="0.6" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text9" Left="75.6" Width="26.46" Height="18.9" HorzAlign="Right" Font="宋体, 9pt"/>
+      <TextObject Name="Text10" Left="189" Width="26.46" Height="18.9" HorzAlign="Right" Font="宋体, 9pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

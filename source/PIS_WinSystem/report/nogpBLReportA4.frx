@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/01/2015 09:47:29" ReportInfo.Modified="09/19/2018 12:31:05" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <Parameter Name="ReportParaHospital" DataType="System.String"/>
+    <Parameter Name="study_no" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="160.65">
+      <TextObject Name="Text1" Left="9.45" Top="56.7" Width="765.45" Height="37.8" Text="[ReportParaHospital]" HorzAlign="Center" VertAlign="Center" Font="黑体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="103.95" Width="765.45" Height="28.35" Text="病理诊断报告" HorzAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text3" Left="585.9" Top="132.3" Width="132.3" Height="28.35" Text="[study_no]" VertAlign="Center" Font="宋体, 14.25pt, style=Bold"/>
+      <TextObject Name="Text4" Left="519.75" Top="132.3" Width="85.05" Height="28.35" Text="病理号：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line1" Left="66.15" Top="160.65" Width="652.05" Border.Width="2"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="164.65" Width="793.8" Height="103.95" Guides="0">
+      <TextObject Name="Text5" Left="85.05" Top="9.45" Width="94.5" Height="28.35" Text="姓    名：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text6" Left="283.5" Top="9.45" Width="94.5" Height="28.35" Text="送检科室：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text7" Left="283.5" Top="37.8" Width="94.5" Height="28.35" Text="送检医生：" VertAlign="Center" Font="宋体, 12pt"/>
+      <LineObject Name="Line2" Left="66.15" Top="103.95" Width="652.05"/>
+      <TextObject Name="Txt_Name" Left="160.65" Top="9.45" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Sjks" Left="359.1" Top="9.45" Width="122.85" Height="28.35" VertAlign="Center" WordWrap="false" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Sjys" Left="359.1" Top="37.8" Width="122.85" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text11" Left="85.05" Top="66.15" Width="94.5" Height="28.35" Text="性    别：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Sex" Left="160.65" Top="66.15" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text19" Left="85.05" Top="37.8" Width="94.5" Height="28.35" Text="年    龄：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Age" Left="160.65" Top="37.8" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text25" Left="283.5" Top="66.15" Width="94.5" Height="28.35" Text="送检日期：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Sqrq" Left="359.1" Top="66.15" Width="122.85" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text30" Left="481.95" Top="9.45" Width="94.5" Height="28.35" Text="病人ID号：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Pid" Left="557.55" Top="9.45" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text32" Left="481.95" Top="66.15" Width="94.5" Height="28.35" Text="送检材料：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Sjbw" Left="557.55" Top="66.15" Width="207.9" Height="28.35" VertAlign="Center" WordWrap="false" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_ly" Left="557.55" Top="37.8" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text13" Left="481.95" Top="37.8" Width="94.5" Height="28.35" Text="病人来源：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_BedNo" Left="670.95" Top="9.45" Width="47.25" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="272.6" Width="793.8" Height="746.55" Guides="0">
+      <TextObject Name="Text8" Left="75.6" Width="94.5" Height="28.35" Text="肉眼所见：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text26" Left="75.6" Top="226.8" Width="113.4" Height="28.35" Text="镜下所见：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <PictureObject Name="Picture1" Left="170.1" Top="236.25" Width="255.15" Height="217.35" SizeMode="StretchImage"/>
+      <PictureObject Name="Picture2" Left="453.6" Top="236.25" Width="255.15" Height="217.35" SizeMode="StretchImage"/>
+      <TextObject Name="Text27" Left="75.6" Top="463.05" Width="94.5" Height="28.35" Text="病理诊断：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Rysj" Left="113.4" Top="37.8" Width="595.35" Height="179.55" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Blzd" Left="113.4" Top="500.85" Width="595.35" Height="245.7" Font="宋体, 12pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="1023.15" Width="793.8" Height="94.5">
+      <LineObject Name="Line3" Left="56.7" Top="28.35" Width="661.5" Border.Width="2"/>
+      <TextObject Name="Text10" Left="75.6" Top="37.8" Width="642.6" Height="18.9" Text="(注:本报告供临床参考,若发现病理诊断与临床实际不符,请务必与病理诊断医师联系.）" Font="宋体, 9pt"/>
+      <TextObject Name="Text9" Left="548.1" Width="94.5" Height="28.35" Text="报告日期：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="txt_Bgrq" Left="623.7" Width="94.5" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text28" Left="226.8" Width="94.5" Height="28.35" Text="报告医师：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Bgys" Left="302.4" Width="85.05" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text33" Left="387.45" Width="94.5" Height="28.35" Text="复诊医师：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_fyys" Left="463.05" Width="85.05" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text34" Left="66.15" Width="94.5" Height="28.35" Text="初诊医师：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Gpys" Left="141.75" Width="85.05" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,1501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PIS_Sys.Program</StartupObject>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EA603F7-96B2-47F6-B45A-4024FDD852CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIS_Sys</RootNamespace>
+    <AssemblyName>PIS_Sys</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\LibCommons\aforge\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls">
+      <HintPath>..\..\LibCommons\aforge\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\LibCommons\aforge\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging.Formats">
+      <HintPath>..\..\LibCommons\aforge\AForge.Imaging.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\LibCommons\aforge\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\LibCommons\aforge\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\aforge\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision, Version=2.2.5.0, Culture=neutral, PublicKeyToken=b612fa915eefaa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\aforge\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\LibCommons\Aspose\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="bccrypto">
+      <HintPath>..\..\LibCommons\Auth\bccrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.TreeGX, Version=14.1.0.37, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL" />
+    <Reference Include="DVPCameraCS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MshotFunction\Drive86\DVPCameraCS.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageListView">
+      <HintPath>..\..\LibCommons\ImageListView.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\LibCommons\Log4Net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MhLicenseLib">
+      <HintPath>..\..\LibCommons\Auth\MhLicenseLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\LibCommons\MySql.Data.6.9.12\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\..\LibCommons\NAudio\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WindowsMediaFormat">
+      <HintPath>..\..\LibCommons\NAudio\NAudio.WindowsMediaFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\LibCommons\Oracle.ManagedDataAccess.19.3.1\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Scs">
+      <HintPath>..\..\LibCommons\scs\Scs.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="verifyAuthorization">
+      <HintPath>..\..\LibCommons\Auth\verifyAuthorization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutSystem.Designer.cs">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bbdj\FrmBbdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bbdj\FrmBbdj.Designer.cs">
+      <DependentUpon>FrmBbdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bbdj\FrmBhgbb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bbdj\FrmBhgbb.Designer.cs">
+      <DependentUpon>FrmBhgbb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bbdj\FrmMerge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bbdj\FrmMerge.Designer.cs">
+      <DependentUpon>FrmMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bbdj\Frm_dept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bbdj\Frm_dept.Designer.cs">
+      <DependentUpon>Frm_dept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bbdj\Frm_doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bbdj\Frm_doctor.Designer.cs">
+      <DependentUpon>Frm_doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bbdj\Frm_ExamItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bbdj\Frm_ExamItem.Designer.cs">
+      <DependentUpon>Frm_ExamItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\FrmBlzd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\FrmBlzd.Designer.cs">
+      <DependentUpon>FrmBlzd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\FrmLcgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\FrmLcgt.Designer.cs">
+      <DependentUpon>FrmLcgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\FrmYsRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\FrmYsRegister.Designer.cs">
+      <DependentUpon>FrmYsRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_advice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_advice.Designer.cs">
+      <DependentUpon>Frm_advice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_bcbg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_bcbg.Designer.cs">
+      <DependentUpon>Frm_bcbg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_BgHj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_BgHj.designer.cs">
+      <DependentUpon>Frm_BgHj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_BgPre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_BgPre.Designer.cs">
+      <DependentUpon>Frm_BgPre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_bjw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_bjw.Designer.cs">
+      <DependentUpon>Frm_bjw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_chancelk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_chancelk.Designer.cs">
+      <DependentUpon>Frm_chancelk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Delay_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Delay_Report.Designer.cs">
+      <DependentUpon>Frm_Delay_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_edit_bjw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_edit_bjw.Designer.cs">
+      <DependentUpon>Frm_edit_bjw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_hzgl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_hzgl.Designer.cs">
+      <DependentUpon>Frm_hzgl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_ice_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_ice_report.Designer.cs">
+      <DependentUpon>Frm_ice_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_jsyz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_jsyz.Designer.cs">
+      <DependentUpon>Frm_jsyz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_myzh_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_myzh_report.designer.cs">
+      <DependentUpon>Frm_myzh_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Qcxx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Qcxx.Designer.cs">
+      <DependentUpon>Frm_Qcxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Qpxx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Qpxx.Designer.cs">
+      <DependentUpon>Frm_Qpxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_qtJcbg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_qtJcbg.designer.cs">
+      <DependentUpon>Frm_qtJcbg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_SC_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_SC_Report.Designer.cs">
+      <DependentUpon>Frm_SC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Sjz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Sjz.designer.cs">
+      <DependentUpon>Frm_Sjz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_taocan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_taocan.Designer.cs">
+      <DependentUpon>Frm_taocan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Tjbjw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Tjbjw.Designer.cs">
+      <DependentUpon>Frm_Tjbjw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_tjyz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_tjyz.Designer.cs">
+      <DependentUpon>Frm_tjyz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_xbx_Templet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_xbx_Templet.designer.cs">
+      <DependentUpon>Frm_xbx_Templet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_blzd_Templet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_blzd_Templet.designer.cs">
+      <DependentUpon>Frm_blzd_Templet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Zhcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Zhcx.Designer.cs">
+      <DependentUpon>Frm_Zhcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_zzsf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_zzsf.Designer.cs">
+      <DependentUpon>Frm_zzsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blzd\Frm_Zzys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blzd\Frm_Zzys.Designer.cs">
+      <DependentUpon>Frm_Zzys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildWinManagement.cs" />
+    <Compile Include="ClientSCS.cs" />
+    <Compile Include="dagl\Frm_AddJydj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_AddJydj.Designer.cs">
+      <DependentUpon>Frm_AddJydj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_BbQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_BbQuery.Designer.cs">
+      <DependentUpon>Frm_BbQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_bcReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_bcReport.Designer.cs">
+      <DependentUpon>Frm_bcReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_BdReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_BdReport.Designer.cs">
+      <DependentUpon>Frm_BdReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_bghc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_bghc.Designer.cs">
+      <DependentUpon>Frm_bghc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_bgjsd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_bgjsd.Designer.cs">
+      <DependentUpon>Frm_bgjsd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Dagl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Dagl.Designer.cs">
+      <DependentUpon>Frm_Dagl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_dmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_dmt.Designer.cs">
+      <DependentUpon>Frm_dmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_fwfy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_fwfy.designer.cs">
+      <DependentUpon>Frm_fwfy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_fwfy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_fwfy.designer.cs">
+      <DependentUpon>Frm_hcgl_fwfy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_rygh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_rygh.Designer.cs">
+      <DependentUpon>Frm_hcgl_rygh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_tsyjl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_tsyjl.Designer.cs">
+      <DependentUpon>Frm_hcgl_tsyjl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_ydsj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_ydsj.designer.cs">
+      <DependentUpon>Frm_hcgl_ydsj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_yryb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_hcgl_yryb.designer.cs">
+      <DependentUpon>Frm_hcgl_yryb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_hj_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_hj_report.Designer.cs">
+      <DependentUpon>Frm_hj_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Jydj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Jydj.Designer.cs">
+      <DependentUpon>Frm_Jydj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_LkQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_LkQuery.Designer.cs">
+      <DependentUpon>Frm_LkQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Pldy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Pldy.Designer.cs">
+      <DependentUpon>Frm_Pldy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_QpQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_QpQuery.Designer.cs">
+      <DependentUpon>Frm_QpQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_QueryScReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_QueryScReport.Designer.cs">
+      <DependentUpon>Frm_QueryScReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_ReportQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_ReportQuery.Designer.cs">
+      <DependentUpon>Frm_ReportQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_ReportViewer.Designer.cs">
+      <DependentUpon>Frm_ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Rygh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Rygh.designer.cs">
+      <DependentUpon>Frm_Rygh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_SF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_SF.Designer.cs">
+      <DependentUpon>Frm_SF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Sjckdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Sjckdj.Designer.cs">
+      <DependentUpon>Frm_Sjckdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Sjdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Sjdj.Designer.cs">
+      <DependentUpon>Frm_Sjdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_tjQp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_tjQp.Designer.cs">
+      <DependentUpon>Frm_tjQp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_Tsyjl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_Tsyjl.designer.cs">
+      <DependentUpon>Frm_Tsyjl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_XG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_XG.designer.cs">
+      <DependentUpon>Frm_XG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_ydsj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_ydsj.designer.cs">
+      <DependentUpon>Frm_ydsj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_yryb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_yryb.designer.cs">
+      <DependentUpon>Frm_yryb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dagl\Frm_YsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dagl\Frm_YsReport.Designer.cs">
+      <DependentUpon>Frm_YsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileOperations.cs" />
+    <Compile Include="FrmAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlert.Designer.cs">
+      <DependentUpon>FrmAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMessage.Designer.cs">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Ftp_Down.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ftp_Down.Designer.cs">
+      <DependentUpon>Frm_Ftp_Down.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Ftp_Down1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ftp_Down1.designer.cs">
+      <DependentUpon>Frm_Ftp_Down1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_History.Designer.cs">
+      <DependentUpon>Frm_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ICD10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ICD10.Designer.cs">
+      <DependentUpon>Frm_ICD10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LockScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LockScreen.Designer.cs">
+      <DependentUpon>Frm_LockScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ModityInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ModityInfo.Designer.cs">
+      <DependentUpon>Frm_ModityInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Pwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Pwd.Designer.cs">
+      <DependentUpon>Frm_Pwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_splash.Designer.cs">
+      <DependentUpon>Frm_splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BgTempletImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BgTempletImport.Designer.cs">
+      <DependentUpon>Frm_BgTempletImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TempletImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TempletImport.designer.cs">
+      <DependentUpon>Frm_TempletImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ZhImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ZhImage.Designer.cs">
+      <DependentUpon>Frm_ZhImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalExceptionsHandler.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="HotkeyInfo.cs" />
+    <Compile Include="INIClass.cs" />
+    <Compile Include="jcyy\FrmJcyy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jcyy\FrmJcyy.Designer.cs">
+      <DependentUpon>FrmJcyy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jszp\FrmSmHd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jszp\FrmSmHd.Designer.cs">
+      <DependentUpon>FrmSmHd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jszp\Frm_jszp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jszp\Frm_jszp.Designer.cs">
+      <DependentUpon>Frm_jszp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jxgzz\Frm_jxgzz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jxgzz\Frm_jxgzz.designer.cs">
+      <DependentUpon>Frm_jxgzz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ksgl\Frm_ksgl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ksgl\Frm_ksgl.Designer.cs">
+      <DependentUpon>Frm_ksgl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ksgl\Frm_UserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ksgl\Frm_UserAdd.Designer.cs">
+      <DependentUpon>Frm_UserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ksgl\Frm_UserUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ksgl\Frm_UserUpdate.Designer.cs">
+      <DependentUpon>Frm_UserUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrmMain.Designer.cs">
+      <DependentUpon>LoginFrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Middle.cs" />
+    <Compile Include="NativeStructs.cs" />
+    <Compile Include="PatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PatientInfo.Designer.cs">
+      <DependentUpon>PatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PinYin.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\FrmCkhd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\FrmCkhd.Designer.cs">
+      <DependentUpon>FrmCkhd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\FrmQcgl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\FrmQcgl.Designer.cs">
+      <DependentUpon>FrmQcgl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\FrmSetThums.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\FrmSetThums.Designer.cs">
+      <DependentUpon>FrmSetThums.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\Frm_BqList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\Frm_BqList.Designer.cs">
+      <DependentUpon>Frm_BqList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\Frm_Dtcj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\Frm_Dtcj.Designer.cs">
+      <DependentUpon>Frm_Dtcj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\Frm_DtmsTemplet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\Frm_DtmsTemplet.Designer.cs">
+      <DependentUpon>Frm_DtmsTemplet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\Frm_Memo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\Frm_Memo.Designer.cs">
+      <DependentUpon>Frm_Memo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qcgl\Frm_QcList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qcgl\Frm_QcList.Designer.cs">
+      <DependentUpon>Frm_QcList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReflectionUtil.cs" />
+    <Compile Include="tjgl\FrmTjgl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tjgl\FrmTjgl.Designer.cs">
+      <DependentUpon>FrmTjgl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xtsz\Frm_bgDicWh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xtsz\Frm_bgDicWh.Designer.cs">
+      <DependentUpon>Frm_bgDicWh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xtsz\Frm_bgd_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xtsz\Frm_bgd_type.Designer.cs">
+      <DependentUpon>Frm_bgd_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xtsz\Frm_smfjk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xtsz\Frm_smfjk.Designer.cs">
+      <DependentUpon>Frm_smfjk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xtsz\Frm_Xtsz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xtsz\Frm_Xtsz.Designer.cs">
+      <DependentUpon>Frm_Xtsz.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutSystem.resx">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bbdj\FrmBbdj.resx">
+      <DependentUpon>FrmBbdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bbdj\FrmBhgbb.resx">
+      <DependentUpon>FrmBhgbb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bbdj\FrmMerge.resx">
+      <DependentUpon>FrmMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bbdj\Frm_dept.resx">
+      <DependentUpon>Frm_dept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bbdj\Frm_doctor.resx">
+      <DependentUpon>Frm_doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bbdj\Frm_ExamItem.resx">
+      <DependentUpon>Frm_ExamItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\FrmBlzd.resx">
+      <DependentUpon>FrmBlzd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\FrmLcgt.resx">
+      <DependentUpon>FrmLcgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\FrmYsRegister.resx">
+      <DependentUpon>FrmYsRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_advice.resx">
+      <DependentUpon>Frm_advice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_bcbg.resx">
+      <DependentUpon>Frm_bcbg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_BgHj.resx">
+      <DependentUpon>Frm_BgHj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_BgPre.resx">
+      <DependentUpon>Frm_BgPre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_bjw.resx">
+      <DependentUpon>Frm_bjw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_chancelk.resx">
+      <DependentUpon>Frm_chancelk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Delay_Report.resx">
+      <DependentUpon>Frm_Delay_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_edit_bjw.resx">
+      <DependentUpon>Frm_edit_bjw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_hzgl.resx">
+      <DependentUpon>Frm_hzgl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_ice_report.resx">
+      <DependentUpon>Frm_ice_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_jsyz.resx">
+      <DependentUpon>Frm_jsyz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_myzh_report.resx">
+      <DependentUpon>Frm_myzh_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Qcxx.resx">
+      <DependentUpon>Frm_Qcxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Qpxx.resx">
+      <DependentUpon>Frm_Qpxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_qtJcbg.resx">
+      <DependentUpon>Frm_qtJcbg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_SC_Report.resx">
+      <DependentUpon>Frm_SC_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Sjz.resx">
+      <DependentUpon>Frm_Sjz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_taocan.resx">
+      <DependentUpon>Frm_taocan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Tjbjw.resx">
+      <DependentUpon>Frm_Tjbjw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_tjyz.resx">
+      <DependentUpon>Frm_tjyz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_xbx_Templet.resx">
+      <DependentUpon>Frm_xbx_Templet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_blzd_Templet.resx">
+      <DependentUpon>Frm_blzd_Templet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Zhcx.resx">
+      <DependentUpon>Frm_Zhcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_zzsf.resx">
+      <DependentUpon>Frm_zzsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blzd\Frm_Zzys.resx">
+      <DependentUpon>Frm_Zzys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_AddJydj.resx">
+      <DependentUpon>Frm_AddJydj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_BbQuery.resx">
+      <DependentUpon>Frm_BbQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_bcReport.resx">
+      <DependentUpon>Frm_bcReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_BdReport.resx">
+      <DependentUpon>Frm_BdReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_bghc.resx">
+      <DependentUpon>Frm_bghc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_bgjsd.resx">
+      <DependentUpon>Frm_bgjsd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Dagl.resx">
+      <DependentUpon>Frm_Dagl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_dmt.resx">
+      <DependentUpon>Frm_dmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_fwfy.resx">
+      <DependentUpon>Frm_fwfy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_hcgl_fwfy.resx">
+      <DependentUpon>Frm_hcgl_fwfy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_hcgl_rygh.resx">
+      <DependentUpon>Frm_hcgl_rygh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_hcgl_tsyjl.resx">
+      <DependentUpon>Frm_hcgl_tsyjl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_hcgl_ydsj.resx">
+      <DependentUpon>Frm_hcgl_ydsj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_hcgl_yryb.resx">
+      <DependentUpon>Frm_hcgl_yryb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_hj_report.resx">
+      <DependentUpon>Frm_hj_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Jydj.resx">
+      <DependentUpon>Frm_Jydj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_LkQuery.resx">
+      <DependentUpon>Frm_LkQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Pldy.resx">
+      <DependentUpon>Frm_Pldy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_QpQuery.resx">
+      <DependentUpon>Frm_QpQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_QueryScReport.resx">
+      <DependentUpon>Frm_QueryScReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_ReportQuery.resx">
+      <DependentUpon>Frm_ReportQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_ReportViewer.resx">
+      <DependentUpon>Frm_ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Rygh.resx">
+      <DependentUpon>Frm_Rygh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_SF.resx">
+      <DependentUpon>Frm_SF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Sjckdj.resx">
+      <DependentUpon>Frm_Sjckdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Sjdj.resx">
+      <DependentUpon>Frm_Sjdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_tjQp.resx">
+      <DependentUpon>Frm_tjQp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_Tsyjl.resx">
+      <DependentUpon>Frm_Tsyjl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_XG.resx">
+      <DependentUpon>Frm_XG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_ydsj.resx">
+      <DependentUpon>Frm_ydsj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_yryb.resx">
+      <DependentUpon>Frm_yryb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dagl\Frm_YsReport.resx">
+      <DependentUpon>Frm_YsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlert.resx">
+      <DependentUpon>FrmAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessage.resx">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ftp_Down.resx">
+      <DependentUpon>Frm_Ftp_Down.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ftp_Down1.resx">
+      <DependentUpon>Frm_Ftp_Down1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_History.resx">
+      <DependentUpon>Frm_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ICD10.resx">
+      <DependentUpon>Frm_ICD10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LockScreen.resx">
+      <DependentUpon>Frm_LockScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ModityInfo.resx">
+      <DependentUpon>Frm_ModityInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Pwd.resx">
+      <DependentUpon>Frm_Pwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_splash.resx">
+      <DependentUpon>Frm_splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BgTempletImport.resx">
+      <DependentUpon>Frm_BgTempletImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TempletImport.resx">
+      <DependentUpon>Frm_TempletImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ZhImage.resx">
+      <DependentUpon>Frm_ZhImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jcyy\FrmJcyy.resx">
+      <DependentUpon>FrmJcyy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jszp\FrmSmHd.resx">
+      <DependentUpon>FrmSmHd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jszp\Frm_jszp.resx">
+      <DependentUpon>Frm_jszp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jxgzz\Frm_jxgzz.resx">
+      <DependentUpon>Frm_jxgzz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ksgl\Frm_ksgl.resx">
+      <DependentUpon>Frm_ksgl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ksgl\Frm_UserAdd.resx">
+      <DependentUpon>Frm_UserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ksgl\Frm_UserUpdate.resx">
+      <DependentUpon>Frm_UserUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrmMain.resx">
+      <DependentUpon>LoginFrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInfo.resx">
+      <DependentUpon>PatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\FrmCkhd.resx">
+      <DependentUpon>FrmCkhd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\FrmQcgl.resx">
+      <DependentUpon>FrmQcgl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\FrmSetThums.resx">
+      <DependentUpon>FrmSetThums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\Frm_BqList.resx">
+      <DependentUpon>Frm_BqList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\Frm_Dtcj.resx">
+      <DependentUpon>Frm_Dtcj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\Frm_DtmsTemplet.resx">
+      <DependentUpon>Frm_DtmsTemplet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\Frm_Memo.resx">
+      <DependentUpon>Frm_Memo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qcgl\Frm_QcList.resx">
+      <DependentUpon>Frm_QcList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tjgl\FrmTjgl.resx">
+      <DependentUpon>FrmTjgl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xtsz\Frm_bgDicWh.resx">
+      <DependentUpon>Frm_bgDicWh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xtsz\Frm_bgd_type.resx">
+      <DependentUpon>Frm_bgd_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xtsz\Frm_smfjk.resx">
+      <DependentUpon>Frm_smfjk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xtsz\Frm_Xtsz.resx">
+      <DependentUpon>Frm_Xtsz.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Log4netSetFile.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\buqu.png" />
+    <None Include="img\bar_code_32px_1082668_easyicon.net.png" />
+    <None Include="img\bar_code_48px_1082668_easyicon.net.png" />
+    <None Include="img\Bar_Code_32px_556602_easyicon.net.png" />
+    <None Include="img\image_32px.png" />
+    <None Include="img\arrow_up_32px.png" />
+    <None Include="img\arrow_down_32px.png" />
+    <None Include="img\check_32px_1180491_easyicon.net.png" />
+    <None Include="img\booklet_32px_1180477_easyicon.net.png" />
+    <None Include="img\compose_32px_1180500_easyicon.net.png" />
+    <None Include="img\preview_32px_1168082_easyicon.net.png" />
+    <None Include="img\stack_32px_1180615_easyicon.net.png" />
+    <None Include="img\blimp_32px_1180474_easyicon.net.png" />
+    <None Include="img\browser_32px_1180481_easyicon.net.png" />
+    <None Include="img\Ok_32px_1181294_easyicon.net.png" />
+    <None Include="img\close_32px_1181276_easyicon.net.png" />
+    <None Include="img\logo.png" />
+    <None Include="img\medical_report_48px.png" />
+    <None Include="img\soaps_soap_48px_525397_easyicon.net.png" />
+    <None Include="img\Blood_Slide_48px_561440_easyicon.net.png" />
+    <None Include="img\20141119050404427_easyicon_net_32.ico" />
+    <None Include="img\ok_16px_1134004_easyicon.net.png" />
+    <None Include="img\medicine_bottle_48.png" />
+    <None Include="img\del.png" />
+    <None Include="img\Save_16x16.png" />
+    <None Include="img\BDreport.png" />
+    <None Include="img\ysreport.png" />
+    <None Include="img\tjqp.png" />
+    <None Include="img\storage_32px_1182272_easyicon.net.png" />
+    <None Include="img\note_write.png" />
+    <None Include="img\Write_24.png" />
+    <None Include="img\Write_15.png" />
+    <None Include="img\up.png" />
+    <None Include="img\down.png" />
+    <None Include="img\Excel_2013_32px_1180012.png" />
+    <None Include="img\lb.png" />
+    <None Include="img\barcode.png" />
+    <None Include="img\Print32.png" />
+    <None Include="img\bg.jpg" />
+    <None Include="report\gpBLpic1ReportA4.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="report\gpBLReportA4.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="report\nogpBLpic1ReportA4.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="report\nogpBLReportA4.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="report\WtgpBLpic1ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\WtgpBLReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\WtnogpBLpic1ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\WtnogpBLReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\bl2x.jpg" />
+    <Content Include="avcodec-53.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avdevice-53.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avfilter-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avformat-53.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avutil-51.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ffmpeg.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IPPrototyper.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="msvcp100d.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="msvcr100d.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="postproc-52.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="swresample-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="swscale-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="update.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="升级日志.txt" />
+    <Content Include="关键技术和模块备注.txt" />
+    <None Include="img\Image_Capture_32px.png" />
+    <None Include="img\Camera.png" />
+    <None Include="img\Video.png" />
+    <None Include="img\Cross_32px.png" />
+    <None Include="img\video_start.png" />
+    <None Include="img\Audacity_32px_1072433_easyicon.net.png" />
+    <None Include="img\pause_32px_1160876_easyicon.net.png" />
+    <None Include="img\Sound_32px_1191711_easyicon.net.png" />
+    <None Include="img\Sound_alt_32.084656084656px_1191710_easyicon.net.png" />
+    <None Include="img\Sound_off_32px_1191712_easyicon.net %281%29.png" />
+    <None Include="img\Media_Player_Windows_32px_1072557_easyicon.net.png" />
+    <None Include="qptm.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BbXfsReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BbXfsReportA5.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BCreport.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\bgjsd.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BLnopicReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BLpic1ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BLReport3PicA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\BLReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\djb.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\DjBarcode.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\FFKXBXReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\FZ0ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\FZ1ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\GdddReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\HPV-21.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\HPV.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\HPV12-2.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\hznopicReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\hzpic1ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\hzReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\iceReport.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\iceReportB5.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\lkyjb.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\myzhReport.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="report\noBbXfsReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\noBLpic1ReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\noBLReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\qcgdReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\QPBarcode.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\QPBarcode2.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\Qpddy.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\XbxReportA4.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\yjxbx.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\ylczd_djb.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\ysReport.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\ysReportB5.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\NoteHS.png" />
+    <None Include="Resources\NewFolderHS.png" />
+    <None Include="Resources\ShowRulelinesHS.png" />
+    <None Include="Resources\Calendar_32x32.png" />
+    <None Include="Resources\WithTextWrapping_BottomRight_32x32.png" />
+    <None Include="Resources\DayView_32x32.png" />
+    <None Include="img\user.png" />
+    <None Include="img\time.png" />
+    <None Include="bjt\4K\Wallpaper\Windows\img0_1366x768.jpg" />
+    <None Include="bjt\Screen\img100.jpg" />
+    <None Include="img\logo.ico" />
+    <None Include="img\jczt.ico" />
+    <None Include="img\Add.ico" />
+    <None Include="img\clearall.ico" />
+    <None Include="img\clear.ico" />
+    <None Include="img\refresh_48.png" />
+    <None Include="img\refresh_32.png" />
+    <None Include="img\Delete_32x32.png" />
+    <None Include="img\empty.png" />
+    <None Include="img\empty32.png" />
+    <None Include="img\idcard.ico" />
+    <None Include="img\report.ico" />
+    <None Include="img\movie.ico" />
+    <None Include="img\db insert.ico" />
+    <None Include="img\db delete.ico" />
+    <None Include="img\print.png" />
+    <None Include="img\MB_save.png" />
+    <None Include="img\bingd.png" />
+    <None Include="img\tj.ico" />
+    <None Include="img\find.ico" />
+    <None Include="img\cc.ico" />
+    <None Include="img\yestoday.ico" />
+    <None Include="img\copy plus.ico" />
+    <None Include="img\calendar 1.ico" />
+    <None Include="img\refresh.ico" />
+    <None Include="img\load.gif" />
+    <None Include="img\loading.gif" />
+    <None Include="img\box_unchecked_all_over.ico" />
+    <None Include="img\box closed.ico" />
+    <None Include="img\box_unchecked_all.ico" />
+    <None Include="img\cut1.ico" />
+    <None Include="img\copy.ico" />
+    <None Include="img\tEPaste.ico" />
+    <None Include="img\select_all_32px.png" />
+    <None Include="img\adjust_32px.png" />
+    <None Include="img\check_box_outline_blank_32px.png" />
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bltj\PIS_Statistics.csproj">
+      <Project>{7BC047ED-F97B-4757-BF60-D6A92E7FE2EB}</Project>
+      <Name>PIS_Statistics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBhleper\DBHelper.csproj">
+      <Project>{EFDE79AC-F2FA-425C-A426-02697B92CA7D}</Project>
+      <Name>DBHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastReportLib\PIS_StatReport.csproj">
+      <Project>{457ACF5E-C3C0-4D60-921E-BCA5A40123E8}</Project>
+      <Name>PIS_StatReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FYFtpDownloader\FtpDownloader.vbproj">
+      <Project>{9f778ff2-11cd-40fa-a3e4-2939c5d67b14}</Project>
+      <Name>FtpDownloader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Greenshot.ImageEditor\ImageEditor.csproj">
+      <Project>{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}</Project>
+      <Name>ImageEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MshotFunction\MshotDigitsCamControl\MshotDigitsCamControl.csproj">
+      <Project>{2ffba5f2-9e4d-47c1-9628-72d6c8564e01}</Project>
+      <Name>MshotDigitsCamControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Myzh_BenchMark_Hl7\Myzh_BenchMark_Hl7.csproj">
+      <Project>{2A13C567-4CCF-4D66-A5E4-C66E49E6DFA8}</Project>
+      <Name>Myzh_BenchMark_Hl7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicVbLIb\PublicVbLIb.vbproj">
+      <Project>{BB0DEDED-FBAA-4660-9D8C-2C7082A07E04}</Project>
+      <Name>PublicVbLIb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

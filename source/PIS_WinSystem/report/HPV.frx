@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/01/2015 09:47:29" ReportInfo.Modified="07/18/2016 01:32:18" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <TableDataSource Name="exam_master_view" ReferenceName="Data.exam_master_view" DataType="System.Int32" Enabled="true">
+      <Column Name="receive_doctor_name" DataType="System.String"/>
+      <Column Name="new_flag" DataType="System.String"/>
+      <Column Name="exam_no" DataType="System.String"/>
+      <Column Name="study_no" DataType="System.String"/>
+      <Column Name="exam_type" DataType="System.String"/>
+      <Column Name="modality_cn" DataType="System.String"/>
+      <Column Name="patient_name" DataType="System.String"/>
+      <Column Name="sex" DataType="System.String"/>
+      <Column Name="age" DataType="System.String"/>
+      <Column Name="patient_id" DataType="System.String"/>
+      <Column Name="patient_source" DataType="System.String"/>
+      <Column Name="req_dept" DataType="System.String"/>
+      <Column Name="req_physician" DataType="System.String"/>
+      <Column Name="submit_unit" DataType="System.String"/>
+      <Column Name="req_date_time" DataType="System.String"/>
+      <Column Name="received_datetime" DataType="System.String"/>
+      <Column Name="status_name" DataType="System.String"/>
+      <Column Name="exam_status" DataType="System.String"/>
+      <Column Name="si_card" DataType="System.String"/>
+      <Column Name="hospital_card" DataType="System.String"/>
+      <Column Name="output_id" DataType="System.String"/>
+      <Column Name="input_id" DataType="System.String"/>
+      <Column Name="ice_flag" DataType="System.String"/>
+      <Column Name="modality" DataType="System.String"/>
+      <Column Name="ward" DataType="System.String"/>
+      <Column Name="bed_no" DataType="System.String"/>
+      <Column Name="phone_number" DataType="System.String"/>
+      <Column Name="visit_id" DataType="System.String"/>
+      <Column Name="cbreport_doc_name" DataType="System.String"/>
+    </TableDataSource>
+    <Parameter Name="ReportParaHospital" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="217.35">
+      <TextObject Name="Text1" Left="9.45" Top="56.7" Width="765.45" Height="37.8" Text="[ReportParaHospital]" HorzAlign="Center" VertAlign="Center" Font="黑体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="103.95" Width="765.45" Height="28.35" Text="高 风 险 HPV DNA 检 测 报 告" HorzAlign="Center" VertAlign="Center" Font="黑体, 15.75pt, style=Bold"/>
+      <TextObject Name="Text3" Left="623.7" Top="189" Width="122.85" Height="28.35" Text="[exam_master_view.study_no]" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="529.2" Top="189" Width="113.4" Height="28.35" Text="病理检查号：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text33" Left="56.7" Top="189" Width="113.4" Height="28.35" Text="检查申请号：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text34" Left="151.2" Top="189" Width="226.8" Height="28.35" Text="[exam_master_view.exam_no]" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="255.15" Top="141.75" Width="274.05" Height="18.9" Text="（高危型人乳头瘤病毒检测）" HorzAlign="Center" Font="宋体, 14.25pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="221.35" Width="793.8" Height="103.95" Guides="0">
+      <TextObject Name="Text5" Left="56.7" Top="9.45" Width="56.7" Height="28.35" Text="姓名：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text6" Left="236.25" Top="9.45" Width="56.7" Height="28.35" Text="性别：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text7" Left="236.25" Top="37.8" Width="56.7" Height="28.35" Text="科别：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line2" Left="37.8" Top="103.95" Width="708.75"/>
+      <TextObject Name="Txt_Name" Left="103.95" Top="9.45" Width="132.3" Height="28.35" Text="[exam_master_view.patient_name]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjks" Left="283.5" Top="9.45" Width="122.85" Height="28.35" Text="[exam_master_view.sex]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjys" Left="283.5" Top="37.8" Width="132.3" Height="28.35" Text="[exam_master_view.req_dept]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text11" Left="56.7" Top="66.15" Width="85.05" Height="28.35" Text="送检医生：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sex" Left="132.3" Top="66.15" Width="103.95" Height="28.35" Text="[exam_master_view.req_physician]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text19" Left="56.7" Top="37.8" Width="85.05" Height="28.35" Text="送检单位：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Age" Left="132.3" Top="37.8" Width="103.95" Height="28.35" Text="[exam_master_view.submit_unit]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text25" Left="236.25" Top="66.15" Width="85.05" Height="28.35" Text="送检日期：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sqrq" Left="311.85" Top="66.15" Width="170.1" Height="28.35" Text="[exam_master_view.received_datetime]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text30" Left="415.8" Top="9.45" Width="56.7" Height="28.35" Text="年龄：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Pid" Left="463.05" Top="9.45" Width="103.95" Height="28.35" Text="[exam_master_view.age]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text32" Left="481.95" Top="66.15" Width="85.05" Height="28.35" Text="诊断日期：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjbw" Left="557.55" Top="66.15" Width="189" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_ly" Left="463.05" Top="37.8" Width="103.95" Height="28.35" Text="[exam_master_view.bed_no]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text13" Left="415.8" Top="37.8" Width="56.7" Height="28.35" Text="床号：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text35" Left="576.45" Top="9.45" Width="75.6" Height="28.35" Text="住院号:" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text36" Left="633.15" Top="9.45" Width="113.4" Height="28.35" Text="[exam_master_view.input_id]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text37" Left="576.45" Top="37.8" Width="75.6" Height="28.35" Text="来源:" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text38" Left="623.7" Top="37.8" Width="122.85" Height="28.35" Text="[exam_master_view.patient_source]" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line1" Left="37.8" Width="708.75" Border.Width="2"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="329.3" Width="793.8" Height="670.95" Guides="0">
+      <TextObject Name="Text8" Left="103.95" Top="47.25" Width="94.5" Height="28.35" Text="检测项目：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text27" Left="103.95" Top="94.5" Width="94.5" Height="28.35" Text="检测类别：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Rysj" Left="198.45" Top="47.25" Width="463.05" Height="28.35" Text="14种高危型HPV及单独分型16、18检测&#13;&#10;" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Blzd" Left="198.45" Top="94.5" Width="463.05" Height="28.35" Text="16型、18型、其他12种高危型" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <LineObject Name="Line4" Left="37.8" Top="28.35" Width="708.75"/>
+      <TextObject Name="Text39" Left="56.7" Width="85.05" Height="28.35" Text="送检材料：" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text40" Left="132.3" Width="217.35" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text41" Left="349.65" Width="85.05" Height="28.35" Text="临床诊断：" VertAlign="Center" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text42" Left="425.25" Width="321.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text43" Left="103.95" Top="141.75" Width="94.5" Height="28.35" Text="结    果：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text44" Left="207.9" Top="151.2" Width="132.3" Height="198.45" Text="   高危型HPV：&#13;&#10;&#13;&#10;型别：HPV16型&#13;&#10;      HPV18型&#13;&#10;&#13;&#10;其他12种高危型" Font="宋体, 12pt"/>
+      <TextObject Name="Text12" Left="103.95" Top="368.55" Width="557.55" Height="18.9" Text="(其它12种高危型HPV包括:31、33、35、39、45、51、52、56、58、59、66、68)" HorzAlign="Center" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line5" Left="37.8" Top="396.9" Width="708.75"/>
+      <TextObject Name="Text14" Left="103.95" Top="434.7" Width="595.35" Height="141.75" Text="注：&#13;&#10;  1、人乳头瘤病毒（HPV）高危型，是引起子宫颈癌的直接原因；&#13;&#10;  2、cobas HPV DNA检测技术，可检测所有致癌的14种高危型HPV DNA，并区分出致癌性最高的16和18型；&#13;&#10;  3、若检出cobas HPV高危型阳性，应即依从妇科医生复诊，追踪；&#13;&#10;  4、导诊台有关于HPV与宫颈癌的科普资料，请向医护人员索取；&#13;&#10;  5、一生只做一次cobas HPV DNA检测也可以有效远离宫颈癌。&#13;&#10;注：此实验结果只对本次标本负责。" Font="宋体, 9pt" FirstTabOffset="3.78" LineHeight="18.9"/>
+      <TextObject Name="Text15" Left="321.3" Top="151.2" Width="151.2" Height="18.9" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text45" Left="321.3" Top="189" Width="151.2" Height="18.9" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text46" Left="321.3" Top="207.9" Width="151.2" Height="18.9" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text47" Left="330.75" Top="245.7" Width="151.2" Height="18.9" Font="宋体, 12pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="1004.25" Width="793.8" Height="75.6">
+      <LineObject Name="Line3" Left="37.8" Width="708.75" Border.Width="2"/>
+      <TextObject Name="Text10" Left="56.7" Top="9.45" Width="359.1" Height="18.9" Text="*此报告仅供临床医师参考*" VertAlign="Bottom" Font="宋体, 7.5pt"/>
+      <TextObject Name="Text28" Left="425.25" Width="94.5" Height="28.35" Text="医师签字：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Text48" Left="510.3" Width="132.3" Height="28.35" Text="[exam_master_view.cbreport_doc_name]" VertAlign="Bottom" Font="宋体, 12pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

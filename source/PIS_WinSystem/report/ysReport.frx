@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/06/2015 14:44:52" ReportInfo.Modified="08/08/2016 08:04:54" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" PaperHeight="148" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="160.65">
+      <TextObject Name="Text1" Left="9.45" Top="47.25" Width="765.45" Height="47.25" HorzAlign="Center" VertAlign="Center" Font="黑体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="94.5" Width="765.45" Height="37.8" Text="病理诊断延时报告" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 18pt, style=Bold"/>
+      <LineObject Name="Line1" Left="75.6" Top="160.65" Width="642.6" Border.Width="2"/>
+      <TextObject Name="Text3" Left="548.1" Top="132.3" Width="75.6" Height="18.9" Text="病理号：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="614.25" Top="132.3" Width="94.5" Height="18.9" VertAlign="Center" Font="微软雅黑, 12pt"/>
+      <TextObject Name="Text4" Left="85.05" Top="132.3" Width="94.5" Height="18.9" Font="宋体, 12pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="164.65" Width="793.8" Height="378" Guides="0">
+      <TextObject Name="Text6" Left="85.05" Top="9.45" Width="94.5" Height="18.9" Text="姓    名:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="179.55" Top="9.45" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text8" Left="85.05" Top="37.8" Width="94.5" Height="18.9" Text="送检日期:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="179.55" Top="37.8" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text12" Left="387.45" Top="9.45" Width="94.5" Height="18.9" Text="性    别:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text13" Left="481.95" Top="9.45" Width="66.15" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text14" Left="557.55" Top="9.45" Width="56.7" Height="18.9" Text="年龄:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text15" Left="614.25" Top="9.45" Width="94.5" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line2" Left="75.6" Top="66.15" Width="642.6"/>
+      <TextObject Name="Text20" Left="85.05" Top="75.6" Width="94.5" Height="18.9" Text="延时原因：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text22" Left="122.85" Top="103.95" Width="585.9" Height="198.45" Font="宋体, 12pt"/>
+      <TextObject Name="Text24" Left="85.05" Top="311.85" Width="94.5" Height="18.9" Text="报告医师:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text25" Left="179.55" Top="311.85" Width="103.95" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text28" Left="444.15" Top="311.85" Width="94.5" Height="18.9" Text="报告日期:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text29" Left="538.65" Top="311.85" Width="170.1" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line3" Left="75.6" Top="340.2" Width="642.6" Border.Width="2"/>
+      <TextObject Name="Text31" Left="387.45" Top="37.8" Width="94.5" Height="18.9" Text="送检科室:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text32" Left="481.95" Top="37.8" Width="226.8" Height="18.9" WordWrap="false" Font="宋体, 12pt"/>
+      <TextObject Name="Text10" Left="85.05" Top="340.2" Width="623.7" Height="28.35" Text="*此报告仅供临床医师参考*" VertAlign="Center" Font="宋体, 9pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

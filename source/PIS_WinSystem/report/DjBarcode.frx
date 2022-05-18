@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/03/2014 15:25:10" ReportInfo.Modified="01/07/2016 08:51:54" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <Parameter Name="Pat_Name" DataType="System.String"/>
+    <Parameter Name="study_no" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="54" PaperHeight="24" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="4" OtherPagesSource="4">
+    <DataBand Name="Data1" Width="204.12" Height="85.05">
+      <BarcodeObject Name="Barcode1" Left="9.45" Top="3.78" Width="83.3" Height="28.35" CanShrink="true" AutoSize="false" Text="" ShowText="false" Zoom="0.8" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text2" Left="9.45" Top="62.37" Width="85.05" Height="18.9" CanBreak="false" Text="[Pat_Name]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="宋体, 10.5pt, style=Bold"/>
+      <BarcodeObject Name="Barcode2" Left="115.29" Top="3.78" Width="83.3" Height="28.35" CanShrink="true" AutoSize="false" Text="" ShowText="false" Zoom="0.8" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text3" Left="115.29" Top="62.37" Width="85.05" Height="18.9" CanBreak="false" Text="[Pat_Name]" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="宋体, 10.5pt, style=Bold"/>
+      <TextObject Name="Text5" Left="9.45" Top="34.02" Width="85.05" Height="28.35" CanGrow="true" HorzAlign="Center" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Left="115.29" Top="34.02" Width="85.05" Height="28.35" CanGrow="true" HorzAlign="Center" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/01/2015 09:47:29" ReportInfo.Modified="01/17/2016 10:20:36" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <Parameter Name="ReportParaHospital" DataType="System.String"/>
+    <Parameter Name="study_no" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="170.1">
+      <TextObject Name="Text1" Left="28.35" Top="66.15" Width="737.1" Height="37.8" Text="[ReportParaHospital]" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="226.8" Top="113.4" Width="340.2" Height="28.35" Text="薄层液基细胞学检测报告单" HorzAlign="Center" VertAlign="Center" Font="黑体, 18pt"/>
+      <TextObject Name="Text3" Left="614.25" Top="141.75" Width="103.95" Height="28.35" Text="[study_no]" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="548.1" Top="141.75" Width="75.6" Height="28.35" Text="病理号：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line1" Left="66.15" Top="170.1" Width="661.5" Border.Width="2"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="174.1" Width="793.8" Height="113.4">
+      <TextObject Name="Text5" Left="85.05" Top="18.9" Width="85.05" Height="28.35" Text="姓    名：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text6" Left="510.3" Top="47.25" Width="85.05" Height="28.35" Text="送检科室：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text7" Left="283.5" Top="75.6" Width="85.05" Height="28.35" Text="末次月经：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line2" Left="66.15" Top="113.4" Width="661.5"/>
+      <TextObject Name="Txt_Name" Left="160.65" Top="18.9" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjks" Left="585.9" Top="47.25" Width="198.45" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Mcyj" Left="359.1" Top="75.6" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text11" Left="85.05" Top="75.6" Width="85.05" Height="28.35" Text="性    别：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sex" Left="160.65" Top="75.6" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text13" Left="510.3" Top="18.9" Width="85.05" Height="28.35" Text="病人来源：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_ly" Left="585.9" Top="18.9" Width="141.75" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text19" Left="85.05" Top="47.25" Width="85.05" Height="28.35" Text="年    龄：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Age" Left="160.65" Top="47.25" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text21" Left="510.3" Top="75.6" Width="85.05" Height="28.35" Text="送检医师：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_sjys" Left="585.9" Top="75.6" Width="141.75" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text23" Left="283.5" Top="47.25" Width="85.05" Height="28.35" Text="标本类型：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Bblx" Left="359.1" Top="47.25" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text25" Left="283.5" Top="18.9" Width="85.05" Height="28.35" Text="送检日期：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sqrq" Left="359.1" Top="18.9" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="291.5" Width="793.8" Height="708.75" Guides="0">
+      <TextObject Name="Text8" Left="75.6" Top="9.45" Width="113.4" Height="28.35" Text="标本满意度：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text26" Left="75.6" Top="207.9" Width="85.05" Height="28.35" Text="炎细胞：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <PictureObject Name="Picture2" Left="434.7" Top="160.65" Width="264.6" Height="217.35" SizeMode="StretchImage"/>
+      <TextObject Name="Text27" Left="75.6" Top="245.7" Width="113.4" Height="28.35" Text="微生物项目：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Bbmyd" Left="179.55" Top="9.45" Width="170.1" Height="28.35" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Xbxjg" Left="170.1" Top="576.45" Width="529.2" Height="56.7" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text29" Left="75.6" Top="47.25" Width="141.75" Height="28.35" Text="反应性细胞变化：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text30" Left="132.3" Top="85.05" Width="122.85" Height="28.35" Text="（1）细胞量：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text31" Left="132.3" Top="113.4" Width="122.85" Height="28.35" Text="（2）颈管细胞" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text32" Left="132.3" Top="141.75" Width="122.85" Height="28.35" Text="（3）化生细胞" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text33" Left="132.3" Top="170.1" Width="122.85" Height="28.35" Text="（4）鳞状细胞" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text34" Left="349.65" Top="85.05" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text35" Left="349.65" Top="113.4" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text36" Left="349.65" Top="141.75" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text37" Left="349.65" Top="170.1" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text38" Left="141.75" Top="207.9" Width="94.5" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text39" Left="141.75" Top="292.95" Width="170.1" Height="28.35" Text="（1）滴虫感染提示：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text40" Left="141.75" Top="321.3" Width="170.1" Height="28.35" Text="（2）霉菌感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text41" Left="141.75" Top="349.65" Width="170.1" Height="28.35" Text="（3）球杆菌感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text42" Left="141.75" Top="378" Width="170.1" Height="28.35" Text="（4）放线菌感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text43" Left="141.75" Top="406.35" Width="170.1" Height="28.35" Text="（5）HPV感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text44" Left="141.75" Top="434.7" Width="170.1" Height="28.35" Text="（6）疱疹病毒感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text45" Left="141.75" Top="463.05" Width="151.2" Height="28.35" Text="（7）念珠菌感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text46" Left="141.75" Top="491.4" Width="217.35" Height="28.35" Text="（8）类似乳头状病毒感染：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text47" Left="75.6" Top="548.1" Width="113.4" Height="28.35" Text="细胞学结果：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text48" Left="75.6" Top="642.6" Width="94.5" Height="28.35" Text="治疗建议：" VertAlign="Bottom" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Zljy" Left="170.1" Top="652.05" Width="529.2" Height="56.7" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text50" Left="349.65" Top="491.4" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text51" Left="349.65" Top="463.05" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text52" Left="349.65" Top="434.7" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text53" Left="349.65" Top="406.35" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text54" Left="349.65" Top="378" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text55" Left="349.65" Top="349.65" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text56" Left="349.65" Top="321.3" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text57" Left="349.65" Top="292.95" Width="66.15" Height="28.35" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="1004.25" Width="793.8" Height="103.95">
+      <TextObject Name="Text9" Left="75.6" Width="94.5" Height="28.35" Text="报告日期：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="txt_Bgrq" Left="170.1" Width="132.3" Height="28.35" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Text28" Left="481.95" Width="94.5" Height="28.35" Text="报告医师：" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Bgys" Left="576.45" Width="122.85" Height="28.35" VertAlign="Bottom" Font="宋体, 12pt"/>
+      <LineObject Name="Line3" Left="66.15" Top="28.35" Width="652.05" Border.Width="2"/>
+      <TextObject Name="Text10" Left="75.6" Top="37.8" Width="226.8" Height="18.9" Text="本报告只对本标本负责" Font="宋体, 9pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/27/2015 13:42:36" ReportInfo.Modified="09/21/2016 10:04:51" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" PaperWidth="29" PaperHeight="24" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="4" OtherPagesSource="4">
+    <DataBand Name="Data1" Width="109.62" Height="86.94" Guides="94.5">
+      <TextObject Name="Text1" Left="3.02" Width="75.6" Height="22.68" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 12pt, style=Bold, Underline"/>
+      <BarcodeObject Name="Barcode1" Left="5.67" Top="41.58" Width="85" Height="26.46" CanShrink="true" AutoSize="false" Text="" ShowText="false" Zoom="0.6" Barcode="Code128" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text3" Left="1.89" Top="71.82" Width="103.95" Height="15.12" CanShrink="true" AutoWidth="true" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 6.75pt"/>
+      <TextObject Name="Text5" Left="34.02" Top="24.57" Width="69.93" Height="15.12" CanBreak="false" VertAlign="Center" WordWrap="false" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text9" Left="79.38" Width="26.46" Height="22.68" HorzAlign="Right" Font="宋体, 9pt"/>
+      <TextObject Name="Text7" Left="3.02" Top="24.57" Width="28.35" Height="15.12" Font="宋体, 10.5pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+</Report>

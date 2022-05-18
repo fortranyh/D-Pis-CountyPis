@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <add name="oracle" connectionString="Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=168.168.1.216)(PORT=1521))(CONNECT_DATA=(SID=orcl)));User Id=tjris;Password=tjris;" providerName="Oracle.DataAccess.Client" />
+    <add name="mysql"  connectionString="Database='pathology';Data Source='127.0.0.1';port='3306';User Id='root';Password='125353Ct';charset='utf8'; Allow User Variables='True'" providerName="MySql.Data.MySqlClient" />
+  </connectionStrings>
+</configuration>

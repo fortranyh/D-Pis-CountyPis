@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <system_code>{0}</system_code>
+  <system_name>{0}</system_name>
+  <server_ip>{0}</server_ip>
+  <server_port>{0}</server_port>
+  <User>{0}</User>
+  <Pwd>{0}</Pwd>
+  <version>{0}</version>
+  <curversion>{0}</curversion>
+  <update_date>{0}</update_date>
+  <update_info>{0}</update_info>
+  <update_subDir>{0}</update_subDir>
+  <strProcessName>{0}</strProcessName>
+</root>

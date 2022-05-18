@@ -1,0 +1,362 @@
+﻿2015-12-18：interface_set_info表添加bhg_flag字段。
+---------------------------------------------------------------------------------
+2016-2-19:  dept_message表添加msg_type字段；
+CREATE TABLE `msgtype_dict` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`msg_type` VARCHAR(50) NOT NULL DEFAULT '',
+	PRIMARY KEY (`id`)
+)
+COMMENT='消息类型字典'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=8
+===================================================================================
+2016-2-22:shiji_ruku表添加字段sjdkc和sjgq两个字段
+===================================================================================
+2016-4-11:为对接全自动免疫组化设备tj_bjw_dict表添加字段rs_code和rs_name两个字段
+===================================================================================
+2016-4-20:系统更改添加工作站类型逻辑
+===============================================================================================
+CREATE TABLE IF NOT EXISTS `exam_big_type_dict` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `big_type_code` varchar(50) NOT NULL DEFAULT '',
+  `big_type_name` varchar(50) NOT NULL DEFAULT '',
+  `big_type_enable` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='病理系统主检查类型字典';
+================================================================================================
+ALTER TABLE `sys_sequence`
+	ADD COLUMN `memo` VARCHAR(50) NULL DEFAULT '' COMMENT '序号发生器名称' AFTER `memo_note`,
+	ADD COLUMN `show_flag` TINYINT NOT NULL DEFAULT '0' AFTER `memo`;
+================================================================================================
+INSERT INTO `exam_big_type_dict` (`id`, `big_type_code`, `big_type_name`, `big_type_enable`) VALUES (1, 'PL', '组织学', 1);
+INSERT INTO `exam_big_type_dict` (`id`, `big_type_code`, `big_type_name`, `big_type_enable`) VALUES (2, 'XBX', '细胞学', 1);
+INSERT INTO `exam_big_type_dict` (`id`, `big_type_code`, `big_type_name`, `big_type_enable`) VALUES (3, 'HZ', '病理会诊', 1);
+-----------------------------------------------------------------------------------------------
+INSERT INTO `exam_type_dict` (`id`, `modality`, `modality_cn`, `sequence_name`, `pre_char`, `exam_flag`, `big_type`, `default_templet_index`, `report_limit`, `enable_flag`) VALUES (1, 'hj', '组织学', 'PL', '', 0, 'PL', 0, 7200, 1);
+INSERT INTO `exam_type_dict` (`id`, `modality`, `modality_cn`, `sequence_name`, `pre_char`, `exam_flag`, `big_type`, `default_templet_index`, `report_limit`, `enable_flag`) VALUES (2, 'whj', '组织学(外)', 'PL', '', 1, 'PL', 0, 7200, 1);
+INSERT INTO `exam_type_dict` (`id`, `modality`, `modality_cn`, `sequence_name`, `pre_char`, `exam_flag`, `big_type`, `default_templet_index`, `report_limit`, `enable_flag`) VALUES (3, 'xbx', '细胞学', 'PL', 'C', 0, 'XBX', 3, 4320, 1);
+INSERT INTO `exam_type_dict` (`id`, `modality`, `modality_cn`, `sequence_name`, `pre_char`, `exam_flag`, `big_type`, `default_templet_index`, `report_limit`, `enable_flag`) VALUES (4, 'wxbx', '细胞学(外)', 'PL', 'C', 1, 'XBX', 3, 4320, 1);
+INSERT INTO `exam_type_dict` (`id`, `modality`, `modality_cn`, `sequence_name`, `pre_char`, `exam_flag`, `big_type`, `default_templet_index`, `report_limit`, `enable_flag`) VALUES (5, 'hz', '外院会诊', 'HZ', 'H', 1, 'HZ', 5, 7200, 1);
+------------------------------------------------------------------------------------------------
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('BD', 2100001, 1, '冰冻序号发生器', '', 0);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('HZ', 2100001, 1, '外院会诊', '外院会诊流水号', 1);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('PID', 2100001, 1, '病人ID号序号发生器', '', 0);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('PL', 2100001, 1, '活检病理号序号发生器', '组织学流水号', 1);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('SQD', 2100001, 1, '申请单序号发生器', '', 0);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('XBX', 2100001, 1, '细胞学病理号序号发生器', '细胞学流水号', 1);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('YZ', 2100001, 1, '医嘱序号发生器', '', 0);
+=================================================================================================
+2016-4-20:系统支持分页查询
+===================================================================================
+2016-4-21:系统添加质控提醒窗体
+===================================================================================
+2016-4-22:系统更新报告编辑器控件
+===================================================================================
+2016-5-4:系统添加报告时间质控，在表中exam_type_dict添加int类型字段report_limit。
+ALTER TABLE `exam_type_dict`
+	ADD COLUMN `report_limit` INT NOT NULL DEFAULT '0' AFTER `default_templet_index`;
+===================================================================================
+2016-5-9:添加一条新的检查类型库步骤：
+1.在exam_big_type_dict表中添加一条大类
+2.在sys_sequence表中添加一条流水号生成规则
+3.在exam_type_dict表中添加一条检查类型大类下的明细类
+====================================================================================
+2016-5-27:
+1.检查明细类别表exam_type_dict添加是否可用标记；
+ALTER TABLE `exam_type_dict`
+	ADD COLUMN `enable_flag` TINYINT NOT NULL DEFAULT '1' COMMENT '是否当前可用' 
+2.插入PACS影像浏览接口配置信息
+INSERT INTO `pathology`.`thirdinterface_info` (`type_str`, `memo`) VALUES ('PACS', '');
+=========================================================================================================
+2016-6-4
+添加报告模板子类型索引
+ALTER TABLE `exam_report`
+	ADD COLUMN `report_childtmp_index` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '报告模板子类型' AFTER `tmplet_index`;
+=======================================================================================================================
+2016-6-17
+修改exam_master_view视图，添加  ,qucai_doctor_code,qucai_doctor_name,r.zzreport_doc_code as zzreport_doc_code,r.shreport_doc_code as shreprt_doc_code,visit_id,cbreport_doc_name内容
+=======================================================================================================================
+2016-6-21
+修改exam_master表，添加蜡块上脱水机时间
+ALTER TABLE `exam_master`
+ADD COLUMN `tuoshui_datetime` DATETIME NULL DEFAULT NULL COMMENT '蜡块上脱水机时间' AFTER `zhipian_datetime`;
+===============================================================================================================
+2016-6-22
+添加IDC10编码字典表
+CREATE TABLE `ICD10_DICT` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`big_type_name` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '疾病大类名称',
+	`icd_code` VARCHAR(50) NOT NULL DEFAULT '',
+	`icd_name` VARCHAR(100) NOT NULL DEFAULT '',
+	`icd_pinyin` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '拼音助记码',
+	`icd_enable` TINYINT(4) NOT NULL DEFAULT '1',
+	PRIMARY KEY (`id`)
+)
+COMMENT='ICD10疾病字典编码表'
+ENGINE=InnoDB
+;
+===============================================================================================
+2016-6-22
+添加外院会诊所需报告字段
+ALTER TABLE `exam_report`
+	ADD COLUMN `lk_num` INT NOT NULL DEFAULT '0' AFTER `report_childtmp_index`,
+	ADD COLUMN `bp_num` INT NOT NULL DEFAULT '0' AFTER `lk_num`,
+	ADD COLUMN `wy_study_no` VARCHAR(20) NOT NULL DEFAULT '' AFTER `bp_num`;
+================================================================================================
+2016-7-11
+添加作废医师编码
+ALTER TABLE `exam_master`
+	ADD COLUMN `zf_doc_code` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '作废医师编码' AFTER `cbreport_doc_code`;
+================================================================================================
+2016-8-5 
+创建视图ice_report_view
+
+select a.exam_no as exam_no, c.study_no as study_no,c.sh_doc_name as sh_doc_name, `d`.`patient_name` AS `patient_name`,`a`.`patient_id` AS `patient_id`,`a`.`patient_source` AS `patient_source`,`a`.`req_dept` AS `req_dept`,`a`.`req_physician` AS `req_physician`,`a`.`submit_unit` AS `submit_unit`,date_format(`a`.`req_date_time`,'%Y-%m-%d %H:%i:%s') AS `req_date_time`,date_format(`a`.`received_datetime`,'%Y-%m-%d %H:%i:%s') AS `received_datetime`,`d`.`si_card` AS `si_card`,`d`.`hospital_card` AS `hospital_card`,`a`.`output_id` AS `output_id`,`a`.`input_id` AS `input_id`,a.exam_status as exam_status from ((`exam_ice_report` `c` left join `exam_master` `a` on (`c`.`study_no` = `a`.`study_no`)) left join `exam_pat_mi` `d` on (`a`.`patient_id` = `d`.`patient_id`)) where `a`.`exam_status` > 15 and c.sh_flag=1 
+=================================================================================================
+
+2016-8-18
+创建送检单位字典表
+CREATE TABLE `hospital_list` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(100) NOT NULL DEFAULT '',
+	PRIMARY KEY (`id`)
+)
+COMMENT='送检单位列表'
+ENGINE=InnoDB
+;
+=======================================================================================================
+2016-8-21
+更新标本不合格登记表
+ALTER TABLE `exam_specimens_qualified`
+	ADD COLUMN `study_no` VARCHAR(20) NULL COMMENT '病理号' AFTER `note_doctor`,
+	ADD COLUMN `dept_name` VARCHAR(100) NULL COMMENT '送检科室' AFTER `study_no`,
+	ADD COLUMN `doctor_name` VARCHAR(20) NULL COMMENT '送检医生' AFTER `dept_name`;
+======================================================================================================
+2016-8-22
+更新蜡块表exam_draw_meterials
+ALTER TABLE `exam_draw_meterials`
+	ADD COLUMN `gd_flag` TINYINT(4) NULL DEFAULT '0' COMMENT '归档状态' AFTER `print_flag`,
+	ADD COLUMN `gd_doctor` VARCHAR(20) NULL DEFAULT '' COMMENT '归档医生姓名' AFTER `gd_flag`,
+	ADD COLUMN `gd_datetime` DATETIME NULL COMMENT '归档日期' AFTER `gd_doctor`,
+	ADD COLUMN `gd_location` VARCHAR(50) NULL DEFAULT '' COMMENT '归档位置' AFTER `gd_datetime`;
+=======================================================================================================
+2016-8-22
+更新蜡块视图exam_lk_view支持归档
+select `a`.`id` AS `id`,`a`.`study_no` AS `study_no`,`a`.`meterial_no` AS `meterial_no`,`a`.`parts` AS `parts`,`a`.`group_num` AS `group_num`,`a`.`group_unite` AS `group_unite`,`a`.`draw_doctor_name` AS `draw_doctor_name`,date_format(`a`.`draw_datetime`,'%Y-%m-%d %H:%i:%s') AS `draw_datetime`,`a`.`memo_note` AS `memo_note`,`a`.`hd_flag` AS `hd_flag`,`a`.`hd_flag` AS `sfys`,`b`.`specimens_class` AS `specimens_class`,`a`.`work_source` AS `work_source`,`a`.`barcode` AS `barcode`,`a`.`bm_doc_name` AS `bm_doc_name`,gd_flag,gd_doctor,date_format(`a`.`gd_datetime`,'%Y-%m-%d %H:%i:%s') AS `gd_datetime`,gd_location from (`exam_draw_meterials` `a` left join `exam_specimens` `b` on((`a`.`specimens_id` = `b`.`id`))) where (`a`.`hd_flag` = 1) order by `a`.`study_no` asc,`a`.`id` asc 
+
+=========================================================================================================
+2016-8-22
+更新玻片表exam_filmmaking
+ALTER TABLE `exam_filmmaking`
+	ADD COLUMN `qpgd_flag` TINYINT(4) NULL DEFAULT '0' COMMENT '归档状态' AFTER `hb_flag`,
+	ADD COLUMN `qpgd_doctor` VARCHAR(20) NULL DEFAULT '' COMMENT '归档医生姓名' AFTER `qpgd_flag`,
+	ADD COLUMN `qpgd_datetime` DATETIME NULL COMMENT '归档日期' AFTER `qpgd_doctor`,
+	ADD COLUMN `qpgd_location` VARCHAR(50) NULL DEFAULT '' COMMENT '归档位置' AFTER `qpgd_datetime`;
+=======================================================================================================
+2016-8-22
+更新蜡块视图exam_qp_view支持归档
+select `exam_filmmaking`.`id` AS `id`,`exam_filmmaking`.`study_no` AS `study_no`,`exam_filmmaking`.`draw_id` AS `draw_id`,`exam_filmmaking`.`draw_barcode` AS `draw_barcode`,`exam_filmmaking`.`film_child_barcode` AS `film_child_barcode`,`exam_filmmaking`.`barcode` AS `barcode`,`exam_filmmaking`.`work_source` AS `work_source`,`exam_filmmaking`.`film_num` AS `film_num`,`exam_filmmaking`.`memo_note` AS `memo_note`,`exam_filmmaking`.`zp_flag` AS `zp_flag`,`exam_filmmaking`.`print_flag` AS `print_flag`,`exam_filmmaking`.`make_doc_name` AS `make_doc_name`,date_format(`exam_filmmaking`.`make_datetime`,'%Y-%m-%d %H:%i:%s') AS `make_datetime`,`exam_filmmaking`.`level` AS `level`,`exam_filmmaking`.`level_memo` AS `level_memo`,`exam_filmmaking`.`he_level` AS `he_level`,`exam_filmmaking`.`he_flag` AS `he_flag`,qpgd_flag,qpgd_doctor, date_format(qpgd_datetime,'%Y-%m-%d %H:%i:%s') AS  qpgd_datetime,qpgd_location,zp_info  from `exam_filmmaking` where (`exam_filmmaking`.`zp_flag` >= 1) order by `exam_filmmaking`.`study_no` asc,draw_id asc 
+
+=======================================================================================================
+2016-8-22
+exam_master更新visit_id字段为varchar类型
+
+=======================================================================================================
+2016-8-24
+exam_master添加胃镜切片六点标志字段wj_liud
+ALTER TABLE `exam_master`
+	ADD COLUMN `wj_liud` TINYINT NOT NULL DEFAULT '0' COMMENT '胃镜小标本六点标记' AFTER `zf_doc_code`;
+=======================================================================================================
+2016-8-25
+视图exam_report_view添加,a.parts as parts,a.wj_liud as wj_liud字段
+=======================================================================================================
+2016-8-27
+视图exam_report_view添加,a.qucai_doctor_name as qucai_doctor_name,date_format(`a`.`qucai_datetime`,'%Y-%m-%d %H:%i:%s') AS qucai_datetime 字段
+=======================================================================================================
+2016-11-13
+添加表；
+CREATE TABLE `myzh_report` (
+	`study_no` VARCHAR(50) NOT NULL,
+	`rs_func` VARCHAR(50) NULL DEFAULT NULL,
+	`zh_md` TEXT NULL,
+	`content` TEXT NOT NULL,
+	`report_doc` VARCHAR(50) NOT NULL,
+	`report_dt` DATETIME NOT NULL
+)
+COMMENT='免疫组化报告'
+ENGINE=InnoDB
+====================================================================================================
+2017-10-28  添加报告痕迹表
+
+CREATE TABLE `exam_his_report` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`study_no` VARCHAR(20) NOT NULL COMMENT '病理号',
+	`zdyj` TEXT NULL COMMENT '诊断意见',
+	`rysj` TEXT NULL,
+	`xbms` TEXT NULL,
+	`save_doc_name` VARCHAR(20) NULL DEFAULT '' COMMENT '保存报告医师',
+	`save_doc_code` VARCHAR(20) NULL DEFAULT '',
+	`zdpz` VARCHAR(100) NULL DEFAULT NULL COMMENT '诊断批注',
+	`save_datetime` DATETIME NULL DEFAULT NULL COMMENT '保存报告日期',
+	PRIMARY KEY (`id`),
+	INDEX `study_no` (`study_no`)
+)
+COMMENT='病理报告痕迹表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=35574
+;
+=====================================================================================
+2017-10-28 标本记录表添加脱水时间
+ALTER TABLE `exam_draw_meterials`
+	ADD COLUMN `tuoshui_datetime` DATETIME NULL DEFAULT NULL COMMENT '脱水时间' AFTER `bm_datetime`;
+
+
+ALTER TABLE `exam_draw_meterials`
+	ADD COLUMN `lktsdt_flag` VARCHAR(4) NULL DEFAULT '快' AFTER `bm_xh`;
+
+	视图exam_lk_view添加,date_format(`a`.`tuoshui_datetime`,'%Y-%m-%d %H:%i:%s')  as tuoshui_datetime
+=====================================================================================
+2018-04-11 添加质控总时间字段
+ALTER TABLE `exam_master`
+	ADD COLUMN `zk_time` INT NOT NULL DEFAULT '0' AFTER `examItems`;
+=====================================================================================
+	exam_report_view,exam_history_report_view两个视图中添加字段zk_time
+=====================================================================================
+2018-04-11 创建延时原因表
+
+CREATE TABLE `exam_ysbg_dict` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`delay_ys` VARCHAR(200) NOT NULL DEFAULT '',
+	PRIMARY KEY (`id`)
+)
+COMMENT='延时报告原因'
+ENGINE=InnoDB
+;
+----------------------------------------------------------------------------------
+INSERT INTO `exam_ysbg_dict` (`id`, `delay_ys`) VALUES
+	(1, '病史、手术记录不详'),
+	(2, '深切片'),
+	(3, '组织需要特别处理以及补充取材'),
+	(4, '特殊染色'),
+	(5, '免疫组化'),
+	(6, '脱钙'),
+	(7, '疑难病例讨论'),
+	(8, '传染性标本延迟固定'),
+	(9, '借外院切片'),
+	(10, '补交病理费');
+==========================================================================
+2018-4-12 增加与临床医生沟通表
+
+CREATE TABLE `exam_lcys_im` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`study_no` VARCHAR(20) NOT NULL,
+	`im_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`im_lc_dept` VARCHAR(50) NULL DEFAULT NULL,
+	`im_lc_doc` VARCHAR(50) NOT NULL,
+	`im_bl_doc` VARCHAR(50) NOT NULL,
+	`im_info` VARCHAR(500) NOT NULL,
+	PRIMARY KEY (`id`)
+)
+COMMENT='与临床医师沟通信息记录表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+==========================================================================
+2018-4-12 增加切片评级备注字典表
+
+CREATE TABLE `qp_pjinfo_dict` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`pj_info` VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COMMENT='切片评级备注字典'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=7
+;
+-------------------------------------------------------------------------
+INSERT INTO `qp_pjinfo_dict` (`id`, `pj_info`) VALUES
+	(2, '不全'),
+	(3, '过厚'),
+	(4, '染色不佳'),
+	(5, '翻切'),
+	(6, '冰冻过度');
+================================================================================
+2018-4-12 
+
+ALTER TABLE `exam_master`
+	ADD COLUMN `bgnr_gs_flag` VARCHAR(10) NULL DEFAULT '是' COMMENT '报告内容与格式是否合格' AFTER `new_flag`,
+	ADD COLUMN `bbqc_info` VARCHAR(50) NULL DEFAULT '' COMMENT '标本取材信息' AFTER `bgnr_gs_flag`;
+--------------------------------------------------------------------------------------------------------
+exam_report_view添加,bgnr_gs_flag,bbqc_info,delay_reason
+========================================================================================================
+
+2018-4-15 新建延时报告视图 delay_report_view
+
+select `a`.`exam_no` AS `exam_no`,`c`.`study_no` AS `study_no`,`c`.`report_doc_name` AS `report_doc_name`,`d`.`patient_name` AS `patient_name`,`a`.`patient_id` AS `patient_id`,`a`.`patient_source` AS `patient_source`,`a`.`req_dept` AS `req_dept`,`a`.`req_physician` AS `req_physician`,`a`.`submit_unit` AS `submit_unit`,`a`.`req_date_time` AS `req_date_time`,`a`.`received_datetime` AS `received_datetime`,`d`.`si_card` AS `si_card`,`d`.`hospital_card` AS `hospital_card`,`a`.`output_id` AS `output_id`,`a`.`input_id` AS `input_id`,`a`.`exam_status` AS `exam_status` from ((`exam_delay_report` `c` left join `exam_master` `a` on((`c`.`study_no` = `a`.`study_no`))) left join `exam_pat_mi` `d` on((`a`.`patient_id` = `d`.`patient_id`))) where (`a`.`exam_status` > 15) 
+
+========================================================================================================
+2018-4-20 exam_report添加规培医师字段
+
+ALTER TABLE `exam_report`
+	ADD COLUMN `report_gb_doc` VARCHAR(20) NULL DEFAULT NULL COMMENT '规培医师' AFTER `shreport_doc_code`;
+------------------------------------------------------------------------------------------------------
+      sys_user_dict添加规培医师标记
+
+ALTER TABLE `sys_user_dict`
+	ADD COLUMN `gb_flag` TINYINT(4) NULL DEFAULT '0' COMMENT '规培标记' AFTER `user_qx`;
+
+------------------------------------------------------------------------------------------------------
+视图sys_user_view中添加,a.gb_flag as gb_flag
+视图exam_report_view中添加 ,report_gb_doc
+========================================================================================================
+2018-09-20 中医院委托滨州人民病理诊断报告
+INSERT INTO `pathology`.`hospital_list` (`name`) VALUES ('滨州市中医院');
+---------------------------------------------------------------------------------------------------------
+ALTER TABLE `exam_master`
+	ADD COLUMN `wtzd_flag` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '区域病理诊断中心委托诊断标记' AFTER `wj_liud`;
+-----------------------------------------------------------------------------------------------------------------
+exam_master_view视图添加委托诊断字段：
+,a.wtzd_flag as wtzd_flag
+========================================================================================================
+2019-05-11
+临床反应根据病人姓名查询病理报告慢，通过对以下表添加普通索引解决此问题：
+exam_pat_mi的patient_name添加key索引
+exam_master的study_no、exam_type、patient_id、req_date_time、received_datetime、receive_doctor_name、wtzd_flag、cbreport_doc_code分别添加key索引
+exam_report的study_no、report_print_datetime、cbreport_datetime、zzreport_doc_code、shreport_doc_code添加key索引
+exam_ice_report的study_no、report_doc_name、sh_doc_name添加key索引
+exam_bc_report的study_no添加key索引
+exam_delay_report的study_no添加key索引
+========================================================================================================
+exam_draw_meterials表draw_datetime、draw_doctor_name、bm_datetime、bm_doc_name添加key索引
+exam_filmmaking表make_datetime、make_doc_name添加key索引
+exam_tjyz表sq_datetime、sq_doctor_name、yz_flag、zx_datetime、zx_doc_name添加key索引
+========================================================================================================
+2019-05-11
+exam_djb_view登记薄打印视图更新：
+select `a`.`study_no` AS `study_no`,`a`.`exam_type` AS `exam_type`,`d`.`patient_name` AS `patient_name`,`d`.`sex` AS `sex`,concat(`a`.`age`,`a`.`ageUint`) AS `age`,`a`.`patient_source` AS `patient_source`,`a`.`req_dept` AS `req_dept`,date_format(`a`.`received_datetime`,'%Y-%m-%d') AS `received_datetime`,date_format(`r`.`cbreport_datetime`,'%Y-%m-%d') AS `cbreport_datetime`,`a`.`input_id` AS `input_id`,r.zdyj as zdyj,q.clinical_diag as clinical_diag from (((`exam_master` `a` left join `exam_pat_mi` `d` on `a`.`patient_id` = `d`.`patient_id`)  join `exam_report` `r` on `a`.`study_no` = `r`.`study_no`)  join exam_requisition q on  `a`.`exam_no` = `q`.`exam_no`)  where a.exam_status>15
+========================================================================================================
+2021-02-24 增加videoSourcePlayer的保持视频预览时候的图像原始比例属性KeepAspectRatio：
+故用vs2010打开C:\Program Files (x86)\AForge.NET\Framework\Sources\Build All.sln,调整到Release模式编译AForge.Controls替换原来的。
+此设置当配置文件KeepAspectRatioFlag = 1时生效。   
+========================================================================================================
+2021-03-27 Mariadb10.3版本更新序号发生器自定义函数：
+更新`currval`函数为`piscurrval`    
+更新`nextval`函数为`pisnextval`    
+更新`setval`函数为`pissetval`    
+=========================================================================================================
+2022-04-05 系统重大潜在bug修正，增加study_no字段唯一索引限制(https://www.cnblogs.com/wzmenjoy/archive/2012/08/23/2652427.html)：
+UPDATE exam_master SET study_no=NULL WHERE study_no='';
+UPDATE exam_master SET study_no=NULL WHERE exam_status<'15';
+--------------------------------------------------------------------------------------------
+根据NULL的定义，NULL表示的是未知，因此两个NULL比较的结果既不相等，也不不等，结果仍然是未知。
+根据这个定义，多个NULL值的存在不违反唯一约束，所以是合理的.
+--------------------------------------------------------------------------------------------
+ALTER TABLE `exam_master`
+	DROP INDEX `study_no`,
+	ADD UNIQUE INDEX `study_no` (`study_no`);
+=========================================================================================================
+
+

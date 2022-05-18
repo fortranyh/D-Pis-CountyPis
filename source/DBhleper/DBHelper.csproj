@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFDE79AC-F2FA-425C-A426-02697B92CA7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBHelper</RootNamespace>
+    <AssemblyName>DBHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\DBhleper.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DBhleper.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\LibCommons\Log4Net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\db\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\db\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\db\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\db\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibCommons\db\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\blzd_templet.cs" />
+    <Compile Include="BLL\bq_type_dict.cs" />
+    <Compile Include="BLL\dept_dict.cs" />
+    <Compile Include="BLL\dept_message.cs" />
+    <Compile Include="BLL\doctor_dict.cs" />
+    <Compile Include="BLL\dtms_templet.cs" />
+    <Compile Include="BLL\exam_bc_report.cs" />
+    <Compile Include="BLL\exam_bgzd_dict.cs" />
+    <Compile Include="BLL\exam_charge.cs" />
+    <Compile Include="BLL\exam_delay_report.cs" />
+    <Compile Include="BLL\exam_diagnosiswords_dict.cs" />
+    <Compile Include="BLL\exam_draw_meterials.cs" />
+    <Compile Include="BLL\exam_filmmaking.cs" />
+    <Compile Include="BLL\exam_ice_report.cs" />
+    <Compile Include="BLL\Exam_Items.cs" />
+    <Compile Include="BLL\exam_jsyz.cs" />
+    <Compile Include="BLL\exam_lcys_im.cs" />
+    <Compile Include="BLL\exam_master.cs" />
+    <Compile Include="BLL\exam_nation.cs" />
+    <Compile Include="BLL\exam_obstetric.cs" />
+    <Compile Include="BLL\exam_parts_dict.cs" />
+    <Compile Include="BLL\exam_pat_mi.cs" />
+    <Compile Include="BLL\exam_report.cs" />
+    <Compile Include="BLL\exam_requisition.cs" />
+    <Compile Include="BLL\exam_specimens.cs" />
+    <Compile Include="BLL\exam_specimens_qualified.cs" />
+    <Compile Include="BLL\exam_status.cs" />
+    <Compile Include="BLL\exam_tjyz.cs" />
+    <Compile Include="BLL\exam_tumour.cs" />
+    <Compile Include="BLL\exam_type.cs" />
+    <Compile Include="BLL\exam_yz.cs" />
+    <Compile Include="BLL\ftp_set_info.cs" />
+    <Compile Include="BLL\group_dict.cs" />
+    <Compile Include="BLL\hcgl.cs" />
+    <Compile Include="BLL\huizhen_info.cs" />
+    <Compile Include="BLL\icd10dict.cs" />
+    <Compile Include="BLL\interface_set_info.cs" />
+    <Compile Include="BLL\charge_dict.cs" />
+    <Compile Include="BLL\Jydjb.cs" />
+    <Compile Include="BLL\multi_media_info.cs" />
+    <Compile Include="BLL\myzh_report.cs" />
+    <Compile Include="BLL\patient_source.cs" />
+    <Compile Include="BLL\pat_zzsf_advice.cs" />
+    <Compile Include="BLL\report_hz_advice.cs" />
+    <Compile Include="BLL\report_xg_advice.cs" />
+    <Compile Include="BLL\sc_report.cs" />
+    <Compile Include="BLL\shijiguanlics.cs" />
+    <Compile Include="BLL\Sjzk_info.cs" />
+    <Compile Include="BLL\specimens_type.cs" />
+    <Compile Include="BLL\specimen_process_dict.cs" />
+    <Compile Include="BLL\sys_info.cs" />
+    <Compile Include="BLL\sys_sequence.cs" />
+    <Compile Include="BLL\sys_user.cs" />
+    <Compile Include="BLL\tjbjw.cs" />
+    <Compile Include="BLL\work_source_dict.cs" />
+    <Compile Include="BLL\xbx_templet.cs" />
+    <Compile Include="DBProcess.cs" />
+    <Compile Include="Model\bgmb_templet.cs" />
+    <Compile Include="Model\dept_message.cs" />
+    <Compile Include="Model\dtms_templet.cs" />
+    <Compile Include="Model\exam_delay_report.cs" />
+    <Compile Include="Model\exam_ice_report.cs" />
+    <Compile Include="Model\exam_lcgt_model.cs" />
+    <Compile Include="Model\exam_master.cs" />
+    <Compile Include="Model\exam_obstetric.cs" />
+    <Compile Include="Model\exam_pat_mi.cs" />
+    <Compile Include="Model\exam_report.cs" />
+    <Compile Include="Model\exam_requisition.cs" />
+    <Compile Include="Model\exam_specimens_qualified.cs" />
+    <Compile Include="Model\exam_status.cs" />
+    <Compile Include="Model\exam_tumour.cs" />
+    <Compile Include="Model\interface_set_info.cs" />
+    <Compile Include="Model\specimens_type.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="数据库连接字符串模版.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

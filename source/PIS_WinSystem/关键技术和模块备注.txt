@@ -1,0 +1,88 @@
+﻿ 1.自动升级
+ 需要在ftp服务器根目录下建立update文件夹，然后建立数据库sys_info表的update_subDir字段对应的文件夹；对需要更新的内容打包成update.zip放于目录下；
+ 只要表字段newversion的值大于程序配置文件中的SysVersion的值，程序就会自动升级！
+ 2.关于授权
+ sys_info表中system_hospital表：上线时间|结束时间|医院名称|是否永久有效
+ =================================================================================================
+  Mariadb10.3版本数据库增加序号发生器自定义函数：
+  ------------------------------------------------------------------------------------------------
+ CREATE TABLE `sys_sequence` (
+	`NAME` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`CURRENT_VALUE` INT(11) NOT NULL DEFAULT '0',
+	`INCREMENT` INT(11) NOT NULL DEFAULT '1',
+	`memo_note` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`memo` VARCHAR(50) NULL DEFAULT '' COMMENT '序号发生器名称' COLLATE 'utf8_general_ci',
+	`show_flag` TINYINT(4) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`NAME`) USING BTREE
+)
+COMMENT='序号发生器记录表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+===================================================================================================
+ DELIMITER $$
+CREATE DEFINER=`root`@`%` FUNCTION `piscurrval`(seq_name VARCHAR(50)) RETURNS INT(11)
+BEGIN
+    DECLARE VALUE INTEGER;
+    SET VALUE=0;
+    SELECT current_value INTO VALUE
+    FROM sys_sequence 
+    WHERE NAME=seq_name;
+    RETURN VALUE;
+    END$$
+ 
+DELIMITER ;
+
+ -------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+CREATE DEFINER=`root`@`%` FUNCTION `pisnextval`(seq_name varchar(50)) RETURNS int(11)
+ BEGIN
+     UPDATE sys_sequence
+     SET CURRENT_VALUE = CURRENT_VALUE + INCREMENT
+     where  name=seq_name;
+     return `piscurrval`(seq_name);
+     END$$
+ 
+DELIMITER ;
+
+ -------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+
+CREATE DEFINER=`root`@`%` FUNCTION `pissetval`(seq_name varchar(50),value integer) RETURNS int(11)
+ BEGIN
+     update sys_sequence 
+     set current_value=value
+     where name=seq_name;
+     return `piscurrval`(seq_name);
+     END$$
+ 
+DELIMITER ;
+
+================================================================================================================
+
+使用方法：
+首先在sys_sequence表中维护好数据；
+
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('BD', 2100001, 1, '冰冻序号发生器', '', 0);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('HZ', 2100001, 1, '外院会诊', '外院会诊流水号', 1);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('PID', 2100001, 1, '病人ID号序号发生器', '', 0);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('PL', 2100001, 1, '活检病理号序号发生器', '组织学流水号', 1);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('SQD', 2100001, 1, '申请单序号发生器', '', 0);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('XBX', 2100001, 1, '细胞学病理号序号发生器', '细胞学流水号', 1);
+INSERT INTO `sys_sequence` (`NAME`, `CURRENT_VALUE`, `INCREMENT`, `memo_note`, `memo`, `show_flag`) VALUES ('YZ', 2100001, 1, '医嘱序号发生器', '', 0);
+
+===================================================================================================================
+验证：
+
+select pisnextval('PL') ;
+ 
+select pissetval('PL',2100001);
+
+select piscurrval('PL')
+
+====================================================================================================================
+
+
+ 

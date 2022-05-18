@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/28/2016 15:08:26" ReportInfo.Modified="10/28/2016 16:46:07" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" RawPaperSize="9">
+    <OverlayBand Name="Overlay" Width="718.2" Height="1047.06">
+      <LineObject Name="Line1" Top="529.2" Width="718.2"/>
+      <TextObject Name="Text1" Left="207.9" Top="604.8" Width="302.4" Height="37.8" Text="借阅登记单" HorzAlign="Center" VertAlign="Center" Font="宋体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="207.9" Top="56.7" Width="302.4" Height="37.8" Text="借阅登记单" HorzAlign="Center" VertAlign="Center" Font="宋体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text3" Left="66.15" Top="141.75" Width="85.05" Height="18.9" Text="病理号：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="141.75" Top="141.75" Width="94.5" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="245.7" Top="141.75" Width="94.5" Height="18.9" Text="病人姓名：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Left="330.75" Top="141.75" Width="94.5" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="434.7" Top="141.75" Width="113.4" Height="18.9" Text="借出人姓名：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text8" Left="538.65" Top="141.75" Width="113.4" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="66.15" Top="179.55" Width="94.5" Height="18.9" Text="借出明细：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text10" Left="151.2" Top="179.55" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text11" Left="434.7" Top="179.55" Width="113.4" Height="18.9" Text="押金：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text12" Left="538.65" Top="179.55" Width="113.4" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text13" Left="66.15" Top="217.35" Width="94.5" Height="18.9" Text="本院诊断：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text14" Left="151.2" Top="217.35" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text15" Left="66.15" Top="255.15" Width="94.5" Height="18.9" Text="会诊医院：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text16" Left="151.2" Top="255.15" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text17" Left="66.15" Top="292.95" Width="94.5" Height="18.9" Text="备注：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text18" Left="151.2" Top="292.95" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text19" Left="434.7" Top="217.35" Width="113.4" Height="18.9" Text="其它：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text20" Left="538.65" Top="217.35" Width="113.4" Height="94.5" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text21" Left="387.45" Top="415.8" Width="94.5" Height="18.9" Text="借出时间：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text22" Left="472.5" Top="415.8" Width="179.55" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line2" Left="37.8" Top="122.85" Height="330.75"/>
+      <LineObject Name="Line3" Left="37.8" Top="122.85" Width="633.15"/>
+      <LineObject Name="Line4" Left="670.95" Top="122.85" Height="330.75"/>
+      <LineObject Name="Line5" Left="37.8" Top="453.6" Width="633.15"/>
+      <TextObject Name="Text23" Left="66.15" Top="689.85" Width="85.05" Height="18.9" Text="病理号：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text24" Left="141.75" Top="689.85" Width="94.5" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text25" Left="245.7" Top="689.85" Width="94.5" Height="18.9" Text="病人姓名：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text26" Left="330.75" Top="689.85" Width="94.5" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text27" Left="434.7" Top="689.85" Width="113.4" Height="18.9" Text="借出人姓名：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text28" Left="538.65" Top="689.85" Width="113.4" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text29" Left="66.15" Top="727.65" Width="94.5" Height="18.9" Text="借出明细：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text30" Left="151.2" Top="727.65" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text31" Left="434.7" Top="727.65" Width="113.4" Height="18.9" Text="押金：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text32" Left="538.65" Top="727.65" Width="113.4" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text33" Left="66.15" Top="765.45" Width="94.5" Height="18.9" Text="本院诊断：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text34" Left="151.2" Top="765.45" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text35" Left="66.15" Top="803.25" Width="94.5" Height="18.9" Text="会诊医院：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text36" Left="151.2" Top="803.25" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text37" Left="66.15" Top="841.05" Width="94.5" Height="18.9" Text="备注：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text38" Left="151.2" Top="841.05" Width="274.05" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text39" Left="434.7" Top="765.45" Width="113.4" Height="18.9" Text="其它：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text40" Left="538.65" Top="765.45" Width="113.4" Height="94.5" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text41" Left="387.45" Top="963.9" Width="94.5" Height="18.9" Text="借出时间：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text42" Left="472.5" Top="963.9" Width="179.55" Height="18.9" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line6" Left="37.8" Top="670.95" Height="330.75"/>
+      <LineObject Name="Line7" Left="37.8" Top="670.95" Width="633.15"/>
+      <LineObject Name="Line8" Left="670.95" Top="670.95" Height="330.75"/>
+      <LineObject Name="Line9" Left="37.8" Top="1001.7" Width="633.15"/>
+      <TextObject Name="Text43" Left="66.15" Top="359.1" Width="94.5" Height="18.9" Text="签名：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text45" Left="66.15" Top="907.2" Width="94.5" Height="18.9" Text="签名：" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+    </OverlayBand>
+  </ReportPage>
+</Report>

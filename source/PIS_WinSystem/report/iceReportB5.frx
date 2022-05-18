@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/06/2015 14:44:52" ReportInfo.Modified="12/11/2015 15:56:32" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="170.1" Guides="113.4,103.95">
+      <TextObject Name="Text1" Left="189" Top="66.15" Width="396.9" Height="47.25" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 21.75pt, style=Bold"/>
+      <TextObject Name="Text2" Left="207.9" Top="113.4" Width="359.1" Height="28.35" Text="术中冰冻切片病理会诊报告单" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 15.75pt, style=Bold"/>
+      <LineObject Name="Line1" Left="66.15" Top="170.1" Width="642.6" Border.Width="2"/>
+      <TextObject Name="Text3" Left="519.75" Top="151.2" Width="75.6" Height="18.9" Text="病理号：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="595.35" Top="151.2" Width="103.95" Height="18.9" HorzAlign="Right" VertAlign="Center" Font="微软雅黑, 12pt"/>
+      <TextObject Name="Text33" Left="189" Top="28.35" Width="396.9" Height="47.25" Text="北京肿瘤医院国际诊疗中心" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 21.75pt, style=Bold"/>
+      <PictureObject Name="Picture1" Left="47.25" Top="37.8" Width="141.75" Height="56.7"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="174.1" Width="793.8" Height="907.2" Guides="9.45">
+      <TextObject Name="Text6" Left="75.6" Top="9.45" Width="94.5" Height="18.9" Text="姓    名:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="170.1" Top="9.45" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text8" Left="75.6" Top="37.8" Width="94.5" Height="18.9" Text="接收日期:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="170.1" Top="37.8" Width="198.45" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text12" Left="378" Top="9.45" Width="94.5" Height="18.9" Text="性    别:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text13" Left="472.5" Top="9.45" Width="66.15" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text14" Left="548.1" Top="9.45" Width="56.7" Height="18.9" Text="年龄:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text15" Left="604.8" Top="9.45" Width="94.5" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line2" Left="66.15" Top="66.15" Width="642.6"/>
+      <TextObject Name="Text20" Left="75.6" Top="85.05" Width="94.5" Height="18.9" Text="冰冻结果：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text22" Left="85.05" Top="122.85" Width="614.25" Height="330.75" Font="宋体, 14pt"/>
+      <TextObject Name="Text24" Left="75.6" Top="472.5" Width="94.5" Height="18.9" Text="报告医师:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text25" Left="179.55" Top="472.5" Width="103.95" Height="18.9" Font="宋体, 12pt"/>
+      <TextObject Name="Text28" Left="444.15" Top="472.5" Width="94.5" Height="18.9" Text="报告日期:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text29" Left="538.65" Top="472.5" Width="170.1" Height="18.9" Font="宋体, 12pt"/>
+      <LineObject Name="Line3" Left="66.15" Top="500.85" Width="642.6" Border.Width="2"/>
+      <TextObject Name="Text30" Left="85.05" Top="519.75" Width="633.15" Height="321.3" Text="特别提示：&#13;&#10;&#13;&#10;1.手术中冷冻报告切片病理检查是手术医生请求病理医生进行的紧急会诊，由于低温冷冻制片可使组织和细胞的形态发生变异且影响染色效果，加之观察时间较短且取材部位局限，从而使这种诊断方式的精确性受到限制。&#13;&#10;2.冷冻快速病理检查结果仅作为临床手术治疗的参考，不能作为最终病理诊断，做出最后病理诊断需要依据术后完整的大体标本检查、多部位取材和石蜡切片观察。&#13;&#10;3.手术医生有责任向病理医生提供有关的临床资料和通报术中所见。&#13;&#10;4.冷冻切片观察不能作出明确诊断意见的病理，手术医生可根据病理科医生的建议改变手术方式，调整手术范围，或等术后石蜡切片报告后再进行二次手术。&#13;&#10;5.手术医生如对术中病理会诊结果又疑问，请及时与病理会诊医生联系。" Font="宋体, 14.25pt"/>
+      <TextObject Name="Text31" Left="378" Top="37.8" Width="94.5" Height="18.9" Text="送检科室:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text32" Left="472.5" Top="37.8" Width="226.8" Height="18.9" Font="宋体, 12pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

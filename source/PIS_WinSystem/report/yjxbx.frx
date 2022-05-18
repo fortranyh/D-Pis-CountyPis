@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/01/2015 09:47:29" ReportInfo.Modified="08/20/2016 10:44:03" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <Parameter Name="ReportParaHospital" DataType="System.String"/>
+    <Parameter Name="study_no" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="170.1">
+      <TextObject Name="Text1" Left="28.35" Top="66.15" Width="737.1" Height="37.8" Text="[ReportParaHospital]" HorzAlign="Center" VertAlign="Bottom" Font="黑体, 21.75pt, style=Bold" TextFill.Color="Red"/>
+      <TextObject Name="Text2" Left="226.8" Top="113.4" Width="340.2" Height="28.35" Text="薄层液基细胞学检测报告单" HorzAlign="Center" VertAlign="Center" Font="黑体, 18pt" TextFill.Color="Blue"/>
+      <TextObject Name="Text3" Left="614.25" Top="141.75" Width="103.95" Height="28.35" Text="[study_no]" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="548.1" Top="141.75" Width="75.6" Height="28.35" Text="病理号：" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line1" Left="66.15" Top="170.1" Width="661.5" Border.Width="2"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="174.1" Width="793.8" Height="113.4">
+      <TextObject Name="Text5" Left="85.05" Top="18.9" Width="85.05" Height="28.35" Text="姓    名：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text6" Left="510.3" Top="47.25" Width="85.05" Height="28.35" Text="送检科室：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text7" Left="283.5" Top="75.6" Width="85.05" Height="28.35" Text="医院卡号：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <LineObject Name="Line2" Left="66.15" Top="113.4" Width="661.5"/>
+      <TextObject Name="Txt_Name" Left="160.65" Top="18.9" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sjks" Left="585.9" Top="47.25" Width="198.45" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Mcyj" Left="359.1" Top="75.6" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text11" Left="85.05" Top="75.6" Width="85.05" Height="28.35" Text="性    别：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sex" Left="160.65" Top="75.6" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text13" Left="510.3" Top="18.9" Width="85.05" Height="28.35" Text="病人来源：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_ly" Left="585.9" Top="18.9" Width="141.75" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text19" Left="85.05" Top="47.25" Width="85.05" Height="28.35" Text="年    龄：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Age" Left="160.65" Top="47.25" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text21" Left="510.3" Top="75.6" Width="85.05" Height="28.35" Text="送检医师：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_sjys" Left="585.9" Top="75.6" Width="141.75" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text23" Left="283.5" Top="47.25" Width="85.05" Height="28.35" Text="送检标本：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Bblx" Left="359.1" Top="47.25" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Text25" Left="283.5" Top="18.9" Width="85.05" Height="28.35" Text="送检日期：" VertAlign="Center" Font="宋体, 10.5pt"/>
+      <TextObject Name="Txt_Sqrq" Left="359.1" Top="18.9" Width="132.3" Height="28.35" VertAlign="Center" Font="宋体, 10.5pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="291.5" Width="793.8" Height="718.2" Guides="0">
+      <PictureObject Name="Picture2" Left="463.05" Top="75.6" Width="236.25" Height="189" SizeMode="StretchImage"/>
+      <TextObject Name="Text8" Left="66.15" Width="122.85" Height="18.9" Text="TBS标准诊断：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text12" Left="66.15" Top="28.35" Width="122.85" Height="18.9" Text="标本满意度：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text14" Left="283.5" Top="28.35" Width="75.6" Height="18.9" Text="细胞量：&#13;&#10;" Font="宋体, 10pt"/>
+      <TextObject Name="Text15" Left="463.05" Top="28.35" Width="75.6" Height="18.9" Text="红细胞：" Font="宋体, 10pt"/>
+      <TextObject Name="Text16" Left="66.15" Top="56.7" Width="94.5" Height="18.9" Text="颈管细胞：&#13;&#10;" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox17" Left="170.1" Top="56.7" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text17" Left="283.5" Top="56.7" Width="94.5" Height="18.9" Text="化生细胞：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox18" Left="368.55" Top="56.7" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text18" Left="66.15" Top="85.05" Width="330.75" Height="18.9" Text="未见上皮内病变/未见恶性细胞（NILM）：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text20" Left="66.15" Top="103.95" Width="94.5" Height="18.9" Text="正常：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox19" Left="179.55" Top="103.95" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text22" Left="66.15" Top="141.75" Width="132.3" Height="18.9" Text="良性反应性改变：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox20" Left="179.55" Top="141.75" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <LineObject Name="Line4" Left="207.9" Top="122.85" Width="28.35"/>
+      <LineObject Name="Line5" Left="207.9" Top="151.2" Width="28.35"/>
+      <LineObject Name="Line6" Left="207.9" Top="179.55" Width="28.35"/>
+      <LineObject Name="Line7" Left="207.9" Top="207.9" Width="28.35"/>
+      <LineObject Name="Line8" Left="207.9" Top="236.25" Width="28.35"/>
+      <LineObject Name="Line9" Left="207.9" Top="264.6" Width="28.35"/>
+      <LineObject Name="Line10" Left="207.9" Top="122.85" Height="141.75" Diagonal="true"/>
+      <TextObject Name="Text24" Left="236.25" Top="113.4" Width="94.5" Height="18.9" Text="放疗：" Font="宋体, 10pt"/>
+      <TextObject Name="Text26" Left="236.25" Top="141.75" Width="94.5" Height="18.9" Text="炎性：" Font="宋体, 10pt"/>
+      <TextObject Name="Text27" Left="236.25" Top="170.1" Width="94.5" Height="18.9" Text="妊娠：" Font="宋体, 10pt"/>
+      <TextObject Name="Text29" Left="236.25" Top="198.45" Width="94.5" Height="18.9" Text="萎缩性：" Font="宋体, 10pt"/>
+      <TextObject Name="Text30" Left="236.25" Top="226.8" Width="122.85" Height="18.9" Text="宫内避孕器：" Font="宋体, 10pt"/>
+      <TextObject Name="Text31" Left="236.25" Top="255.15" Width="94.5" Height="18.9" Text="其它：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox21" Left="330.75" Top="113.4" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox22" Left="330.75" Top="141.75" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox23" Left="330.75" Top="170.1" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox24" Left="330.75" Top="198.45" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox25" Left="330.75" Top="226.8" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox26" Left="330.75" Top="255.15" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <LineObject Name="Line11" Left="359.1" Top="122.85" Width="28.35"/>
+      <LineObject Name="Line12" Left="359.1" Top="151.2" Width="28.35"/>
+      <LineObject Name="Line13" Left="359.1" Top="179.55" Width="28.35"/>
+      <LineObject Name="Line14" Left="359.1" Top="122.85" Height="56.7" Diagonal="true"/>
+      <TextObject Name="Text32" Left="387.45" Top="113.4" Width="94.5" Height="18.9" Text="轻度：" Font="宋体, 10pt"/>
+      <TextObject Name="Text33" Left="387.45" Top="141.75" Width="94.5" Height="18.9" Text="中度：" Font="宋体, 10pt"/>
+      <TextObject Name="Text34" Left="387.45" Top="170.1" Width="94.5" Height="18.9" Text="重度" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox27" Left="434.7" Top="113.4" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox28" Left="434.7" Top="141.75" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox29" Left="434.7" Top="170.1" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text35" Left="66.15" Top="283.5" Width="94.5" Height="18.9" Text="病原体：&#13;&#10;" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text36" Left="132.3" Top="283.5" Width="94.5" Height="18.9" Text="滴虫感染：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox30" Left="207.9" Top="311.85" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text37" Left="245.7" Top="283.5" Width="113.4" Height="18.9" Text="念珠菌感染：" Font="宋体, 10pt"/>
+      <TextObject Name="Text38" Left="378" Top="283.5" Width="94.5" Height="18.9" Text="细菌感染：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox31" Left="340.2" Top="283.5" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox32" Left="453.6" Top="283.5" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text39" Left="66.15" Top="311.85" Width="113.4" Height="18.9" Text="提示HPV感染：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox33" Left="207.9" Top="283.5" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox34" Left="340.2" Top="311.85" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text40" Left="245.7" Top="311.85" Width="113.4" Height="18.9" Text="疱疹病毒感染：" Font="宋体, 10pt"/>
+      <TextObject Name="Text41" Left="66.15" Top="340.2" Width="160.65" Height="18.9" Text="鳞状上皮细胞分析：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text42" Left="66.15" Top="387.45" Width="151.2" Height="18.9" Text="非典型鳞状细胞：" Font="宋体, 12pt"/>
+      <CheckBoxObject Name="CheckBox35" Left="207.9" Top="387.45" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <LineObject Name="Line15" Left="283.5" Top="378" Width="28.35"/>
+      <LineObject Name="Line17" Left="283.5" Top="406.35" Width="28.35"/>
+      <LineObject Name="Line18" Left="283.5" Top="434.7" Width="28.35"/>
+      <LineObject Name="Line19" Left="283.5" Top="349.65" Height="85.05" Diagonal="true"/>
+      <TextObject Name="Text43" Left="311.85" Top="340.2" Width="141.75" Height="18.9" Text="倾向上皮内瘤变：" Font="宋体, 10pt"/>
+      <TextObject Name="Text44" Left="311.85" Top="368.55" Width="160.65" Height="18.9" Text="倾向良性反应性改变：" Font="宋体, 10pt"/>
+      <TextObject Name="Text45" Left="311.85" Top="396.9" Width="132.3" Height="18.9" Text="不能明确定义：" Font="宋体, 10pt"/>
+      <TextObject Name="Text46" Left="311.85" Top="425.25" Width="132.3" Height="18.9" Text="不排除高度病变：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox36" Left="453.6" Top="340.2" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox37" Left="453.6" Top="368.55" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox38" Left="453.6" Top="396.9" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox39" Left="453.6" Top="425.25" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text47" Left="66.15" Top="453.6" Width="132.3" Height="18.9" Text="上皮内低度病变：" Font="宋体, 10pt"/>
+      <TextObject Name="Text48" Left="66.15" Top="491.4" Width="132.3" Height="18.9" Text="上皮内高度病变：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox41" Left="207.9" Top="491.4" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <LineObject Name="Line20" Left="236.25" Top="481.95" Width="28.35"/>
+      <LineObject Name="Line21" Left="236.25" Top="510.3" Width="28.35"/>
+      <LineObject Name="Line22" Left="236.25" Top="481.95" Height="28.35" Diagonal="true"/>
+      <TextObject Name="Text49" Left="179.55" Top="453.6" Width="66.15" Height="18.9" Text="鳞癌：" Font="宋体, 10pt"/>
+      <TextObject Name="Text50" Left="264.6" Top="472.5" Width="94.5" Height="18.9" Text="CIN2:" Font="宋体, 10pt"/>
+      <TextObject Name="Text51" Left="264.6" Top="500.85" Width="94.5" Height="18.9" Text="CIN3:" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox44" Left="368.55" Top="500.85" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox45" Left="368.55" Top="472.5" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox42" Left="226.8" Top="453.6" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text52" Left="66.15" Top="519.75" Width="141.75" Height="18.9" Text="腺上皮细胞分析：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text53" Left="66.15" Top="548.1" Width="122.85" Height="18.9" Text="非典型腺细胞：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox46" Left="207.9" Top="548.1" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <LineObject Name="Line23" Left="236.25" Top="538.65" Width="28.35"/>
+      <LineObject Name="Line24" Left="236.25" Top="567" Width="28.35"/>
+      <LineObject Name="Line25" Left="236.25" Top="538.65" Height="28.35" Diagonal="true"/>
+      <TextObject Name="Text54" Left="264.6" Top="529.2" Width="94.5" Height="18.9" Text="宫内膜：" Font="宋体, 10pt"/>
+      <TextObject Name="Text55" Left="264.6" Top="557.55" Width="94.5" Height="18.9" Text="来源不明：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox47" Left="368.55" Top="529.2" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox48" Left="368.55" Top="557.55" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox49" Left="548.1" Top="28.35" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text56" Left="66.15" Top="604.8" Width="179.55" Height="18.9" Text="非典型腺细胞（宫颈管）：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox50" Left="236.25" Top="604.8" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <LineObject Name="Line26" Left="292.95" Top="595.35" Width="28.35"/>
+      <LineObject Name="Line27" Left="292.95" Top="652.05" Width="28.35"/>
+      <LineObject Name="Line28" Left="292.95" Top="623.7" Width="28.35"/>
+      <LineObject Name="Line29" Left="292.95" Top="595.35" Height="56.7" Diagonal="true"/>
+      <TextObject Name="Text57" Left="321.3" Top="585.9" Width="122.85" Height="18.9" Text="倾向原位腺癌：" Font="宋体, 10pt"/>
+      <TextObject Name="Text58" Left="321.3" Top="614.25" Width="122.85" Height="18.9" Text="不能明确意义：" Font="宋体, 10pt"/>
+      <TextObject Name="Text59" Left="321.3" Top="642.6" Width="160.65" Height="18.9" Text="倾向良性反应性改变：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox51" Left="463.05" Top="585.9" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox52" Left="463.05" Top="614.25" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox53" Left="463.05" Top="642.6" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text60" Left="66.15" Top="670.95" Width="94.5" Height="18.9" Text="腺癌：" Font="宋体, 10pt"/>
+      <LineObject Name="Line30" Left="132.3" Top="652.05" Width="28.35"/>
+      <TextObject Name="Text61" Left="538.65" Top="274.05" Width="94.5" Height="18.9" Text="10×10" HorzAlign="Center" Font="宋体, 12pt"/>
+      <LineObject Name="Line32" Left="283.5" Top="349.65" Width="28.35"/>
+      <LineObject Name="Line31" Left="132.3" Top="680.4" Width="28.35"/>
+      <LineObject Name="Line33" Left="132.3" Top="708.75" Width="28.35"/>
+      <LineObject Name="Line16" Left="132.3" Top="652.05" Height="56.7" Diagonal="true"/>
+      <TextObject Name="Text62" Left="160.65" Top="642.6" Width="94.5" Height="18.9" Text="宫颈管：&#13;&#10;" Font="宋体, 10pt"/>
+      <TextObject Name="Text63" Left="160.65" Top="670.95" Width="94.5" Height="18.9" Text="宫内膜：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox54" Left="236.25" Top="642.6" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <CheckBoxObject Name="CheckBox55" Left="236.25" Top="670.95" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text65" Left="160.65" Top="699.3" Width="122.85" Height="18.9" Text="其他-可疑腺癌：" Font="宋体, 10pt"/>
+      <CheckBoxObject Name="CheckBox57" Left="264.6" Top="699.3" Width="15.12" Height="15.12" Border.Lines="All" Checked="false"/>
+      <TextObject Name="Text68" Left="170.1" Top="28.35" Width="94.5" Height="18.9" HorzAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text69" Left="340.2" Top="28.35" Width="94.5" Height="18.9" HorzAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text70" Left="198.45" Width="94.5" Height="18.9" HorzAlign="Center" Font="宋体, 12pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="1013.7" Width="793.8" Height="94.5">
+      <TextObject Name="Text9" Left="349.65" Top="47.25" Width="103.95" Height="28.35" Text="报告日期：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="txt_Bgrq" Left="425.25" Top="47.25" Width="113.4" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Text28" Left="538.65" Top="47.25" Width="94.5" Height="28.35" Text="报告医师：" VertAlign="Center" Font="宋体, 12pt"/>
+      <TextObject Name="Txt_Bgys" Left="614.25" Top="47.25" Width="103.95" Height="28.35" VertAlign="Center" Font="宋体, 12pt"/>
+      <LineObject Name="Line3" Left="66.15" Top="47.25" Width="652.05" Border.Width="2"/>
+      <TextObject Name="Text10" Left="37.8" Top="47.25" Width="311.85" Height="28.35" Text="报告必须有操作者签名才有效. 咨询电话:0632 5529871" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text66" Left="66.15" Top="9.45" Width="94.5" Height="18.9" Text="诊断意见：" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Txt_Zljy" Left="160.65" Top="9.45" Width="538.65" Height="37.8" Font="宋体, 12pt"/>
+      <LineObject Name="Line34" Left="66.15" Width="652.05"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

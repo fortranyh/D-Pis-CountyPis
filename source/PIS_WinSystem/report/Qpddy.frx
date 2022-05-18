@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/04/2015 11:41:46" ReportInfo.Modified="01/10/2016 17:32:31" ReportInfo.CreatorVersion="1.8.30.0">
+  <Dictionary>
+    <TableDataSource Name="exam_blh" ReferenceName="Data.exam_blh" DataType="System.Int32" Enabled="true">
+      <Column Name="study_no" DataType="System.String"/>
+      <Column Name="Pat_Name" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="exam_draw_meterials" ReferenceName="Data.exam_draw_meterials" DataType="System.Int32" Enabled="true">
+      <Column Name="meterial_no" DataType="System.String"/>
+      <Column Name="work_source" DataType="System.String"/>
+      <Column Name="parts" DataType="System.String"/>
+      <Column Name="group_num" DataType="System.String"/>
+      <Column Name="memo_note" DataType="System.String"/>
+      <Column Name="study_no" DataType="System.String"/>
+    </TableDataSource>
+    <Relation Name="exam_blh_exam_draw_meterials" ParentDataSource="exam_blh" ChildDataSource="exam_draw_meterials" ParentColumns="study_no" ChildColumns="study_no" Enabled="true"/>
+    <Parameter Name="title" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="37.8">
+      <TextObject Name="Text1" Left="18.9" Top="18.9" Width="756" Height="18.9" Text="[title]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="41.8" Width="793.8" Height="37.8">
+      <TextObject Name="Text2" Left="18.9" Top="9.45" Width="75.6" Height="18.9" Text="病理号：" VertAlign="Center" Font="宋体, 9pt" TextFill.Color="Brown"/>
+      <TextObject Name="Text3" Left="94.5" Top="9.45" Width="132.3" Height="18.9" Text="[exam_blh.study_no]" VertAlign="Center" Font="宋体, 9pt" TextFill.Color="Firebrick"/>
+      <LineObject Name="Line1" Left="18.9" Top="28.35" Width="236.25" Diagonal="true" EndCap.Style="Arrow"/>
+      <DataBand Name="Data2" Top="83.6" Width="793.8" Height="37.8">
+        <TextObject Name="Text4" Left="18.9" Top="9.45" Width="75.6" Height="18.9" Text="蜡块编号：" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text5" Left="85.05" Top="9.45" Width="56.7" Height="18.9" Text="[exam_draw_meterials.meterial_no]" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text6" Left="141.75" Top="9.45" Width="75.6" Height="18.9" Text="任务来源：" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text7" Left="207.9" Top="9.45" Width="75.6" Height="18.9" Text="[exam_draw_meterials.work_source]" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text8" Left="283.5" Top="9.45" Width="75.6" Height="18.9" Text="取材部位：" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text9" Left="349.65" Top="9.45" Width="122.85" Height="18.9" CanGrow="true" CanShrink="true" Text="[exam_draw_meterials.parts]" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text10" Left="472.5" Top="9.45" Width="66.15" Height="18.9" Text="组织数：" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text11" Left="519.75" Top="9.45" Width="56.7" Height="18.9" Text="[exam_draw_meterials.group_num]" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text12" Left="576.45" Top="9.45" Width="47.25" Height="18.9" Text="备注：" VertAlign="Center" Font="宋体, 9pt"/>
+        <TextObject Name="Text13" Left="614.25" Top="9.45" Width="160.65" Height="18.9" CanGrow="true" CanShrink="true" Text="[exam_draw_meterials.memo_note]" VertAlign="Center" Font="宋体, 9pt"/>
+      </DataBand>
+    </DataBand>
+  </ReportPage>
+</Report>
