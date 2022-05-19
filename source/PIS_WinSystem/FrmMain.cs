@@ -548,14 +548,6 @@ namespace PIS_Sys
             }
             //当前登录用户
             this.Text = string.Format("潤沁實嶪病理信息管理系统—【{0}】<{1}:{2}>", ConfigurationManager.AppSettings["w_big_type_name"], Program.Dept_Name, Program.User_Name);
-
-            //读取当前试剂管理中是否存在需要提示的信息
-            DBHelper.BLL.shijiguanlics sjIns = new DBHelper.BLL.shijiguanlics();
-            if (sjIns.SelectedSjmcTjCount() > 0)
-            {
-                Frm_TJInfo("试剂管理提示信息", "当前存在需要立即采购的试剂。\n请进入‘试剂管理’模块进行维护！");
-            }
-
         }
 
 
