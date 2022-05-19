@@ -84,5 +84,47 @@ select piscurrval('PL')
 
 ====================================================================================================================
 
+mysql日期函数相加减：
+
+1.MySQL加减某个时间间隔
+interval为整数时，正确
+
+date_sub() 日期减去一个时间间隔
+
+ select date_sub(SYSDATE(), interval 1  year) from dual;  
+ select date_sub(SYSDATE(), interval 1  month) from dual;  
+ select date_sub(SYSDATE(), interval 1  DAY) from dual;  
+ select date_sub(SYSDATE(), interval 1  HOUR) from dual;  
+ select date_sub(SYSDATE(), interval 1  minute) from dual; 
+date_add() 日期加上一个时间间隔
+
+ select date_add(SYSDATE(), interval 1  year) from dual;  
+ select date_add(SYSDATE(), interval 1  month) from dual;  
+ select date_add(SYSDATE(), interval 1  DAY)   from dual;  
+ select date_add(SYSDATE(), interval 1  HOUR)  from dual;  
+ select date_add(SYSDATE(), interval 1  minute) from dual; 
+ select date_add(SYSDATE(), interval 1  SECOND) from dual;
+ interval为时间格式时，正确
+
+select date_sub(SYSDATE(), INTERVAL '3 2:00:45' DAY ) from dual;  
+ 
+select date_add(SYSDATE(), INTERVAL '3 2:00:45' DAY) time  from dual; 
+interval为小数时，错误
+
+注意：使用interval时，如果后面跟小数则数据不正确。
+
+ select date_add(SYSDATE(), interval 1.5  HOUR) time  from dual;  
+无论加减都和实际时间对应不上 
+
+
+
+2.日期相减
+TIMEDIFF（）获取两个日期的差值是time
+
+ select    TIMEDIFF(sysdate(), date_sub(SYSDATE(), INTERVAL '3 2:00:45' DAY ) )from dual;  
+DATEDIFF()获取两个日期的差值是天
+
+ select    DATEDIFF(sysdate(), date_sub(SYSDATE(), INTERVAL '3 2:00:45' DAY ) )from dual;  
+————————————————
 
  

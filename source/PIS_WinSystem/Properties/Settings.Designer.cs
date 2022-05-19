@@ -169,7 +169,7 @@ namespace PIS_Sys.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Open_BG_SXT {
             get {
                 return ((bool)(this["Open_BG_SXT"]));
@@ -313,7 +313,7 @@ namespace PIS_Sys.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Open_DT_SXT {
             get {
                 return ((bool)(this["Open_DT_SXT"]));
@@ -445,18 +445,6 @@ namespace PIS_Sys.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("滨州市人民医院")]
-        public string Bp_Ksmc {
-            get {
-                return ((string)(this["Bp_Ksmc"]));
-            }
-            set {
-                this["Bp_Ksmc"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Open_Smxj {
             get {
@@ -464,6 +452,18 @@ namespace PIS_Sys.Properties {
             }
             set {
                 this["Open_Smxj"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("XXX市人民医院")]
+        public string Bp_Ksmc {
+            get {
+                return ((string)(this["Bp_Ksmc"]));
+            }
+            set {
+                this["Bp_Ksmc"] = value;
             }
         }
     }

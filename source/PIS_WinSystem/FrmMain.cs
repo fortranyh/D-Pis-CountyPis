@@ -398,7 +398,7 @@ namespace PIS_Sys
                 TaskDialog.EnableGlass = false;
 
                 int ret = SendMessage(this.Handle, 0x000B, 0, 0);
-                if (TaskDialog.Show("麦禾病理信息管理系统", "确认", "确定要退出本系统么？", Curbutton) == eTaskDialogResult.Ok)
+                if (TaskDialog.Show("潤沁實嶪病理信息管理系统", "确认", "确定要退出本系统么？", Curbutton) == eTaskDialogResult.Ok)
                 {
                     ret = SendMessage(this.Handle, 0x000B, 1, 0);
                     RedrawWindow(this.Handle, IntPtr.Zero, IntPtr.Zero, 0x0491);
@@ -547,7 +547,7 @@ namespace PIS_Sys
 
             }
             //当前登录用户
-            this.Text = string.Format("麦禾病理信息管理系统—【{0}】<{1}:{2}>", ConfigurationManager.AppSettings["w_big_type_name"], Program.Dept_Name, Program.User_Name);
+            this.Text = string.Format("潤沁實嶪病理信息管理系统—【{0}】<{1}:{2}>", ConfigurationManager.AppSettings["w_big_type_name"], Program.Dept_Name, Program.User_Name);
 
             //读取当前试剂管理中是否存在需要提示的信息
             DBHelper.BLL.shijiguanlics sjIns = new DBHelper.BLL.shijiguanlics();
@@ -861,7 +861,7 @@ namespace PIS_Sys
             eTaskDialogButton Curbutton = eTaskDialogButton.Ok | eTaskDialogButton.Cancel;
             TaskDialog.EnableGlass = false;
             int ret = SendMessage(this.Handle, 0x000B, 0, 0);
-            if (TaskDialog.Show("麦禾病理信息管理系统", "确认", "确定要切换用户么？", Curbutton) == eTaskDialogResult.Ok)
+            if (TaskDialog.Show("潤沁實嶪病理信息管理系统", "确认", "确定要切换用户么？", Curbutton) == eTaskDialogResult.Ok)
             {
                 ret = SendMessage(this.Handle, 0x000B, 1, 0);
                 RedrawWindow(this.Handle, IntPtr.Zero, IntPtr.Zero, 0x0491);

@@ -39,7 +39,7 @@
       <Value Profile="(Default)">两周</Value>
     </Setting>
     <Setting Name="Open_BG_SXT" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ReportPrinter" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -75,7 +75,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="Open_DT_SXT" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Load_DT_IMG" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -107,11 +107,11 @@
     <Setting Name="His_PatInfo_Flag" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Bp_Ksmc" Type="System.String" Scope="User">
-      <Value Profile="(Default)">滨州市人民医院</Value>
-    </Setting>
     <Setting Name="Open_Smxj" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Bp_Ksmc" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XXX市人民医院</Value>
     </Setting>
   </Settings>
 </SettingsFile>

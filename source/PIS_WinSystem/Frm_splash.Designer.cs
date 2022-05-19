@@ -57,7 +57,7 @@
             this.ApplicationProductName.Name = "ApplicationProductName";
             this.ApplicationProductName.Size = new System.Drawing.Size(461, 46);
             this.ApplicationProductName.TabIndex = 6;
-            this.ApplicationProductName.Text = "麦禾病理信息管理系统";
+            this.ApplicationProductName.Text = "潤沁實嶪病理信息管理系统";
             this.ApplicationProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PictureBox1

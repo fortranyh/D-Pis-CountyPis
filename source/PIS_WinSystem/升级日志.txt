@@ -174,7 +174,7 @@ ALTER TABLE `exam_master`
 2016-8-27
 视图exam_report_view添加,a.qucai_doctor_name as qucai_doctor_name,date_format(`a`.`qucai_datetime`,'%Y-%m-%d %H:%i:%s') AS qucai_datetime 字段
 =======================================================================================================
-2016-11-13
+2016-11-13 滕州项目从此开始往下都未更新
 添加表；
 CREATE TABLE `myzh_report` (
 	`study_no` VARCHAR(50) NOT NULL,
@@ -348,6 +348,7 @@ select `a`.`study_no` AS `study_no`,`a`.`exam_type` AS `exam_type`,`d`.`patient_
 更新`setval`函数为`pissetval`    
 =========================================================================================================
 2022-04-05 系统重大潜在bug修正，增加study_no字段唯一索引限制(https://www.cnblogs.com/wzmenjoy/archive/2012/08/23/2652427.html)：
+SELECT study_no FROM exam_master GROUP BY study_no HAVING COUNT(*)>1
 UPDATE exam_master SET study_no=NULL WHERE study_no='';
 UPDATE exam_master SET study_no=NULL WHERE exam_status<'15';
 --------------------------------------------------------------------------------------------
@@ -358,5 +359,32 @@ ALTER TABLE `exam_master`
 	DROP INDEX `study_no`,
 	ADD UNIQUE INDEX `study_no` (`study_no`);
 =========================================================================================================
+2022-05-19 
+数据库脱敏：
+update exam_pat_mi t SET t.identity=INSERT(t.identity, 3, 14, '**************'),t.patient_name=INSERT(t.patient_name, 2, 1, '*'),t.hospital_card=INSERT(t.hospital_card, 3, 14, '**************'),t.phone_number=INSERT(t.phone_number, 4, 5, '**************');
 
+UPDATE exam_pat_mi t SET t.current_place='';
+
+SELECT * FROM exam_pat_mi;
+--------------------------------------------------------------------------
+处理主表exam_master的申请时间req_date_time字段为当前日期便于售前演示：
+
+SELECT * FROM exam_master t ORDER BY t.req_date_time DESC;
+
+select DATEDIFF(SYSDATE(), '2022-02-28 16:15:02' )from DUAL; 
+
+select date_add('2022-02-28 16:15:02', INTERVAL 80  DAY) from DUAL; 
+
+UPDATE exam_master t SET t.req_date_time=DATE_ADD(t.req_date_time, INTERVAL 80  DAY);
+--------------------------------------------------------------------------------
+处理主表exam_master的接收时间received_datetime字段为当前日期便于售前演示：
+
+SELECT * FROM exam_master t ORDER BY t.received_datetime DESC;
+
+select DATEDIFF(SYSDATE(), '2022-02-28 16:15:02' )from DUAL; 
+
+select date_add('2022-02-28 16:15:02', INTERVAL 80  DAY) from DUAL; 
+
+UPDATE exam_master t SET t.received_datetime=DATE_ADD(t.received_datetime, INTERVAL 80  DAY);
+===================================================================================================
 

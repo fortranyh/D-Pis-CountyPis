@@ -150,7 +150,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginFrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "登录  麦禾病理信息管理系统";
+            this.Text = "登录  潤沁實嶪病理信息管理系统";
             this.Load += new System.EventHandler(this.LoginFrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
