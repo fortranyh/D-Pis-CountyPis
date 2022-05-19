@@ -61,7 +61,10 @@ namespace PIS_Sys
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
             this.buttonItem16 = new DevComponents.DotNetBar.ButtonItem();
+=======
+>>>>>>> parent of 7dedae0 (增加功能模块：病理小组)
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,9 +94,13 @@ namespace PIS_Sys
             this.buttonItem7,
             this.buttonItem8,
             this.buttonItem13,
+<<<<<<< HEAD
             this.buttonItem14,
             this.buttonItem5,
             this.buttonItem16});
+=======
+            this.buttonItem14});
+>>>>>>> parent of 7dedae0 (增加功能模块：病理小组)
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.MenuBar = true;
             this.bar1.Name = "bar1";
@@ -243,11 +250,14 @@ namespace PIS_Sys
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+<<<<<<< HEAD
             // buttonItem16
             // 
             this.buttonItem16.Name = "buttonItem16";
             this.buttonItem16.Text = "病理分中心";
             // 
+=======
+>>>>>>> parent of 7dedae0 (增加功能模块：病理小组)
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -295,8 +305,11 @@ namespace PIS_Sys
         private DevComponents.DotNetBar.ButtonItem buttonItem11;
         private DevComponents.DotNetBar.ButtonItem buttonItem15;
         private DevComponents.DotNetBar.ButtonItem buttonItem12;
+<<<<<<< HEAD
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
         private DevComponents.DotNetBar.ButtonItem buttonItem16;
+=======
+>>>>>>> parent of 7dedae0 (增加功能模块：病理小组)
     }
 }
 
