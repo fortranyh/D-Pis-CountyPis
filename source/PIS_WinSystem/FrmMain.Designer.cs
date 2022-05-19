@@ -60,6 +60,7 @@ namespace PIS_Sys
             this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,7 +90,8 @@ namespace PIS_Sys
             this.buttonItem7,
             this.buttonItem8,
             this.buttonItem13,
-            this.buttonItem14});
+            this.buttonItem14,
+            this.buttonItem5});
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.MenuBar = true;
             this.bar1.Name = "bar1";
@@ -234,6 +236,11 @@ namespace PIS_Sys
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonItem5
+            // 
+            this.buttonItem5.Name = "buttonItem5";
+            this.buttonItem5.Text = "病理小组";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -281,6 +288,7 @@ namespace PIS_Sys
         private DevComponents.DotNetBar.ButtonItem buttonItem11;
         private DevComponents.DotNetBar.ButtonItem buttonItem15;
         private DevComponents.DotNetBar.ButtonItem buttonItem12;
+        private DevComponents.DotNetBar.ButtonItem buttonItem5;
     }
 }
 
