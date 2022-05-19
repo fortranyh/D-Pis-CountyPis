@@ -58,10 +58,9 @@ namespace PIS_Sys
             this.buttonItem11 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonItem16 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,8 +91,7 @@ namespace PIS_Sys
             this.buttonItem8,
             this.buttonItem13,
             this.buttonItem14,
-            this.buttonItem5,
-            this.buttonItem16});
+            this.buttonItem5});
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.MenuBar = true;
             this.bar1.Name = "bar1";
@@ -205,11 +203,6 @@ namespace PIS_Sys
             this.buttonItem15.Text = "关于本系统";
             this.buttonItem15.Click += new System.EventHandler(this.buttonItem15_Click);
             // 
-            // buttonItem5
-            // 
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.Text = "病理小组";
-            // 
             // panelEx1
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
@@ -243,10 +236,10 @@ namespace PIS_Sys
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonItem16
+            // buttonItem5
             // 
-            this.buttonItem16.Name = "buttonItem16";
-            this.buttonItem16.Text = "病理分中心";
+            this.buttonItem5.Name = "buttonItem5";
+            this.buttonItem5.Text = "病理小组";
             // 
             // FrmMain
             // 
@@ -296,7 +289,6 @@ namespace PIS_Sys
         private DevComponents.DotNetBar.ButtonItem buttonItem15;
         private DevComponents.DotNetBar.ButtonItem buttonItem12;
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
-        private DevComponents.DotNetBar.ButtonItem buttonItem16;
     }
 }
 
